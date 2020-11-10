@@ -9,9 +9,9 @@
   - [ ] Promise
 - [ ] 手写源码系列
   - [ ] 防抖+节流
-  - [ ] 深拷贝
+  - [X] 深拷贝
   - [ ] call+bind+apply
-  - [ ] instanceOf
+  - [X] instanceOf
   - [ ] new
   - [ ] EventBus
 
