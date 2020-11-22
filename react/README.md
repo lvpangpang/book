@@ -6,3 +6,4 @@
 - [ ] React Fiber
 - [ ] Hooks思想
 - [ ] useState，useEffect实现
+- [X] 状态管理（redux，mobx）
