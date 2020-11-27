@@ -2,7 +2,6 @@
 
 - [x] 原型+原型链
 - [X] 闭包
-- [ ] this
 - [ ] 异步系列
   - [x] Event Loop
   - [ ] Promise
