@@ -18,7 +18,6 @@ function allSubsets(arr=[1, 2, 3]) {
   return res;
 };
 
-
 // 2.给两个整数数组 A 和 B ，返回两个数组中公共的、长度最长的子数组的长度。
 /*输入：
   A: [1,2,3,2,1]
@@ -57,7 +56,6 @@ var findLength = function(A, B) {
 };
  
 // 3.最佳观光组合
-
 /* 
   给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。
   一对景点（i < j）组成的观光组合的得分为（A[i] + A[j] + i - j）：景点的评分之和减去它们两者之间的距离。
@@ -124,7 +122,6 @@ var twoSum = function(nums, target) {
   }
 };
 
-
 // 5. 反转字符串
 // 编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
 function reverseString(str) {
@@ -137,40 +134,21 @@ function reverseString(str) {
   }
 }
 
-// 6.环形链表
-/* 给定一个链表，判断链表中是否有环。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。 */
-import Axios from "./Axios";
-const axios = new Axios(true);
-const MyAxios = (function () {
-  function MyAxios() {}
-  MyAxios.prototype.get = function (path, params = {}) {
-    return axios.get(path).catch((err) => {
-      // return Promise.resolve({
-      //   code: 444,
-      //   data: null,
-      //   message: "catch error",
-      //   err
-      // });
-      // 可不用 Promise.resolve 静态方法，因为在Promise链里返回的都会是一个 Promise 对象
-      return {
-        code: 444,
-        data: null,
-        message: "catch error",
-        err
-      };
-    });
-  };
-  MyAxios.prototype.post = function (path, params) {
-    return axios.post(path).catch((err) => {
-      return {
-        code: 444,
-        data: null,
-        message: "catch error",
-        err
-      };
-    });
-  };
-  return MyAxios;
-})();
-export default MyAxios;
-
+// 6. 数组中重复的数字
+// 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findRepeatNumber = function(nums) {
+  const len = nums.length;
+  const obj = {};
+  for(var i=0; i<len; i++) {
+    if(obj[nums[i]]) {
+      return nums[i]
+    } else {
+      obj[nums[i]] = nums[i];
+    }
+  }
+  return null;
+};
