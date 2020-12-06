@@ -10,7 +10,7 @@ function allSubsets(arr=[1, 2, 3]) {
     const tempRes = res.map(item => {
       const one = item.concat([]);
       one.push(arr[i]);
-      console.log(one);
+
       return one;
     });
     res = res.concat(tempRes);
