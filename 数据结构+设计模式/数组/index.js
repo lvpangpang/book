@@ -57,6 +57,36 @@ var findLength = function(A, B) {
  
 // 3. 合并2个有序数组
 /* 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。 */
+// 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+/* 输入:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6], n = 3
+输出: [1,2,2,3,5,6] */
+
+const merge = function(nums1, m, nums2, n) {
+  let i = m - 1;
+  let j = n - 1;
+  let k = m + n - 1;
+  while(i>=0&&j>=0) {
+    if(nums1[i]>=nums2[j]) {
+      nums1[k] = nums1[i];
+      i--;
+      k--;
+    } else {
+      nums1[k] = nums2[j];
+      j--;
+      k--;
+    }
+  }
+  
+  // num2单独留下的情况
+  while(j>=0) {
+    nums1[k] = nums2[j]  
+    j--;
+    k--;
+  }
+
+};
 
 
 // 4. 两数之和
@@ -102,7 +132,40 @@ var twoSum = function(nums, target) {
   }
 };
 
-// 5. 反转字符串
+
+// 5. 三数求和
+/* 真题描述：给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。 */
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+const threeSum = function(nums) {
+  const res = [];
+  nums.sort((a, b) => { return a-b;});
+  const len = nums.length;
+  for(var i=0; i<len-2; i++) {
+    let left = i+1;
+    let right = len - i;
+    while(left<right) {
+      let temp = nums[i] + nums[left] + nums[right];
+      if(temp===0) {
+        res.push([nums[i], nums[left], nums[right]]);
+        left++;
+        right--;
+      } else if(temp<0) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return res;
+};
+
+
+
+// 6. 反转字符串
 // 编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
 function reverseString(str) {
   var left = 0;
@@ -113,22 +176,3 @@ function reverseString(str) {
     right--;
   }
 }
-
-// 6. 数组中重复的数字
-// 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var findRepeatNumber = function(nums) {
-  const len = nums.length;
-  const obj = {};
-  for(var i=0; i<len; i++) {
-    if(obj[nums[i]]) {
-      return nums[i]
-    } else {
-      obj[nums[i]] = nums[i];
-    }
-  }
-  return null;
-};
