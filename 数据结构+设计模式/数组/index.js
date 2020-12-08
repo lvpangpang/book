@@ -55,40 +55,8 @@ var findLength = function(A, B) {
   return max;
 };
  
-// 3.最佳观光组合
-/* 
-  给定正整数数组 A，A[i] 表示第 i 个观光景点的评分，并且两个景点 i 和 j 之间的距离为 j - i。
-  一对景点（i < j）组成的观光组合的得分为（A[i] + A[j] + i - j）：景点的评分之和减去它们两者之间的距离。
-  返回一对观光景点能取得的最高分。
-*/
-
-/* 
-  输入：[8,1,5,2,6]
-  输出：11
-  解释：i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11 
-*/
-
-/**
- * @param {number[]} A
- * @return {number}
- */
-var maxScoreSightseeingPair = function(A) {
-  const len = A.length;
-  let max = 0;
-  for(var i=0; i<len-1; i++) {
-    var a = A[i];
-    var k = i+1;
-    while(k<len) {
-      var b = A[k];
-      var temp = a + b - (k - i);
-      k++;
-      if(temp>max) {
-        max = temp;
-      }
-    }
-  }
-  return max;
-};
+// 3. 合并2个有序数组
+/* 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。 */
 
 
 // 4. 两数之和
@@ -104,6 +72,7 @@ var maxScoreSightseeingPair = function(A) {
  * @param {number} target
  * @return {number[]}
  */
+// 双指针方法
 var twoSum = function(nums, target) {
   let len = nums.length;
   let left = 0;
@@ -119,6 +88,17 @@ var twoSum = function(nums, target) {
     if(sum>target) {
       right--;
     }
+  }
+};
+
+// 加法转为减法
+var twoSum = function(nums, target) {
+  let res = {};
+  for(var i=0; i<nums.length; i++) {
+    if(res[target-nums[i]]!==undefined) {
+      return [res[target-nums[i]], i]
+    }
+    res[nums[i]] = i;
   }
 };
 
