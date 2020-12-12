@@ -12,5 +12,6 @@
   - [X] instanceOf
   - [X] new
   - [ ] EventBus
+- [ ] TS
 
 
