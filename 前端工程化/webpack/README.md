@@ -24,7 +24,7 @@ npm i @babel/polyfill
 2.2 @babel/plugin-transform-runtime
 ```
 npm i @babel/plugin-transform-runtime --D
-npm i @babel/runtime @babel/runtime-corejs2
+npm i @babel/runtime-corejs2(由 core-js@2、@babel/helpers 和 regenerator-runtime 组成)
 {
   "presets": [
     "@babel/preset-env"
@@ -37,4 +37,3 @@ npm i @babel/runtime @babel/runtime-corejs2
   ]
 }
 ```
-
