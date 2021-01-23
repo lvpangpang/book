@@ -28,7 +28,6 @@ Object.prototype.b = () => {
 }
 function A() {}
 const a = new A();
-
 a.a(); // 报错，没有这个方法
 a.b(); // 2
 A.a(); // 1
