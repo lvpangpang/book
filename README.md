@@ -1,6 +1,6 @@
 # document-library
 个人知识体系图书馆
-1. [js](https://github.com/lvpangpang/document-library/tree/main/js)
+1. [js](https://github.com/lvpangpang/document-library/tree/main/js/README.md)
 2. react
 3. node
 4. 数据结构+设计模式
