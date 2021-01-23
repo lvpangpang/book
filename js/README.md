@@ -1,6 +1,6 @@
 # JS
 
-- [x] 原型+原型链
+- [x] [原型+原型链](https://lvpangpang.github.io/document-library/js/原型链)
 - [X] 闭包
 - [ ] 异步系列
   - [x] Event Loop
