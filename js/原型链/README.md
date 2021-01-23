@@ -8,7 +8,6 @@
 1. 描述new一个对象的过程
 ```
 var a = new A();
-
 var a = new Object();
 a.__proto__ = A.prototype; // 重新绑定this，使构造函数的this指向新对象
 A.call(a);
