@@ -6,6 +6,7 @@
 
 ##### 常见面试题
 1. 描述new一个对象的过程
+
 ```
 var a = new A();
 var a = new Object();
@@ -14,11 +15,13 @@ A.call(a);
 ```
 
 2. 原型继承
+
 ```
 代码详见 code/原型继承.js
 ```
 
 3. 原型链查找
+
 ```
 Function.prototype.a = () => {
   console.log(1);
