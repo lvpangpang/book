@@ -1,10 +1,5 @@
-数据结构
-- [ ] 数组
-- [ ] 队列
-- [ ] 栈
-- [ ] 链表
-- [ ] 二叉树
-
-设计模式
-
+#### 数据结构
++ [数组](https://lvpangpang.github.io/document-library/数据结构+设计模式/数据结构/数组)
++ [链表](https://lvpangpang.github.io/document-library/数据结构+设计模式/数据结构/链表)
++ [二叉树](https://lvpangpang.github.io/document-library/数据结构+设计模式/数据结构/二叉树)
 
