@@ -1,4 +1,4 @@
-#### Linux
+## Linux
 // 查找东西安装路径
 whereis redis
 

@@ -1,4 +1,4 @@
-### React
+## React
 + [虚拟DOM](https://lvpangpang.github.io/document-library/react/虚拟DOM)
 + [Diff算法](https://lvpangpang.github.io/document-library/react/Diff算法)
 + [状态管理](https://lvpangpang.github.io/document-library/react/状态管理)

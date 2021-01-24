@@ -1,4 +1,4 @@
-#### 代码规范
+## 代码规范
 
 eslint
 代码质量问题：使用方式有可能有问题(problematic patterns)
