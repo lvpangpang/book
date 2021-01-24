@@ -5,4 +5,4 @@
 3. [node](https://lvpangpang.github.io/document-library/node)
 4. [数据结构+设计模式](https://lvpangpang.github.io/document-library/数据结构+设计模式)
 5. [浏览器+网络](https://lvpangpang.github.io/document-library/浏览器+网络)
-6. [前端工程化](https://lvpangpang.github.io/document-library/前端工程化)
+6. [工程化](https://lvpangpang.github.io/document-library/工程化)
