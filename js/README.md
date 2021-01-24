@@ -1,4 +1,5 @@
 ## Js
+
 1. 基础类型
 ```
 number, string, boolean, null, undefined, symbol,bigInt

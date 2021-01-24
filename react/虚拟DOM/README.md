@@ -1,4 +1,4 @@
-#### 虚拟DOM
+## 虚拟DOM
 1. React.createElement(type, [props], [...children])，将JSX转化为react元素。
 > babel在编译时会判断JSX中组件的首字母，当首字母为小写时，其被认定为原生DOM标签，createElement的第一个变量被编译为字符串；当首字母为大写时，其被认定为自定义组件，createElement的第一个变量被编译为对象；这就是为什么写组件时候需要大写组件首字母。
 

@@ -1,6 +1,6 @@
 ## React
 + [虚拟DOM](https://lvpangpang.github.io/document-library/react/虚拟DOM)
-+ [Diff算法](https://lvpangpang.github.io/document-library/react/Diff算法)
++ [协调](https://lvpangpang.github.io/document-library/react/协调)
 + [状态管理](https://lvpangpang.github.io/document-library/react/状态管理)
 + [路由](https://lvpangpang.github.io/document-library/react/路由)
 + [Hooks](https://lvpangpang.github.io/document-library/react/hooks)

@@ -1,6 +1,6 @@
 ## nginx
 
-##### Location 
+### Location 
 ```
 location [ = | ~ | ~* | ^~ ] uri { ... }
 location @name { ... }
@@ -13,7 +13,7 @@ location @name { ... }
 ^~ 表示如果该符号后面的字符是最佳匹配，采用该规则，不再进行后续的查找。
 ```
 
-##### try_files
+### try_files
 
 ````
 语法规则：
