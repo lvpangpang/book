@@ -58,8 +58,4 @@ function myInstanceof(a, b) {
 ```
 
 7. this
-箭头函数其实是没有 this 的, 已经按照词法作用域绑定了，这个函数中的 this 只取决于他外面的第一个不是箭头函数的函数的 this。并且 this 一旦绑定了上下文，就不会被任何代码改变
-
-8. 执行上下文
-
-
+[this](https://lvpangpang.github.io/document-library/js/this)
