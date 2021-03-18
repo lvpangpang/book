@@ -9,6 +9,8 @@
 + [Nginx](工程化/Nginx/README.md)
 + [package](工程化/package/README.md)
 + [webpack](工程化/webpack/README.md)
++ [jenkins](工程化/jenkins/README.md)
+
 
 
 1. 一套webpack配置-webpack-react-admin。
