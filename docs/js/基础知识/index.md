@@ -1,3 +1,5 @@
+## JS 基础
+
 1. 原始类型
   + number
   + string
@@ -34,8 +36,20 @@ console.log(p2) // { age: 30, name: '王大熊'}
 + typeof 对于原始类型来说，除了 null 都可以显示正确的类型
 + typeof 对于对象来说，除了函数都会显示 object
 + instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
-```
 
+  代码详见 code.js-1.实现Instanceof
+
+4. 原型
+
+可以类比链表
++ 每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。
++ 每个对象都有 __proto__属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用 _proto_ 来访问。
++ 对象可以通过__proto__ 来寻找不属于该对象的属性，__proto__ 将对象连接起来组成了原型链
+```
+let a = '123';
+a.__proto__ === String.prototype;
+a.__proto__.__proto__ === Object.prototype
+a.__proto__.__proto__.__prototype === null
 ```
 
 
