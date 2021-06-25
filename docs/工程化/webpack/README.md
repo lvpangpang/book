@@ -1,11 +1,10 @@
-#### webpack
+## webpack
+
+#### 易错知识
 1. babel
-```
-1. react+ts项目，使用babel预设-@babel/preset-typescript来编译ts，而也可以直接不需要typescript包，之前用ts-loader来转化，babel的按需加载功能就会丧失。
-```
+react+ts项目，使用babel预设-@babel/preset-typescript来编译ts，而也可以直接不需要typescript包，之前用ts-loader来转化，babel的按需加载功能就会丧失。
 
 2. corejs
-
 在babel-laoder中不能编译corejs
 ```
 include: [path.resolve(`${cwd}/src`)],
@@ -74,3 +73,48 @@ module.exports = HelloWorldPlugin;
 + webpack-dev-server = webapck-dev-middleware + express
 + webpack-hot-middleware是一个结合webpack-dev-middleware使用的middleware，它可以实现浏览器的无刷新更新（hot reload），这也是webpack文档里常说的HMR（Hot Module Replacement）。HMR和热加载的区别是：热加载是刷新整个页面。
 
+
+#### 打包优化方式
+##### 减少 Webpack 打包时间
+
+1. 优化 Loader
+优化 Loader 的文件搜索范围
+```
+module.exports = {
+  module: {
+    rules: [
+      {
+        // js 文件才使用 babel
+        test: /\.js$/,
+        loader: 'babel-loader',
+        // 只在 src 文件夹下查找
+        include: [resolve('src')],
+        // 不会去查找的路径
+        exclude: /node_modules/
+      }
+    ]
+  }
+}
+```
+
+文件缓存
+```
+loader: 'babel-loader?cacheDirectory=true'
+```
+
+2. HappyPack
+HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了
+
+3. DllPlugin
+DllPlugin 可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。
+
+4. 代码压缩
+在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
+
+##### 减少 Webpack 打包后的文件体积
+
+1. 按需加载
+使用按需加载，将每个路由页面单独打包为一个文件
+
+2. Tree Shaking-树摇
+你使用 Webpack 4 的话，开启生产环境就会自动启动这个优化功能。

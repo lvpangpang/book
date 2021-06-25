@@ -15,7 +15,7 @@
 
 1. 一套webpack配置-webpack-react-admin。
 2. 基于webpack-reacr-amdin配合自定义的模板文件生成前端脚手架webpack-react-cli。
-3. 基于antd的常用react组件二次封装库-react-antd-mobile。
-4. 常用方法库。
+3. 常用方法库-js-common-library。
+4. 基于antd4+mobx的业务组件库-antd-mobx-components
 5. 基于egg搭建一套node-server，主要作用是提供一些辅助后端功能，比如文件直传oss，日志系统等等。
 
