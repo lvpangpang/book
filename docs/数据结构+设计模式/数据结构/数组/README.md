@@ -6,72 +6,54 @@
 
 修改原数组的API
 1. splice
-```
+```javascript
 const arr = [1, 2, 3, 4, 5]
 arr.splice(0,2) // [1, 2]
 arr // [3, 4, 5]
 ```
 2. sort 
-```
+```javascript
 const arr = [1, 2, 3, 4, 5]
 arr.sort((a, b) => { return b - a})
 arr // [5,4,3,2,1]
 ```
 
 3. push 
-```
+```javascript
 const arr = [1, 2, 3, 4, 5]
 arr.push(...[6, 7])
 arr // [1, 2, 3, 4, 5, 6, 7]
 ```
 
 4. pop
-```
+```javascript
 const arr = [1, 2, 3, 4, 5]
 arr.pop() // 5
 arr // [1, 2, 3, 4]
 ```
 
 5. unshift 
-```
+```javascript
 const arr = [1, 2, 3]
 arr.unshift(0) // 
 arr // [0, 1, 2, 3]
 ```
 
 6. shift 
-```
+```javascript
 const arr = [1, 2, 3]
 arr.shift() // 1
 arr // [2, 3]
 ```
 
 7. from 
-```
+```javascript
 const str = '123'
 arr.form(str) // [1,2,3]
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 常用思路
 1. 双指针
   >将嵌套循环转化为单循环问题
   >通过指针记录状态，从而优化空间复杂度（空间换时间）
