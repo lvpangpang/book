@@ -14,6 +14,7 @@
   * [防抖+节流](/js/防抖+节流/README.md)
 
 * [4.react](/react/README.md)
+  + [基础知识](/react/基础知识/README.md)
   * [虚拟DOM](/react/虚拟DOM/README.md)
   * [协调](/react/协调/README.md)
   * [状态管理](/react/状态管理/README.md)
