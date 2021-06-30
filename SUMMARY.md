@@ -11,7 +11,7 @@
   * [异步](/js/异步/README.md)
   * [eventLoop](/js/eventLoop/README.md)
   * [call+apply+bind](/js/call+apply+bind/README.md)
-  * [防抖+节流](/js/防抖+节流/README.md)
+  * [常用函数](/js/常用函数/README.md)
 
 * [4.react](/react/README.md)
   + [基础知识](/react/基础知识/README.md)

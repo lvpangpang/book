@@ -4,3 +4,5 @@
 + [异步](/js/异步/README.md)
 + [eventLoop](/js/eventLoop/README.md)
 + [call+apply+bind](/js/call+apply+bind/README.md)
++ [常用函数](/js/常用函数/README.md)
+

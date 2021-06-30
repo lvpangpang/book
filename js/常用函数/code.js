@@ -33,7 +33,7 @@ function throttle(fn, time) {
       return;
     }
     timer = setTimeout(function() {
-      fn.apply(_this, arg);// 绑定this， 否则this指向window
+      fn.apply(_this, arg);// 绑定this， 否则this指向window 
       timer = null;
     }, time||300);
   }
