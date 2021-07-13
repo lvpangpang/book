@@ -1,8 +1,9 @@
-## 基础知识
+# 基础知识
 
-### 1. createContext
+## 1. createContext
 
 1. Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。
+
 ```javascript
 const Const = React.createContext();
 ```
