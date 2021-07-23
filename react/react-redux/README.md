@@ -1,5 +1,6 @@
 # Redux
 Redux只是一个单纯状态管理库，没有任何界面相关的东西
+发布订阅模式
 
 1. createStore
 ```javascript
