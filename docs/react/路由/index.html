@@ -64,7 +64,7 @@
     <link rel="next" href="../hooks/" />
     
     
-    <link rel="prev" href="../状态管理/README.md" />
+    <link rel="prev" href="../状态管理/" />
     
 
     </head>
@@ -288,9 +288,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../状态管理/README.md">
+        <li class="chapter " data-level="1.4.4" data-path="../状态管理/">
             
-                <span>
+                <a href="../状态管理/">
             
                     
                     状态管理
@@ -680,7 +680,208 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x8DEF;&#x7531;">&#x8DEF;&#x7531;</h2>
+                                <h1 id="&#x8DEF;&#x7531;">&#x8DEF;&#x7531;</h1>
+<p>&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF0C;&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x5C31;&#x662F;&#x76D1;&#x542C;url&#x53D8;&#x5316;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;pathname&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;js&#x8D44;&#x6E90;
+&#x8DEF;&#x7531;&#x7684;&#x8DF3;&#x8F6C;&#x548C;&#x9875;&#x9762;&#x7684;&#x5207;&#x6362;&#x662F;2&#x56DE;&#x4E8B;&#x60C5;</p>
+<ul>
+<li>history&#x63D0;&#x4F9B;&#x4E86;&#x6838;&#x5FC3;api&#xFF0C;&#x5982;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#xFF0C;&#x66F4;&#x6539;&#x8DEF;&#x7531;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5DF2;&#x7ECF;&#x4FDD;&#x5B58;&#x8DEF;&#x7531;&#x72B6;&#x6001;state&#x3002;</li>
+<li>react-router&#x63D0;&#x4F9B;&#x8DEF;&#x7531;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF0C;&#x8DEF;&#x7531;&#x552F;&#x4E00;&#x6027;&#x5339;&#x914D;&#x7EC4;&#x4EF6;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x7EC4;&#x4EF6;&#x7B49;&#x529F;&#x80FD;&#x7EC4;&#x4EF6;</li>
+</ul>
+<h2 id="1&#x8DEF;&#x7531;&#x539F;&#x7406;">1.&#x8DEF;&#x7531;&#x539F;&#x7406;</h2>
+<ol>
+<li>history&#x6A21;&#x5F0F;</li>
+<li><p>&#x6539;&#x53D8;&#x8DEF;&#x7531;
+history.pushState(state,title,path)
+&#x53EA;&#x80FD;&#x6539;&#x53D8;url&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x9875;&#x9762;&#x89C6;&#x56FE;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6539;&#x53D8;
+history.replaceState(state,title,path) </p>
+</li>
+<li><p>&#x76D1;&#x542C;&#x8DEF;&#x7531;
+popstate
+&#x8FD9;&#x4E2A;api&#x53EA;&#x80FD;&#x76D1;&#x542C;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x5E26;&#x7684;&#x524D;&#x8FDB;&#x56DE;&#x9000;&#x6309;&#x94AE;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x53EA;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6765;&#x505A;&#x5230;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5728;pushState&#x540E;&#x624B;&#x52A8;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570;</p>
+</li>
+<li><p>hash&#x6A21;&#x5F0F;</p>
+</li>
+<li><p>&#x6539;&#x53D8;&#x8DEF;&#x7531;
+windows.location.href</p>
+</li>
+<li><p>&#x76D1;&#x542C;&#x8DEF;&#x7531;
+hashchange</p>
+</li>
+</ol>
+<h2 id="2-&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;">2. &#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</h2>
+<ol>
+<li>BrowserRouter
+&#x5BF9;Router&#x7EC4;&#x4EF6;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4F20;&#x4E86;history&#x5BF9;&#x8C61;&#x7ED9;Router
+```javascript
+import React from &quot;react&quot;;
+import { Router } from &quot;react-router&quot;;
+import { createBrowserHistory as createHistory } from &quot;history&quot;;</li>
+</ol>
+<p>class BrowserRouter extends React.Component {
+  history = createHistory(this.props);
+  render() {
+    return <router history="{this.history}" children="{this.props.children}">;
+  }
+}</router></p>
+<pre><code>
+2. Router
+&#x5C06;&#x4ECE;&#x4F20;&#x5165;&#x7684;history&#x5BF9;&#x8C61;&#x7684;location&#x4FE1;&#x606F;&#x5B58;&#x5165;react&#x7684;state&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x548C;react&#x5EFA;&#x7ACB;&#x4E86;&#x5173;&#x7CFB;
+&#x6BCF;&#x6B21;&#x8DEF;&#x7531;&#x53D8;&#x5316; -&gt; &#x89E6;&#x53D1;&#x9876;&#x5C42; Router &#x7684;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6; -&gt; Router &#x8FDB;&#x884C; setState -&gt; &#x5411;&#x4E0B;&#x4F20;&#x9012; nextContext&#xFF08;context &#x4E2D;&#x542B;&#x6709;&#x6700;&#x65B0;&#x7684; location&#xFF09;-&gt; &#x4E0B;&#x9762;&#x7684; Route &#x83B7;&#x53D6;&#x65B0;&#x7684; nextContext &#x5224;&#x65AD;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;
+```javascript
+import React from &quot;react&quot;;
+
+import HistoryContext from &quot;./HistoryContext.js&quot;;
+import RouterContext from &quot;./RouterContext.js&quot;;
+
+/**
+ * The public API for putting history on context.
+ */
+class Router extends React.Component {
+  // &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x68C0;&#x6D4B;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x662F;&#x5426;&#x5339;&#x914D;
+  static computeRootMatch(pathname) {
+    return { path: &quot;/&quot;, url: &quot;/&quot;, params: {}, isExact: pathname === &quot;/&quot; };
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      location: props.history.location     // &#x5C06;history&#x7684;location&#x6302;&#x8F7D;&#x5230;state&#x4E0A;
+    };
+
+    // &#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x9632;&#x5FA1;&#x6027;&#x4EE3;&#x7801;&#xFF0C;&#x9632;&#x6B62;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;location&#x5C31;&#x53D8;&#x4E86;
+    // &#x5982;&#x679C;location&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x5148;&#x8BB0;&#x4E0B;&#x4ED6;&#xFF0C;&#x7B49;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;mount&#x4E86;&#x518D;&#x8BBE;&#x7F6E;&#x5230;state&#x4E0A;
+    this._isMounted = false;
+    this._pendingLocation = null;
+
+    // &#x901A;&#x8FC7;history&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF0C;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6539;&#x53D8;state&#x4E0A;&#x7684;location
+    this.unlisten = props.history.listen(location =&gt; {
+      if (this._isMounted) {
+        this.setState({ location }); // &#x8FD9;&#x4E00;&#x6B65;&#x5F88;&#x5173;&#x952E;
+      } else {
+        this._pendingLocation = location;
+      }
+    });
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    if (this._pendingLocation) {
+      this.setState({ location: this._pendingLocation });
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.unlisten) {
+      this.unlisten();
+      this._isMounted = false;
+      this._pendingLocation = null;
+    }
+  }
+
+  render() {
+    // render&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x4E24;&#x4E2A;context
+    // &#x4E00;&#x4E2A;&#x662F;&#x8DEF;&#x7531;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;history&#x548C;location&#x7B49;
+    // &#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B;history&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;children&#x6E32;&#x67D3;&#x51FA;&#x6765;
+    return (
+      &lt;RouterContext.Provider
+
+      &gt;
+        &lt;HistoryContext.Provider
+          children={this.props.children || null}
+          value={this.props.history}
+        /&gt;
+      &lt;/RouterContext.Provider&gt;
+    );
+  }
+}
+
+export default Router;
+</code></pre><ol>
+<li>history(&#x8FD9;&#x4E2A;&#x662F;&#x5BF9;&#x8C61;)</li>
+<li><p>createTransitionManager
+&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;</p>
+</li>
+<li><p>Route
+&#x627E;&#x5230;location&#x548C;<router>&#x7684;path&#x5339;&#x914D;&#x7684;&#x7EC4;&#x4EF6;&#x5E76;&#x6E32;&#x67D3;&#x3002;</router></p>
+</li>
+<li><p>Switch</p>
+</li>
+<li><p>Link
+&#x5728; Link &#x4E2D;&#x901A;&#x8FC7; history &#x5E93;&#x7684; push &#x8C03;&#x7528;&#x4E86; HTML5 history &#x7684; pushState&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4EC5;&#x4EC5;&#x4F1A;&#x8BA9;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF0C;&#x5176;&#x4ED6;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#x3002;&#x7136;&#x540E;&#x901A;&#x8FC7; Router &#x4E2D;&#x7684; listen&#xFF0C;&#x5B83;&#x4F1A;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x901A;&#x8FC7; context &#x66F4;&#x65B0; props &#x548C; nextContext &#x8BA9;&#x4E0B;&#x5C42;&#x7684; Route &#x53BB;&#x91CD;&#x65B0;&#x5339;&#x914D;&#xFF0C;&#x5B8C;&#x6210;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Link</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+<span class="hljs-keyword">static</span> defaultProps = {
+ replace: <span class="hljs-literal">false</span>
+};
+
+handleClick(event, context) {
+ <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.onClick) <span class="hljs-keyword">this</span>.props.onClick(event);
+
+ <span class="hljs-keyword">if</span> (
+   !event.defaultPrevented &amp;&amp; <span class="hljs-comment">// &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;</span>
+   event.button === <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-comment">// &#x5FFD;&#x7565;&#x9664;&#x5DE6;&#x51FB;&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;</span>
+   !<span class="hljs-keyword">this</span>.props.target &amp;&amp; <span class="hljs-comment">// &#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x5904;&#x7406;&#x201C;target=_blank&#x201D;&#x7B49;&#x3002;</span>
+   !isModifiedEvent(event) <span class="hljs-comment">// &#x5FFD;&#x7565;&#x5E26;&#x6709;&#x4FEE;&#x9970;&#x7B26;&#x952E;&#x7684;&#x5355;&#x51FB;</span>
+ ) {
+   event.preventDefault();
+
+   <span class="hljs-keyword">const</span> method = <span class="hljs-keyword">this</span>.props.replace
+     ? context.history.replace
+     : context.history.push;
+
+   method(<span class="hljs-keyword">this</span>.props.to);
+ }
+}
+
+render() {
+ <span class="hljs-keyword">const</span> { innerRef, replace, to, ...props } = <span class="hljs-keyword">this</span>.props;
+ <span class="hljs-comment">// eslint-disable-line no-unused-vars</span>
+
+ <span class="hljs-keyword">return</span> (
+   <span class="hljs-comment">// &#x65E0;&#x5904;&#x4E0D;&#x5728;&#x7684;context</span>
+   &lt;RouterContext.Consumer&gt;
+     {context =&gt; {
+       invariant(context, <span class="hljs-string">&quot;You should not use &lt;Link&gt; outside a &lt;Router&gt;&quot;</span>);
+
+       <span class="hljs-keyword">const</span> location =
+         <span class="hljs-keyword">typeof</span> to === <span class="hljs-string">&quot;string&quot;</span>
+           ? createLocation(to, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, context.location)
+           : to;
+       <span class="hljs-keyword">const</span> href = location ? context.history.createHref(location) : <span class="hljs-string">&quot;&quot;</span>;
+
+       <span class="hljs-keyword">return</span> (
+         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+           {<span class="hljs-attr">...props</span>}
+           <span class="hljs-attr">onClick</span>=<span class="hljs-string">{event</span> =&gt;</span> this.handleClick(event, context)}
+           href={href}
+           ref={innerRef}
+         /&gt;
+       );
+     }}
+   <span class="hljs-tag">&lt;/<span class="hljs-name">RouterContext.Consumer</span>&gt;</span>
+ );
+}
+}
+</span></code></pre>
+</li>
+</ol>
+<h2 id="3-&#x8DEF;&#x7531;&#x9274;&#x6743;">3. &#x8DEF;&#x7531;&#x9274;&#x6743;</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { Route, Redirect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Auth</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">const</span> { location, config } = props
+  <span class="hljs-keyword">const</span> { pathname } = location
+  <span class="hljs-keyword">const</span> isLogin = localStorage.getItem(<span class="hljs-string">&apos;token&apos;</span>)
+  <span class="hljs-keyword">const</span> target = config.find((item) =&gt; item.path === pathname)
+  <span class="hljs-keyword">const</span> { auth } = target
+  <span class="hljs-keyword">if</span> (auth &amp;&amp; !isLogin) {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Redirect</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/login&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Redirect</span>&gt;</span></span>
+  }
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">exact</span> <span class="hljs-attr">path</span>=<span class="hljs-string">{target[&apos;path&apos;]}</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{target[&apos;component&apos;]}</span> /&gt;</span>
+}
+</span></code></pre>
 
                                 
                                 </section>
@@ -708,7 +909,7 @@
 
             
                 
-                <a href="../状态管理/README.md" class="navigation navigation-prev " aria-label="Previous page: 状态管理">
+                <a href="../状态管理/" class="navigation navigation-prev " aria-label="Previous page: 状态管理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -724,7 +925,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"路由","level":"1.4.5","depth":2,"next":{"title":"Hooks","level":"1.4.6","depth":2,"path":"react/hooks/README.md","ref":"react/hooks/README.md","articles":[]},"previous":{"title":"状态管理","level":"1.4.4","depth":2,"path":"react/状态管理/README.md","ref":"react/状态管理/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/路由/README.md","mtime":"2021-06-29T02:51:23.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-13T12:43:10.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"路由","level":"1.4.5","depth":2,"next":{"title":"Hooks","level":"1.4.6","depth":2,"path":"react/hooks/README.md","ref":"react/hooks/README.md","articles":[]},"previous":{"title":"状态管理","level":"1.4.4","depth":2,"path":"react/状态管理/README.md","ref":"react/状态管理/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/路由/README.md","mtime":"2021-07-24T08:32:41.426Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-24T08:34:36.254Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
