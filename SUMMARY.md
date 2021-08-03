@@ -9,10 +9,12 @@
 
 * [3.js](/js/README.md)
   * [基础知识](/js/基础知识/README.md)
-  * [异步](/js/异步/README.md)
-  * [eventLoop](/js/eventLoop/README.md)
   * [原型链](/js/原型链/README.md)
   * [this](/js/this/README.md)
+  * [作用域](/js/作用域/README.md)
+  * [eventLoop](/js/eventLoop/README.md)
+  * [异步](/js/异步/README.md)
+  * [深浅拷贝](/js/深浅拷贝/README.md)
   * [常用函数](/js/常用函数/README.md)
 
 * [4.react](/react/README.md)
@@ -48,6 +50,8 @@
   * [前端监控](其他/前端监控/README.md)
   * [websocket](其他/websocket/README.md)
   * [安全](其他/安全/README.md)
+
+* [10.常见面试题](/常见面试题/README.md)
 
 
 

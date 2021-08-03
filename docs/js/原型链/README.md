@@ -15,7 +15,7 @@ const personA = new Person('肥肥')
 console.log(personA.say())
 ```
 
-## __proto__
+## 2.__proto__
 实例对象通过这个属性可以获取到他构造函数对象prototype属性上面的所有方法
 ```javascript
 function Person(name) {
@@ -27,10 +27,10 @@ Person.prototype.say = () => {
 const personA = new Person('肥肥')
 console.log(personA.__proto__===Person.prototype) // true
 ```
-## constructor
+## 3.constructor
 这个属性就指向类函数本身，用于指示当前类的构造函数
 
-## 静态方法
+## 4.静态方法
 只有构造函数才能访问到，实例对象无法访问
 ```javascript
 function Person(name) {
@@ -43,7 +43,7 @@ const personA = new Person('肥肥')
 personA.run // undefined
 ```
 
-## 继承
+## 5.继承
 子类能够继承父类的属性和方法
 子类能够找到父类的prototype
 ```javascript
@@ -60,7 +60,7 @@ person.prototype = Object.create(Person.prototype);
 person.prototype.constructor = person;      
 ```
 
-## new
+## 6.new
 ```javascript
 function myNew(func, ...args) {
   const obj = {};     // 新建一个空对象
@@ -79,9 +79,13 @@ function myNew(func, ...args) {
   return obj;
 }
 ```
-## instanceof
+## 7.instanceof
 检测一个实例对象是不是某个类的实例
 换句话，就是对象的原型链上是否有这个类的prototype
+1. typeof和instanceof区别
+* typeof 对于原始类型来说，除了 null 都可以显示正确的类型
+* typeof 对于对象来说，除了函数都会显示 object
+* instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
 ```javascript
 function myInstanceof(a, A) {
   let __proto = a.__proto__

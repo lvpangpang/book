@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../常用函数/" />
+    <link rel="next" href="../作用域/" />
     
     
     <link rel="prev" href="../原型链/" />
@@ -191,33 +191,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../异步/">
-            
-                <a href="../异步/">
-            
-                    
-                    异步
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="../eventLoop/">
-            
-                <a href="../eventLoop/">
-            
-                    
-                    eventLoop
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="../原型链/">
+        <li class="chapter " data-level="1.3.2" data-path="../原型链/">
             
                 <a href="../原型链/">
             
@@ -230,7 +204,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="./">
+        <li class="chapter active" data-level="1.3.3" data-path="./">
             
                 <a href="./">
             
@@ -243,7 +217,59 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../常用函数/">
+        <li class="chapter " data-level="1.3.4" data-path="../作用域/">
+            
+                <a href="../作用域/">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../eventLoop/">
+            
+                <a href="../eventLoop/">
+            
+                    
+                    eventLoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../异步/">
+            
+                <a href="../异步/">
+            
+                    
+                    异步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../深浅拷贝/">
+            
+                <a href="../深浅拷贝/">
+            
+                    
+                    深浅拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../常用函数/">
             
                 <a href="../常用函数/">
             
@@ -661,6 +687,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10" data-path="../../常见面试题/">
+            
+                <a href="../../常见面试题/">
+            
+                    
+                    10.常见面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -707,13 +746,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="this">This</h1>
-<h2 id="&#x7BAD;&#x5934;&#x51FD;&#x6570;">&#x7BAD;&#x5934;&#x51FD;&#x6570;</h2>
+<h2 id="1&#x7BAD;&#x5934;&#x51FD;&#x6570;">1.&#x7BAD;&#x5934;&#x51FD;&#x6570;</h2>
 <ol>
 <li>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;this&#x662F;&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x7531;&#x4E0A;&#x4E0B;&#x6587;&#x786E;&#x5B9A;&#x3002;</li>
 <li>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x5177;&#x6709;this&#xFF0C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x5728;&#x88AB;&#x7533;&#x660E;&#x786E;&#x5B9A;this&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4ED6;&#x4F1A;&#x76F4;&#x63A5;&#x5C06;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#xFF09;&#x7684;this&#x4F5C;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;this</li>
 <li>&#x7BAD;&#x5934;&#x4E0D;&#x80FD;&#x7528;&#x4F5C;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
 </ol>
-<h2 id="callapplybind">call+apply+bind</h2>
+<h2 id="2callapplybind">2.call+apply+bind</h2>
 <ol>
 <li>call() &#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684; this &#x503C;&#x548C;&#x5355;&#x72EC;&#x7ED9;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</li>
 <li>apply() &#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x7ED9;&#x5B9A;this&#x503C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x4EE5;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF08;&#x6216;&#x7C7B;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x5F62;&#x5F0F;&#x63D0;&#x4F9B;&#x7684;&#x53C2;&#x6570;&#x3002;</li>
@@ -751,7 +790,7 @@
                 </a>
                 
                 
-                <a href="../常用函数/" class="navigation navigation-next " aria-label="Next page: 常用函数">
+                <a href="../作用域/" class="navigation navigation-next " aria-label="Next page: 作用域">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -762,7 +801,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"this","level":"1.3.5","depth":2,"next":{"title":"常用函数","level":"1.3.6","depth":2,"path":"js/常用函数/README.md","ref":"js/常用函数/README.md","articles":[]},"previous":{"title":"原型链","level":"1.3.4","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/this/README.md","mtime":"2021-08-01T05:31:25.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-02T12:46:22.640Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"this","level":"1.3.3","depth":2,"next":{"title":"作用域","level":"1.3.4","depth":2,"path":"js/作用域/README.md","ref":"js/作用域/README.md","articles":[]},"previous":{"title":"原型链","level":"1.3.2","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/this/README.md","mtime":"2021-08-03T06:18:41.451Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-03T12:52:43.320Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

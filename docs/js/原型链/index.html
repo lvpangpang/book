@@ -64,7 +64,7 @@
     <link rel="next" href="../this/" />
     
     
-    <link rel="prev" href="../eventLoop/" />
+    <link rel="prev" href="../基础知识/" />
     
 
     </head>
@@ -191,33 +191,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../异步/">
-            
-                <a href="../异步/">
-            
-                    
-                    异步
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="../eventLoop/">
-            
-                <a href="../eventLoop/">
-            
-                    
-                    eventLoop
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.3.4" data-path="./">
+        <li class="chapter active" data-level="1.3.2" data-path="./">
             
                 <a href="./">
             
@@ -230,7 +204,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../this/">
+        <li class="chapter " data-level="1.3.3" data-path="../this/">
             
                 <a href="../this/">
             
@@ -243,7 +217,59 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../常用函数/">
+        <li class="chapter " data-level="1.3.4" data-path="../作用域/">
+            
+                <a href="../作用域/">
+            
+                    
+                    作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../eventLoop/">
+            
+                <a href="../eventLoop/">
+            
+                    
+                    eventLoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../异步/">
+            
+                <a href="../异步/">
+            
+                    
+                    异步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../深浅拷贝/">
+            
+                <a href="../深浅拷贝/">
+            
+                    
+                    深浅拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../常用函数/">
             
                 <a href="../常用函数/">
             
@@ -661,6 +687,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10" data-path="../../常见面试题/">
+            
+                <a href="../../常见面试题/">
+            
+                    
+                    10.常见面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -719,7 +758,7 @@ Person.prototype.say = () =&gt; {
 <span class="hljs-keyword">const</span> personA = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&apos;&#x80A5;&#x80A5;&apos;</span>)
 <span class="hljs-built_in">console</span>.log(personA.say())
 </code></pre>
-<h2 id="proto"><strong>proto</strong></h2>
+<h2 id="2proto">2.<strong>proto</strong></h2>
 <p>&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x4ED6;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5BF9;&#x8C61;prototype&#x5C5E;&#x6027;&#x4E0A;&#x9762;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>{
   <span class="hljs-keyword">this</span>.name = name
@@ -730,9 +769,9 @@ Person.prototype.say = () =&gt; {
 <span class="hljs-keyword">const</span> personA = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&apos;&#x80A5;&#x80A5;&apos;</span>)
 <span class="hljs-built_in">console</span>.log(personA.__proto__===Person.prototype) <span class="hljs-comment">// true</span>
 </code></pre>
-<h2 id="constructor">constructor</h2>
+<h2 id="3constructor">3.constructor</h2>
 <p>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x6307;&#x5411;&#x7C7B;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x5F53;&#x524D;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
-<h2 id="&#x9759;&#x6001;&#x65B9;&#x6CD5;">&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2>
+<h2 id="4&#x9759;&#x6001;&#x65B9;&#x6CD5;">4.&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2>
 <p>&#x53EA;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#xFF0C;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>{
   <span class="hljs-keyword">this</span>.name = name
@@ -743,7 +782,7 @@ Person.run = <span class="hljs-function"><span class="hljs-keyword">function</sp
 <span class="hljs-keyword">const</span> personA = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&apos;&#x80A5;&#x80A5;&apos;</span>)
 personA.run <span class="hljs-comment">// undefined</span>
 </code></pre>
-<h2 id="&#x7EE7;&#x627F;">&#x7EE7;&#x627F;</h2>
+<h2 id="5&#x7EE7;&#x627F;">5.&#x7EE7;&#x627F;</h2>
 <p>&#x5B50;&#x7C7B;&#x80FD;&#x591F;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;
 &#x5B50;&#x7C7B;&#x80FD;&#x591F;&#x627E;&#x5230;&#x7236;&#x7C7B;&#x7684;prototype</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>{
@@ -758,7 +797,7 @@ Person.prototype.say = () =&gt; {}
 person.prototype = <span class="hljs-built_in">Object</span>.create(Person.prototype);         
 person.prototype.constructor = person;
 </code></pre>
-<h2 id="new">new</h2>
+<h2 id="6new">6.new</h2>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myNew</span>(<span class="hljs-params">func, ...args</span>) </span>{
   <span class="hljs-keyword">const</span> obj = {};     <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;</span>
   <span class="hljs-keyword">const</span> result = func.call(obj, ...args);  <span class="hljs-comment">// &#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
@@ -776,21 +815,27 @@ person.prototype.constructor = person;
   <span class="hljs-keyword">return</span> obj;
 }
 </code></pre>
-<h2 id="instanceof">instanceof</h2>
+<h2 id="7instanceof">7.instanceof</h2>
 <p>&#x68C0;&#x6D4B;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x662F;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
 &#x6362;&#x53E5;&#x8BDD;&#xFF0C;&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x662F;&#x5426;&#x6709;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;prototype</p>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myInstanceof</span>(<span class="hljs-params">a, A</span>) </span>{
-  <span class="hljs-keyword">let</span> __proto = a.__proto__
-  <span class="hljs-keyword">let</span> prototype = A.prototype
-  <span class="hljs-keyword">while</span> (prototype) {
-    <span class="hljs-keyword">if</span> (__proto === prototype) {
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
-    }
-    __proto = __proto.__proto__
+<ol>
+<li>typeof&#x548C;instanceof&#x533A;&#x522B;</li>
+<li>typeof &#x5BF9;&#x4E8E;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x4E86; null &#x90FD;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;</li>
+<li>typeof &#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x4E86;&#x51FD;&#x6570;&#x90FD;&#x4F1A;&#x663E;&#x793A; object</li>
+<li>instanceof &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684; prototype &#x5C5E;&#x6027;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x5728;&#x67D0;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x3002;<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myInstanceof</span>(<span class="hljs-params">a, A</span>) </span>{
+<span class="hljs-keyword">let</span> __proto = a.__proto__
+<span class="hljs-keyword">let</span> prototype = A.prototype
+<span class="hljs-keyword">while</span> (prototype) {
+  <span class="hljs-keyword">if</span> (__proto === prototype) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
   }
-  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+  __proto = __proto.__proto__
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
 }
 </code></pre>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -818,7 +863,7 @@ person.prototype.constructor = person;
 
             
                 
-                <a href="../eventLoop/" class="navigation navigation-prev " aria-label="Previous page: eventLoop">
+                <a href="../基础知识/" class="navigation navigation-prev " aria-label="Previous page: 基础知识">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -834,7 +879,7 @@ person.prototype.constructor = person;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"原型链","level":"1.3.4","depth":2,"next":{"title":"this","level":"1.3.5","depth":2,"path":"js/this/README.md","ref":"js/this/README.md","articles":[]},"previous":{"title":"eventLoop","level":"1.3.3","depth":2,"path":"js/eventLoop/README.md","ref":"js/eventLoop/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/原型链/README.md","mtime":"2021-07-27T11:31:05.908Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-02T12:46:22.640Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"原型链","level":"1.3.2","depth":2,"next":{"title":"this","level":"1.3.3","depth":2,"path":"js/this/README.md","ref":"js/this/README.md","articles":[]},"previous":{"title":"基础知识","level":"1.3.1","depth":2,"path":"js/基础知识/README.md","ref":"js/基础知识/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/原型链/README.md","mtime":"2021-08-03T11:30:02.479Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-03T12:52:43.320Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
