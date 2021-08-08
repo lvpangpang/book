@@ -28,13 +28,14 @@
 * [5.node](/node/README.md)
   * [eventLoop](/node/README.md)
 
-* [6.数据结构+设计模式](/数据结构+设计模式/README.md)
-  * [数组](/数据结构+设计模式/数据结构/数组/README.md)
-  * [链表](/数据结构+设计模式/数据结构/链表/README.md)
-  * [发布订阅](/数据结构+设计模式/设计模式/发布订阅/README.md)
+* [6.算法](/算法/README.md)
+  * [数组](/算法/数据结构/数组/README.md)
+  * [链表](/算法/数据结构/链表/README.md)
+  * [发布订阅](/算法/设计模式/发布订阅/README.md)
+  * [递归](/算法/算法/递归/README.md)
 
-* [7.浏览器+网络](/浏览器+网络/README.md)
-  * [缓存策略](/浏览器+网络/缓存/README.md)
+* [7.网络](/网络/README.md)
+  * [缓存](/网络/缓存/README.md)
 
 * [8.工程化](/工程化/README.md)
   * [代码规范](/工程化/代码规范/README.md)

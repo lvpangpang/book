@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function myInstanceof(a, A) {
+        let proto = a.__proto__
+        let prototype = A.prototype
+        while(proto) {
+          if(proto===prototype) {
+            return true
+          }
+          proto = proto.__proto__
+        }
+        return false
+      }
+      var a = new String('231')
+      var b = 76786
+      console.log(myInstanceof(a, String))
+      console.log(myInstanceof(b, String))
+    </script>
+  </body>
+</html>
