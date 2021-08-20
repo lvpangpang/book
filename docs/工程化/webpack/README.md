@@ -1,6 +1,5 @@
-## webpack
-
-### 知识点
+# webpack
+## 1.知识点
 1. babel
 react+ts项目，使用babel预设-@babel/preset-typescript来编译ts，而也可以直接不需要typescript包，之前用ts-loader来转化，babel的按需加载功能就会丧失。
 
@@ -81,8 +80,25 @@ module.exports = HelloWorldPlugin;
 
 可以使用 @babel/parser 的 parse 方法，将代码字符串解析成 AST；使用 @babel/core 的 transformFromAstSync 方法，对 AST 进行处理，将其转成 ES5 并生成相应的代码字符串；过程中，可能还需要使用 @babel/traverse 来获取依赖文件等。
 
-### 打包优化方式
-#### 减少 Webpack 打包时间
+8. 环境变量
+在业务代码里面请求域名的时候经常会用到环境变量来判断请求哪个域名
+* 执行命令的时候声明环境变量
+```
+"start": "cross-env __ENV__=development webpack-dev-server --open --config webpack.dev.js"
+```
+* webpack中设置获取到的变量到业务代码全局
+```javascript
+plugins: [
+  new webpack.definePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.__ENV__)
+  }),
+  ...
+]
+```
+
+* 业务代码直接读取__ENV__变量就好了，注意，一定要在webpack中设置，才能读取到，因为 process.env这个东东只在node环境中才有的
+## 2.打包优化方式
+### 减少 Webpack 打包时间
 
 1. 优化 Loader
 优化 Loader 的文件搜索范围
@@ -118,7 +134,7 @@ DllPlugin 可以将特定的类库提前打包然后引入。这种方式可以�
 4. 代码压缩
 在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
 
-#### 减少 Webpack 打包后的文件体积
+### 减少 Webpack 打包后的文件体积
 
 1. 按需加载
 使用按需加载，将每个路由页面单独打包为一个文件

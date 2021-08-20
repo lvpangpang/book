@@ -1,7 +1,39 @@
-# 虚拟DOM
+# 虚拟 DOM
 
-## creatElement
-1. React.createElement(type, [props], [...children])，将JSX转化为react元素。
+## 实例
+下面是实际的dom结构
+```html
+<div class="title">
+  <span>Hello ConardLi</span>
+  <ul>
+    <li>苹果</li>
+    <li>橘子</li>
+  </ul>
+</div>
+```
+
+会被React转为下面的虚拟Dom
+```javascript
+const VitrualDom = {
+  type: 'div',
+  props: { class: 'title' },
+  children: [
+    {
+      type: 'span',
+      children: 'Hello ConardLi'
+    },
+    {
+      type: 'ul',
+      children: [
+        { type: 'ul', children: '苹果' },
+        { type: 'ul', children: '橘子' }
+      ]
+    }
+  ]
+}
+```
+## React.creatElement
+1. React.createElement(type, [props], [...children])，将 JSX 转化为 react 元素。
 ```javascript
 function createElement(type, props, ...children) {
   // 核心逻辑不复杂，将参数都塞到一个对象上返回就行
@@ -10,54 +42,69 @@ function createElement(type, props, ...children) {
     type,
     props: {
       ...props,
-      children
-    }
+      children,
+    },
   }
 }
 ```
-babel在编译时会判断JSX中组件的首字母，当首字母为小写时，其被认定为原生DOM标签，createElement的第一个变量被编译为字符串；当首字母为大写时，其被认定为自定义组件，createElement的第一个变量被编译为对象；这就是为什么写组件时候需要大写组件首字母。
 
-## render
-1. 使用React.createElement或JSX编写React组件，实际上所有的JSX代码最后都会转换成React.createElement(...)，Babel帮助我们完成了这个转换的过程。
-2. createElement函数对key和ref等特殊的props进行处理，并获取defaultProps对默认props进行赋值，并且对传入的孩子节点进行处理，最终构造成一个ReactElement对象（所谓的虚拟DOM）。
-3. ReactDOM.render将生成好的虚拟DOM渲染到指定容器上，其中采用了批处理、事务等机制并且对特定浏览器进行了性能优化，最终转换为真实DOM。
+2. 虚拟 DOM 的组成-即 ReactElementelement 对象，我们的组件最终会被渲染成下面的结构：
+- type：元素的类型，可以是原生 html 类型（字符串），或者自定义组件（函数或 class）
+- key：组件的唯一标识，用于 Diff 算法，下面会详细介绍
+- ref：用于访问原生 dom 节点
+- props：传入组件的 props，chidren 是 props 中的一个属性，它存储了当前组件的孩子节点，可以是数组（多个孩子节点）或对象（只有一个孩子节点）
+- owner：当前正在构建的 Component 所属的 Component
+- self：（非生产环境）指定当前位于哪个组件实例
+- _source：（非生产环境）指定调试代码来自的文件(fileName)和代码行数(lineNumber)
+
+babel 在编译时会判断 JSX 中组件的首字母，当首字母为小写时，其被认定为原生 DOM 标签，createElement 的第一个变量被编译为字符串；当首字母为大写时，其被认定为自定义组件，createElement 的第一个变量被编译为对象；这就是为什么写组件时候需要大写组件首字母。
+
+## ReactDom.render()
+示例代码
+```html
+<div>
+  <img src="avatar.png" className="profile" />
+  <Hello />
+</div>;
+```
+```javascript
+React.createElement("div", null, React.createElement("img", {
+  src: "avatar.png",
+  className: "profile"
+}), React.createElement(Hello, null));
+```
+1. 使用 React.createElement 或 JSX 编写 React 组件，实际上所有的 JSX 代码最后都会转换成 React.createElement(...)，Babel 帮助我们完成了这个转换的过程。
+2. createElement 函数对 key 和 ref 等特殊的 props 进行处理，并获取 defaultProps 对默认 props 进行赋值，并且对传入的孩子节点进行处理，最终构造成一个 ReactElement 对象（所谓的虚拟 DOM）。
+3. ReactDOM.render 将生成好的虚拟 DOM 渲染到指定容器上，其中采用了批处理、事务等机制并且对特定浏览器进行了性能优化，最终转换为真实 DOM。
+
 ```javascript
 function render(vDom, container) {
-  let dom;
+  let dom
   // 检查当前节点是文本还是对象
-  if(typeof vDom !== 'object') {
+  if (typeof vDom !== 'object') {
     dom = document.createTextNode(vDom)
   } else {
-    dom = document.createElement(vDom.type);
+    dom = document.createElement(vDom.type)
   }
 
   // 将vDom上除了children外的属性都挂载到真正的DOM上去
-  if(vDom.props) {
+  if (vDom.props) {
     Object.keys(vDom.props)
-      .filter(key => key != 'children')
-      .forEach(item => {
-        dom[item] = vDom.props[item];
+      .filter((key) => key != 'children')
+      .forEach((item) => {
+        dom[item] = vDom.props[item]
       })
   }
 
   // 如果还有子元素，递归调用
-  if(vDom.props && vDom.props.children && vDom.props.children.length) {
-    vDom.props.children.forEach(child => render(child, dom));
+  if (vDom.props && vDom.props.children && vDom.props.children.length) {
+    vDom.props.children.forEach((child) => render(child, dom))
   }
 
-  container.appendChild(dom);
+  container.appendChild(dom)
 }
 ```
 
-3. 虚拟DOM的组成-即ReactElementelement对象，我们的组件最终会被渲染成下面的结构：
-> 1. type：元素的类型，可以是原生html类型（字符串），或者自定义组件（函数或class）
-> 2. key：组件的唯一标识，用于Diff算法，下面会详细介绍
-> 3. ref：用于访问原生dom节点
-> 4. props：传入组件的props，chidren是props中的一个属性，它存储了当前组件的孩子节点，可以是数组（多个孩子节点）或对象（只有一个孩子节点）
-> 5. owner：当前正在构建的Component所属的Component
-> 6. self：（非生产环境）指定当前位于哪个组件实例
-> 7. _source：（非生产环境）指定调试代码来自的文件(fileName)和代码行数(lineNumber)
-
-4. 防止XSS
-> ReactElement对象还有一个?typeof属性，它是一个Symbol类型的变量Symbol.for('react.element')，当环境不支持Symbol时，?typeof被赋值为0xeac7。
-> 这个变量可以防止XSS。如果你的服务器有一个漏洞，允许用户存储任意JSON对象， 而客户端代码需要一个字符串，这可能为你的应用程序带来风险。JSON中不能存储Symbol类型的变量，而React渲染时会把没有?typeof标识的组件过滤掉。
+4. 防止 XSS
+   > ReactElement 对象还有一个?typeof 属性，它是一个 Symbol 类型的变量 Symbol.for('react.element')，当环境不支持 Symbol 时，?typeof 被赋值为 0xeac7。
+   > 这个变量可以防止 XSS。如果你的服务器有一个漏洞，允许用户存储任意 JSON 对象， 而客户端代码需要一个字符串，这可能为你的应用程序带来风险。JSON 中不能存储 Symbol 类型的变量，而 React 渲染时会把没有?typeof 标识的组件过滤掉。

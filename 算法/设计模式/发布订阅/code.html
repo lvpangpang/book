@@ -26,6 +26,13 @@
             })
           }
         }
+        removeSub(event, callBack) {
+          const arr = this.arr[event] || []
+          const index = arr.indexOf(callBack)
+          if (index > -1) {
+            this.arr[event].splice(index, 1)
+          }
+        }
       }
 
       const sub1 = new PubSub()
@@ -36,15 +43,18 @@
         }, 1000)
       }
 
-      sub1.sub('2', function() {
-        console.log(arguments[0])
+      sub1.sub('2', function () {
         console.log('2')
         sub1.pub('3')
       })
 
-      sub1.sub('3', () => {
+
+      function b() {
         console.log('3')
-      })
+      }
+      sub1.sub('3', b)
+
+      sub1.removeSub('3',b)
 
       a()
     </script>
