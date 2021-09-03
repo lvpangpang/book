@@ -3,7 +3,6 @@
 原型链将整个js世界连接起来
 实例的原型属性__proto__===构造函数的原型对象prototype,直到null
 
-
 ## 1.prototype
 给构造函数添加一个prototype属性，然后该函数的实例对象就可以访问这个属性上面的所有方法了
 ```javascript

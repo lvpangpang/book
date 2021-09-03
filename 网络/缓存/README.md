@@ -1,6 +1,6 @@
-## 缓存
+# 缓存
 
-#### 类型
+## 类型
 
 + Service Worker
 + Memory Cache
@@ -8,7 +8,7 @@
 + Push Cache
 + 网络请求-主要的类型
 
-#### 缓存策略
+## 缓存策略
 
 1. 强缓存
 Expires 和 Cache-Control

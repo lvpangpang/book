@@ -6,7 +6,7 @@
 * null
 * boolean
 * symbol
-* BigIn
+* BigInt
 ## 2. 双问号+双感叹号
 1. 双问号
 * value1 ?? value2。只有当value1为null或者 undefined时取value2，否则取value1（0,false,""被认为是有意义的，所以还是取value1）
