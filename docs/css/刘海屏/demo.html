@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: green;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        background: red;
+        text-align: center;
+        padding-top: 20px; 
+        padding-top: constant(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
+      }
+      .scroll {
+        height: 1000px;
+      }
+      .btn {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 58px;
+        line-height: 58px;
+        background: red;
+        text-align: center;
+        font-size: 24px;
+        bottom: constant(safe-area-inset-bottom);
+        bottom: env(safe-area-inset-bottom);
+      }
+      .btn:after {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        height: constant(safe-area-inset-bottom);
+        height: env(safe-area-inset-bottom);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">fixed头部</div>
+    <div class="scroll"></div>
+    <div>我是底部</div>
+    <div class="btn">分享</div>
+  </body>
+</html>
