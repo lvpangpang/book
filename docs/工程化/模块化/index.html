@@ -784,17 +784,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x6A21;&#x5757;&#x5316;">&#x6A21;&#x5757;&#x5316;</h2>
+                                <h1 id="&#x6A21;&#x5757;&#x5316;">&#x6A21;&#x5757;&#x5316;</h1>
+<h2 id="1&#x6A21;&#x5757;&#x7C7B;&#x578B;">1.&#x6A21;&#x5757;&#x7C7B;&#x578B;</h2>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x5BF9;&#x4E8E;&#x7F16;&#x5199;&#x6E90;&#x7801;&#x6765;&#x8BF4;&#xFF0C;&#x4E3B;&#x6D41;&#x7684;&#x65B9;&#x6848;&#x53EA;&#x5269;&#x4E0B;&#x4E09;&#x79CD;&#x3002;</p>
+<ul>
+<li>esm: &#x4ECE; ES6 &#x8D77;&#x5B98;&#x65B9;&#x89C4;&#x8303;&#x81EA;&#x5E26;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x7F16;&#x8BD1;&#x65F6;&#x52A0;&#x8F7D;&#xFF08;&#x9759;&#x6001;&#x52A0;&#x8F7D;&#xFF09;</li>
+<li>cjs: Node.js &#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6848;</li>
+<li>IIFE: &#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x76F4;&#x63A5;&#x5F15;&#x5165;&#x5373;&#x53EF;&#x3002;&#xFF08;&#x5BF9;&#x4E8E;&#x5BFC;&#x51FA;&#x5305;&#x6765;&#x8BF4;&#xFF0C;&#x4F9D;&#x8D56;&#x89C6;&#x4E3A;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE; window/global &#x53D6;&#x503C;&#x5E76;&#x4F20;&#x5165;&#xFF09;</li>
+</ul>
+<h2 id="2es-modules">2.ES Modules</h2>
 <ol>
-<li><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x5BF9;&#x4E8E;&#x7F16;&#x5199;&#x6E90;&#x7801;&#x6765;&#x8BF4;&#xFF0C;&#x4E3B;&#x6D41;&#x7684;&#x65B9;&#x6848;&#x53EA;&#x5269;&#x4E0B;&#x4E09;&#x79CD;&#x3002;</p>
-<pre><code>esm: &#x4ECE; ES6 &#x8D77;&#x5B98;&#x65B9;&#x89C4;&#x8303;&#x81EA;&#x5E26;&#x7684;&#x65B9;&#x6848;
-cjs: Node.js &#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6848;
-IIFE: &#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x9002;&#x5408;&#x4F5C;&#x4E3A;&lt;script&gt;&#x6807;&#x7B7E;&#x3002;&#xFF08;&#x5BF9;&#x4E8E;&#x5BFC;&#x51FA;&#x5305;&#x6765;&#x8BF4;&#xFF0C;&#x4F9D;&#x8D56;&#x89C6;&#x4E3A;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE; window/global &#x53D6;&#x503C;&#x5E76;&#x4F20;&#x5165;&#x3002;&#xFF09;
-</code></pre></li>
-<li><p>Tree-shaking&#x7684;&#x672C;&#x8D28;&#x662F;&#x6D88;&#x9664;&#x65E0;&#x7528;&#x7684;js&#x4EE3;&#x7801;
-&#x5728; webpack &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x68F5;&#x6811;&#x7684;&#x4E3B;&#x5E72;&#xFF0C;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x6709;&#x5F88;&#x591A;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6811;&#x679D;&#x3002;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x867D;&#x7136;&#x4F9D;&#x8D56;&#x4E86;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x53EA;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#x3002;&#x901A;&#x8FC7; tree-shaking&#xFF0C;&#x5C06;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x5757;&#x6447;&#x6389;&#xFF0C;&#x8FD9;&#x6837;&#x6765;&#x8FBE;&#x5230;&#x5220;&#x9664;&#x65E0;&#x7528;&#x4EE3;&#x7801;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
-</li>
+<li>&#x9759;&#x6001;&#x7684;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x8BED;&#x53E5;&#xFF0C;&#x53EA;&#x80FD;&#x58F0;&#x660E;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x9876;&#x90E8;&#xFF0C;&#x4EE3;&#x7801;&#x53D1;&#x751F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;</li>
+<li>export&#x5BFC;&#x51FA;&#x7684;&#x503C;&#x662F;&#x503C;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5185;&#x90E8;&#x6709;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x662F;export&#x5173;&#x952E;&#x5B57;&#x7684;&#x4F5C;&#x7528;&#x3002;&#x800C;&#x4E14;&#x5BFC;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x8BFB;&#x72B6;&#x6001;
+```javascript
+// index.js
+export let num = 0;
+export function add() {
+++ num
+}</li>
 </ol>
+<p>// test.js
+import { num, add } from &quot;./index.js&quot;
+console.log(num) // 0
+add()
+console.log(num) // 1
+num = 10 // &#x629B;&#x51FA;&#x9519;&#x8BEF;</p>
+<pre><code>
+## 3.Commonjs
+1. &#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x8BED;&#x53E5;&#xFF0C;&#x4EE3;&#x7801;&#x53D1;&#x751F;&#x5728;&#x8FD0;&#x884C;&#x65F6;
+2. CommonJs&#x5BFC;&#x5165;&#x7684;&#x503C;&#x662F;&#x62F7;&#x8D1D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x62F7;&#x8D1D;&#x503C;&#xFF0C;&#x4F46;&#x8FD9;&#x4F1A;&#x5F15;&#x8D77;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#xFF0C;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x5C31;&#x91CD;&#x540D; 
+```javascript
+// index.js
+let num = 0;
+module.exports = {
+  num,
+  add() {
+    ++ num 
+  }
+}
+
+// test.js
+let { num, add } = require(&quot;./index.js&quot;)
+console.log(num) // 0
+add()
+console.log(num) // 0
+num = 10
+</code></pre><h2 id="4&#x6811;&#x6447;">4.&#x6811;&#x6447;</h2>
+<p>Tree-shaking&#x7684;&#x672C;&#x8D28;&#x662F;&#x6D88;&#x9664;&#x65E0;&#x7528;&#x7684;js&#x4EE3;&#x7801;
+&#x5728; webpack &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x68F5;&#x6811;&#x7684;&#x4E3B;&#x5E72;&#xFF0C;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x6709;&#x5F88;&#x591A;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6811;&#x679D;&#x3002;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x867D;&#x7136;&#x4F9D;&#x8D56;&#x4E86;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x53EA;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#x3002;&#x901A;&#x8FC7; tree-shaking&#xFF0C;&#x5C06;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x5757;&#x6447;&#x6389;&#xFF0C;&#x8FD9;&#x6837;&#x6765;&#x8FBE;&#x5230;&#x5220;&#x9664;&#x65E0;&#x7528;&#x4EE3;&#x7801;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
 
                                 
                                 </section>
@@ -838,7 +875,7 @@ IIFE: &#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x529F;&#x80FD;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模块化","level":"1.8.2","depth":2,"next":{"title":"JSBridge","level":"1.8.3","depth":2,"path":"工程化/JSBridge/README.md","ref":"工程化/JSBridge/README.md","articles":[]},"previous":{"title":"代码规范","level":"1.8.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/模块化/README.md","mtime":"2021-06-29T02:51:23.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-12T08:21:27.244Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模块化","level":"1.8.2","depth":2,"next":{"title":"JSBridge","level":"1.8.3","depth":2,"path":"工程化/JSBridge/README.md","ref":"工程化/JSBridge/README.md","articles":[]},"previous":{"title":"代码规范","level":"1.8.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/模块化/README.md","mtime":"2021-09-22T07:16:28.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-23T02:11:22.437Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

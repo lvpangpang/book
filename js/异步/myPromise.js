@@ -2,6 +2,14 @@ const PENDING = 'pending'
 const RESOLVED = 'resolved'
 const REJECTED = 'reject'
 
+
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve()
+  }, 1000)
+})
+
+// then只是搜集需要执行的函数到数组，真正执行的时机在resolve，reject方法中
 class MyPromise {
   constructor(executor) {
     this.status = PENDING
@@ -15,6 +23,7 @@ class MyPromise {
       if (this.status === PENDING) {
         this.status = RESOLVED
         this.value = value
+        // 依次执行之前存的回调函数
         this.resolveList.forEach((fn) => {
           fn()
         })
@@ -74,7 +83,8 @@ class MyPromise {
     })
   }
 
-  then(resolve, reject = () => {}) {
+  then(resolve=() => {}, reject = () => {}) {
+    // 如果状态为待定状态，暂时保存两个回调
     if (this.status === PENDING) {
       this.resolveList.push(() => {
         resolve(this.value)
@@ -83,12 +93,15 @@ class MyPromise {
         reject(this.reason)
       })
     }
+    // 如果当前状态为成功，执行成功回调
     if (this.status === RESOLVED) {
       resolve(this.value)
     }
+    // 如果当前状态为失败，执行失败回调
     if (this.status === REJECTED) {
       reject(this.reason)
     }
+    
   }
 }
 
@@ -113,7 +126,7 @@ const promise1 = new MyPromise((resolve, reject) => {
 
 const promise2 = new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve('余多多')
+    resolve('鱼多多')
   }, 1500)
 })
 
