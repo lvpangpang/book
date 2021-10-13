@@ -5,8 +5,10 @@ const REJECTED = 'reject'
 
 new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve()
+    resolve(1)
   }, 1000)
+}).then((data) => {
+  console.log(data)
 })
 
 // then只是搜集需要执行的函数到数组，真正执行的时机在resolve，reject方法中

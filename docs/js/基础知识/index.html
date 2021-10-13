@@ -282,6 +282,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.9" data-path="../精度问题/">
+            
+                <a href="../精度问题/">
+            
+                    
+                    精度问题
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -817,6 +830,17 @@ V8&#x91C7;&#x7528;&#x4E86;&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7684;&#x7B56;&#x756
 <li>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x7F16;&#x7801;&#x6574;&#x4E2A;URL&#xFF0C;&#x7136;&#x540E;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;URL&#xFF0C;&#x90A3;&#x4E48;&#x7528;encodeURI&#x3002;</li>
 <li>&#x5F53;&#x4F60;&#x9700;&#x8981;&#x7F16;&#x7801;URL&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E48;encodeURIComponent&#x662F;&#x6700;&#x597D;&#x65B9;&#x6CD5;&#x3002;</li>
 </ul>
+<h2 id="5-tofixed">5. toFixed</h2>
+<p>toFixed&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x628A;Number&#x56DB;&#x820D;&#x4E94;&#x5165;&#x4F4D;&#x6307;&#x5B9A;&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x7684;&#x6570;&#x5B57;&#x3002;&#x4F46;&#x662F;&#x5176;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x7684;&#x89C4;&#x5219;&#x4E0E;&#x6570;&#x5B66;&#x4E2D;&#x7684;&#x89C4;&#x5219;&#x4E0D;&#x540C;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x94F6;&#x884C;&#x5BB6;&#x820D;&#x5165;&#x89C4;&#x5219;&#x3002;
+&#x94F6;&#x884C;&#x5BB6;&#x820D;&#x5165;&#xFF1A;
+&#x56DB;&#x820D;&#x516D;&#x5165;&#x4E94;&#x53D6;&#x5076;&#xFF08;&#x56DB;&#x820D;&#x516D;&#x5982;&#x4E94;&#x7559;&#x53CC;&#xFF09;&#xFF0C;&#x7B80;&#x5355;&#x5C31;&#x662F;&#x8BF4;&#xFF1A;&#x56DB;&#x820D;&#x516D;&#x5165;&#x4E94;&#x8003;&#x8651;&#xFF0C;&#x4E94;&#x540E;&#x975E;0&#x8FDB;1&#xFF0C;&#x4E94;&#x540E;&#x4E3A;0&#x770B;&#x5947;&#x5076;&#xFF0C;&#x4E94;&#x524D;&#x4E3A;&#x5076;&#x5E94;&#x820D;&#x53BB;&#xFF0C;&#x4E94;&#x524D;&#x4E3A;&#x5947;&#x8981;&#x8FDB;1</p>
+<h2 id="6-jsonstringify">6. JSON.stringify()</h2>
+<p>&#x5C06;&#x4E00;&#x4E2A; JavaScript &#x5BF9;&#x8C61;&#x6216;&#x503C;&#x8F6C;&#x6362;&#x4E3A; JSON &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A; replacer &#x51FD;&#x6570;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6027;&#x5730;&#x66FF;&#x6362;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x7684; replacer &#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x5219;&#x53EF;&#x9009;&#x62E9;&#x6027;&#x5730;&#x4EC5;&#x5305;&#x542B;&#x6570;&#x7EC4;&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;</p>
+<ul>
+<li>undefined&#x3001;&#x4EFB;&#x610F;&#x7684;&#x51FD;&#x6570;&#x4EE5;&#x53CA;symbol&#x503C;&#xFF0C;&#x51FA;&#x73B0;&#x5728;<strong>&#x975E;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;</strong>&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4E2D;&#x65F6;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;</li>
+<li>undefined&#x3001;&#x4EFB;&#x610F;&#x7684;&#x51FD;&#x6570;&#x4EE5;&#x53CA;symbol&#x503C;&#x51FA;&#x73B0;&#x5728;<strong>&#x6570;&#x7EC4;</strong>&#x4E2D;&#x65F6;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210; null&#x3002;</li>
+<li>undefined&#x3001;&#x4EFB;&#x610F;&#x7684;&#x51FD;&#x6570;&#x4EE5;&#x53CA;symbol&#x503C;&#x88AB;&#x5355;&#x72EC;&#x8F6C;&#x6362;&#x65F6;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE; undefined</li>
+</ul>
 
                                 
                                 </section>
@@ -860,7 +884,7 @@ V8&#x91C7;&#x7528;&#x4E86;&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7684;&#x7B56;&#x756
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基础知识","level":"1.3.1","depth":2,"next":{"title":"原型链","level":"1.3.2","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},"previous":{"title":"3.js","level":"1.3","depth":1,"path":"js/README.md","ref":"js/README.md","articles":[{"title":"基础知识","level":"1.3.1","depth":2,"path":"js/基础知识/README.md","ref":"js/基础知识/README.md","articles":[]},{"title":"原型链","level":"1.3.2","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},{"title":"this","level":"1.3.3","depth":2,"path":"js/this/README.md","ref":"js/this/README.md","articles":[]},{"title":"作用域","level":"1.3.4","depth":2,"path":"js/作用域/README.md","ref":"js/作用域/README.md","articles":[]},{"title":"eventLoop","level":"1.3.5","depth":2,"path":"js/eventLoop/README.md","ref":"js/eventLoop/README.md","articles":[]},{"title":"异步","level":"1.3.6","depth":2,"path":"js/异步/README.md","ref":"js/异步/README.md","articles":[]},{"title":"深浅拷贝","level":"1.3.7","depth":2,"path":"js/深浅拷贝/README.md","ref":"js/深浅拷贝/README.md","articles":[]},{"title":"常用函数","level":"1.3.8","depth":2,"path":"js/常用函数/README.md","ref":"js/常用函数/README.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/基础知识/README.md","mtime":"2021-09-03T08:32:06.629Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-23T02:11:22.437Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础知识","level":"1.3.1","depth":2,"next":{"title":"原型链","level":"1.3.2","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},"previous":{"title":"3.js","level":"1.3","depth":1,"path":"js/README.md","ref":"js/README.md","articles":[{"title":"基础知识","level":"1.3.1","depth":2,"path":"js/基础知识/README.md","ref":"js/基础知识/README.md","articles":[]},{"title":"原型链","level":"1.3.2","depth":2,"path":"js/原型链/README.md","ref":"js/原型链/README.md","articles":[]},{"title":"this","level":"1.3.3","depth":2,"path":"js/this/README.md","ref":"js/this/README.md","articles":[]},{"title":"作用域","level":"1.3.4","depth":2,"path":"js/作用域/README.md","ref":"js/作用域/README.md","articles":[]},{"title":"eventLoop","level":"1.3.5","depth":2,"path":"js/eventLoop/README.md","ref":"js/eventLoop/README.md","articles":[]},{"title":"异步","level":"1.3.6","depth":2,"path":"js/异步/README.md","ref":"js/异步/README.md","articles":[]},{"title":"深浅拷贝","level":"1.3.7","depth":2,"path":"js/深浅拷贝/README.md","ref":"js/深浅拷贝/README.md","articles":[]},{"title":"常用函数","level":"1.3.8","depth":2,"path":"js/常用函数/README.md","ref":"js/常用函数/README.md","articles":[]},{"title":"精度问题","level":"1.3.9","depth":2,"path":"js/精度问题/README.md","ref":"js/精度问题/README.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/基础知识/README.md","mtime":"2021-10-11T03:40:02.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-13T11:52:02.635Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -282,6 +282,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.9" data-path="../../js/精度问题/">
+            
+                <a href="../../js/精度问题/">
+            
+                    
+                    精度问题
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -795,41 +808,42 @@
 <h2 id="2es-modules">2.ES Modules</h2>
 <ol>
 <li>&#x9759;&#x6001;&#x7684;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x8BED;&#x53E5;&#xFF0C;&#x53EA;&#x80FD;&#x58F0;&#x660E;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x9876;&#x90E8;&#xFF0C;&#x4EE3;&#x7801;&#x53D1;&#x751F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;</li>
-<li>export&#x5BFC;&#x51FA;&#x7684;&#x503C;&#x662F;&#x503C;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5185;&#x90E8;&#x6709;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x662F;export&#x5173;&#x952E;&#x5B57;&#x7684;&#x4F5C;&#x7528;&#x3002;&#x800C;&#x4E14;&#x5BFC;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x8BFB;&#x72B6;&#x6001;
-```javascript
-// index.js
-export let num = 0;
-export function add() {
-++ num
-}</li>
+<li>export&#x5BFC;&#x51FA;&#x7684;&#x503C;&#x662F;&#x503C;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5185;&#x90E8;&#x6709;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x662F;export&#x5173;&#x952E;&#x5B57;&#x7684;&#x4F5C;&#x7528;&#x3002;&#x800C;&#x4E14;&#x5BFC;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x8BFB;&#x72B6;&#x6001;</li>
 </ol>
-<p>// test.js
-import { num, add } from &quot;./index.js&quot;
-console.log(num) // 0
+<pre><code class="lang-javascript"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"></span>) </span>{
+  ++ num
+}
+<span class="hljs-comment">// test.js</span>
+<span class="hljs-keyword">import</span> { num, add } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./index.js&quot;</span>
+<span class="hljs-built_in">console</span>.log(num) <span class="hljs-comment">// 0</span>
 add()
-console.log(num) // 1
-num = 10 // &#x629B;&#x51FA;&#x9519;&#x8BEF;</p>
-<pre><code>
-## 3.Commonjs
-1. &#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x8BED;&#x53E5;&#xFF0C;&#x4EE3;&#x7801;&#x53D1;&#x751F;&#x5728;&#x8FD0;&#x884C;&#x65F6;
-2. CommonJs&#x5BFC;&#x5165;&#x7684;&#x503C;&#x662F;&#x62F7;&#x8D1D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x62F7;&#x8D1D;&#x503C;&#xFF0C;&#x4F46;&#x8FD9;&#x4F1A;&#x5F15;&#x8D77;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#xFF0C;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x5C31;&#x91CD;&#x540D; 
-```javascript
-// index.js
-let num = 0;
-module.exports = {
+<span class="hljs-built_in">console</span>.log(num) <span class="hljs-comment">// 1</span>
+num = <span class="hljs-number">10</span> <span class="hljs-comment">// &#x629B;&#x51FA;&#x9519;&#x8BEF;</span>
+</code></pre>
+<h2 id="3commonjs">3.Commonjs</h2>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x8BED;&#x53E5;&#xFF0C;&#x4EE3;&#x7801;&#x53D1;&#x751F;&#x5728;&#x8FD0;&#x884C;&#x65F6;</li>
+<li>CommonJs&#x5BFC;&#x5165;&#x7684;&#x503C;&#x662F;&#x62F7;&#x8D1D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x62F7;&#x8D1D;&#x503C;&#xFF0C;&#x4F46;&#x8FD9;&#x4F1A;&#x5F15;&#x8D77;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#xFF0C;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x5C31;&#x91CD;&#x540D; </li>
+</ol>
+<pre><code class="lang-javascript"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">module</span>.exports = {
   num,
   add() {
     ++ num 
   }
 }
 
-// test.js
-let { num, add } = require(&quot;./index.js&quot;)
-console.log(num) // 0
+<span class="hljs-comment">// test.js</span>
+<span class="hljs-keyword">let</span> { num, add } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./index.js&quot;</span>)
+<span class="hljs-built_in">console</span>.log(num) <span class="hljs-comment">// 0</span>
 add()
-console.log(num) // 0
-num = 10
-</code></pre><h2 id="4&#x6811;&#x6447;">4.&#x6811;&#x6447;</h2>
+<span class="hljs-built_in">console</span>.log(num) <span class="hljs-comment">// 0</span>
+num = <span class="hljs-number">10</span>
+</code></pre>
+<h2 id="4&#x6811;&#x6447;">4.&#x6811;&#x6447;</h2>
 <p>Tree-shaking&#x7684;&#x672C;&#x8D28;&#x662F;&#x6D88;&#x9664;&#x65E0;&#x7528;&#x7684;js&#x4EE3;&#x7801;
 &#x5728; webpack &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x68F5;&#x6811;&#x7684;&#x4E3B;&#x5E72;&#xFF0C;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x6709;&#x5F88;&#x591A;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6811;&#x679D;&#x3002;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x867D;&#x7136;&#x4F9D;&#x8D56;&#x4E86;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x53EA;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#x3002;&#x901A;&#x8FC7; tree-shaking&#xFF0C;&#x5C06;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x5757;&#x6447;&#x6389;&#xFF0C;&#x8FD9;&#x6837;&#x6765;&#x8FBE;&#x5230;&#x5220;&#x9664;&#x65E0;&#x7528;&#x4EE3;&#x7801;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
 
@@ -875,7 +889,7 @@ num = 10
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模块化","level":"1.8.2","depth":2,"next":{"title":"JSBridge","level":"1.8.3","depth":2,"path":"工程化/JSBridge/README.md","ref":"工程化/JSBridge/README.md","articles":[]},"previous":{"title":"代码规范","level":"1.8.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/模块化/README.md","mtime":"2021-09-22T07:16:28.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-23T02:11:22.437Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模块化","level":"1.8.2","depth":2,"next":{"title":"JSBridge","level":"1.8.3","depth":2,"path":"工程化/JSBridge/README.md","ref":"工程化/JSBridge/README.md","articles":[]},"previous":{"title":"代码规范","level":"1.8.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/模块化/README.md","mtime":"2021-09-23T02:35:24.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-13T11:52:02.635Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

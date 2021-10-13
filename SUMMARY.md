@@ -16,6 +16,7 @@
   * [异步](/js/异步/README.md)
   * [深浅拷贝](/js/深浅拷贝/README.md)
   * [常用函数](/js/常用函数/README.md)
+  * [精度问题](/js/精度问题/README.md)
 
 * [4.react](/react/README.md)
   * [虚拟DOM](/react/虚拟DOM/README.md)

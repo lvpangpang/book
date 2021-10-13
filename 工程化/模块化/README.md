@@ -8,25 +8,25 @@
 ## 2.ES Modules
 1. 静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时
 2. export导出的值是值的引用，并且内部有映射关系，这是export关键字的作用。而且导入的值，不能进行修改也就是只读状态
+
 ```javascript
 // index.js
 export let num = 0;
 export function add() {
   ++ num
 }
-
 // test.js
 import { num, add } from "./index.js"
 console.log(num) // 0
 add()
 console.log(num) // 1
 num = 10 // 抛出错误
-
 ```
 
 ## 3.Commonjs
 1. 可以动态加载语句，代码发生在运行时
 2. CommonJs导入的值是拷贝的，所以可以修改拷贝值，但这会引起变量污染，一不小心就重名 
+
 ```javascript
 // index.js
 let num = 0;
