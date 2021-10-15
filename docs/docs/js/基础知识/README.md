@@ -31,3 +31,15 @@ V8采用了分代回收的策略，将内存分为两个生代：新生代和老
 2. encodeURIComponent（decodeURIComponent）方法不会对下列字符编码 ASCII字母 数字 ~!*()'
 3. 如果你需要编码整个URL，然后需要使用这个URL，那么用encodeURI。
 4. 当你需要编码URL中的参数的时候，那么encodeURIComponent是最好方法。
+
+## 5. toFixed
+toFixed方法可以把Number四舍五入位指定小数位数的数字。但是其四舍五入的规则与数学中的规则不同，使用的是银行家舍入规则。
+银行家舍入：
+四舍六入五取偶（四舍六如五留双），简单就是说：四舍六入五考虑，五后非0进1，五后为0看奇偶，五前为偶应舍去，五前为奇要进1
+
+## 6. JSON.stringify()
+将一个 JavaScript 对象或值转换为 JSON 字符串，如果指定了一个 replacer 函数，则可以选择性地替换值，或者指定的 replacer 是数组，则可选择性地仅包含数组指定的属性
+
+* undefined、任意的函数以及symbol值，出现在**非数组对象**的属性值中时在序列化过程中会被忽略
+* undefined、任意的函数以及symbol值出现在**数组**中时会被转换成 null。
+* undefined、任意的函数以及symbol值被单独转换时，会返回 undefined

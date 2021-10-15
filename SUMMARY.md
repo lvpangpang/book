@@ -15,7 +15,6 @@
   * [eventLoop](/js/eventLoop/README.md)
   * [异步](/js/异步/README.md)
   * [深浅拷贝](/js/深浅拷贝/README.md)
-  * [常用函数](/js/常用函数/README.md)
   * [精度问题](/js/精度问题/README.md)
 
 * [4.react](/react/README.md)
@@ -50,13 +49,26 @@
   * [jenkins](/工程化/jenkins/README.md)
 
 * [9.其他](/其他/README.md)
-  * [前端监控](其他/前端监控/README.md)
-  * [websocket](其他/websocket/README.md)
+  * [前端监控](/其他/前端监控/README.md)
+  * [websocket](/其他/websocket/README.md)
   * [安全](其他/安全/README.md)
 
-* [10.常见面试题](/常见面试题/README.md)
+* [10.微信小程序](/微信小程序/README.md)
 
-* [11.微信小程序](/微信小程序/README.md)
+* [11.手写源码](/手写源码/README.md)
+  * [防抖](/手写源码/防抖.md)
+  * [节流](/手写源码/节流.md) 
+  * [instanceOf](/手写源码/instanceOf.md)
+  * [Promise](/手写源码/Promise.md)
+  * [多维数组扁平化](/手写源码/多维数组扁平化.md)
+  * [多维数组扁平化](/手写源码/深拷贝.md)
+
+
+
+
+
+
+
 
 
 
