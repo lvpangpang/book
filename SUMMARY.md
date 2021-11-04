@@ -29,11 +29,9 @@
   * [eventLoop](/node/README.md)
 
 * [6.算法](/算法/README.md)
-  * [数组](/算法/数据结构/数组/README.md)
-  * [链表](/算法/数据结构/链表/README.md)
-  * [发布订阅](/算法/设计模式/发布订阅/README.md)
-  * [递归](/算法/算法/递归/README.md)
-
+  * [数组](/算法/数组/README.md)
+  * [链表](/算法/链表/README.md)
+  * [二叉树](/算法/二叉树/README.md)
 * [7.网络](/网络/README.md)
   * [http](/网络/http/README.md)
   * [缓存](/网络/缓存/README.md)
@@ -61,7 +59,7 @@
   * [instanceOf](/手写源码/instanceOf.md)
   * [Promise](/手写源码/Promise.md)
   * [多维数组扁平化](/手写源码/多维数组扁平化.md)
-  * [多维数组扁平化](/手写源码/深拷贝.md)
+  * [深拷贝](/手写源码/深拷贝.md)
 
 
 

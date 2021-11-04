@@ -1,7 +1,7 @@
 # 虚拟 DOM
 
-## 实例
-下面是实际的dom结构
+## 1.实例
+1. 下面是实际的dom结构
 ```html
 <div class="title">
   <span>Hello ConardLi</span>
@@ -12,7 +12,7 @@
 </div>
 ```
 
-会被React转为下面的虚拟Dom
+2. 会被React转为下面的虚拟Dom
 ```javascript
 const VitrualDom = {
   type: 'div',
@@ -20,33 +20,22 @@ const VitrualDom = {
   children: [
     {
       type: 'span',
+      null,
       children: 'Hello ConardLi'
     },
     {
       type: 'ul',
+      null,
       children: [
-        { type: 'ul', children: '苹果' },
-        { type: 'ul', children: '橘子' }
+        { type: 'ul', null, children: '苹果' },
+        { type: 'ul', null, children: '橘子' }
       ]
     }
   ]
 }
 ```
-## React.creatElement
+## 2.React.creatElement
 1. React.createElement(type, [props], [...children])，将 JSX 转化为 react 元素。
-```javascript
-function createElement(type, props, ...children) {
-  // 核心逻辑不复杂，将参数都塞到一个对象上返回就行
-  // children也要放到props里面去，这样我们在组件里面就能通过this.props.children拿到子元素
-  return {
-    type,
-    props: {
-      ...props,
-      children,
-    },
-  }
-}
-```
 
 2. 虚拟 DOM 的组成-即 ReactElementelement 对象，我们的组件最终会被渲染成下面的结构：
 * type：元素的类型，可以是原生 html 类型（字符串），或者自定义组件（函数或 class）
@@ -57,9 +46,27 @@ function createElement(type, props, ...children) {
 * self：（非生产环境）指定当前位于哪个组件实例
 * _source：（非生产环境）指定调试代码来自的文件(fileName)和代码行数(lineNumber)
 
+3. 全新的jsx转换
+React 17 在 React 的 package 中引入了两个新入口，这些入口只会被 Babel 和 TypeScript 等编译器使用。新的 JSX 转换不会将 JSX 转换为 React.createElement，而是自动从 React 的 package 中引入新的入口函数并调用。
+**所以17版本jsx文件中无需引入React也可以正常编译**
+```javascript
+// 源代码
+function App() {
+  return 'Hello world'
+}
+
+// 由编译器引入（禁止自己引入！）
+import {jsx as _jsx} from 'react/jsx-runtime';
+
+function App() {
+  return _jsx('h1', { children: 'Hello world' });
+}
+```
+4. 组件首字母大写原因
 babel 在编译时会判断 JSX 中组件的首字母，当首字母为小写时，其被认定为原生 DOM 标签，createElement 的第一个变量被编译为字符串；当首字母为大写时，其被认定为自定义组件，createElement 的第一个变量被编译为对象；这就是为什么写组件时候需要大写组件首字母。
 
-## ReactDom.render()
+
+## 3.ReactDom.render()
 示例代码
 ```html
 <div>
