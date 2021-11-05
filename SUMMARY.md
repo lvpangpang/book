@@ -19,9 +19,8 @@
 
 * [4.react](/react/README.md)
   * [虚拟DOM](/react/虚拟DOM/README.md)
-  * [Fiber](/react/Fiber/README.md)
-  * [Hooks](/react/Hooks/README.md)
   * [Context](/react/Context/README.md)
+  * [Hooks](/react/Hooks/README.md)
   * [状态管理](/react/状态管理/README.md)
   * [路由](/react/路由/README.md)
 
