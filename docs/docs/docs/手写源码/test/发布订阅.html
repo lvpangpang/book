@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发布订阅</title>
+  </head>
+  <body>
+    <script>
+      class EventEmitter {
+        constructor() {
+          this.list = {}
+        }
+        on(event, fn) {
+          if (!this.list[event]) {
+            this.list[event] = []
+          }
+          this.list[event].push(fn)
+        }
+        off(event, fn) {
+          const events = this.list[event]
+          if (events) {
+            this.list[event] = this.list[event].filter((item) => {
+              return item !== fn
+            })
+          }
+        }
+        emit(event, ...args) {
+          const events = this.list[event]
+          if (events) {
+            events.forEach((item) => {
+              item.call(this, ...args)
+            })
+          }
+        }
+      }
+
+      const pubSub = new EventEmitter()
+
+      function fetch2() {
+        fetch('https://preweb-gateway.lingxichuxing.com/saas/v1/basic/dataTypes')
+          .then((data) => {
+            return data.json()
+          })
+          .then((data) => {
+            const { code } = data
+            console.log('第二个请求成功')
+            pubSub.off('success2', fetch3) // 取消订阅
+            pubSub.emit('success2')
+          })
+      }
+
+      function fetch3() {
+        fetch('https://preweb-gateway.lingxichuxing.com/saas/v1/basic/dataTypes')
+          .then((data) => {
+            return data.json()
+          })
+          .then((data) => {
+            const { code } = data
+            console.log('第三个请求成功')
+            pubSub.emit('success3')
+          })
+      }
+
+      fetch('https://preweb-gateway.lingxichuxing.com/saas/v1/basic/dataTypes')
+        .then((data) => {
+          return data.json()
+        })
+        .then((data) => {
+          const { code } = data
+          console.log('第一个请求成功')
+          pubSub.emit('success1')
+        })
+
+      pubSub.on('success1', fetch2)
+      
+      // 这个订阅将不会被执行，因为他被中途取消了
+      pubSub.on('success2', fetch3)
+    </script>
+  </body>
+</html>
