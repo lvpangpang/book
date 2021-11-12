@@ -398,6 +398,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.2" data-path="../../node/易错路径/">
+            
+                <a href="../../node/易错路径/">
+            
+                    
+                    易错路径
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -417,7 +430,39 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../数组/">
+        <li class="chapter " data-level="1.6.1" data-path="../字符串/">
+            
+                <a href="../字符串/">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../字符串/无重复字符的最长子串.html">
+            
+                <a href="../字符串/无重复字符的最长子串.html">
+            
+                    
+                    无重复字符的最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../数组/">
             
                 <a href="../数组/">
             
@@ -431,7 +476,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1.1" data-path="../数组/两数之和.html">
+        <li class="chapter " data-level="1.6.2.1" data-path="../数组/两数之和.html">
             
                 <a href="../数组/两数之和.html">
             
@@ -444,7 +489,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="../数组/三数之和.html">
+        <li class="chapter " data-level="1.6.2.2" data-path="../数组/三数之和.html">
             
                 <a href="../数组/三数之和.html">
             
@@ -462,7 +507,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="./">
+        <li class="chapter active" data-level="1.6.3" data-path="./">
             
                 <a href="./">
             
@@ -475,7 +520,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../二叉树/">
+        <li class="chapter " data-level="1.6.4" data-path="../二叉树/">
             
                 <a href="../二叉树/">
             
@@ -896,9 +941,10 @@
  <span class="hljs-keyword">this</span>.next = <span class="hljs-literal">null</span>;
 }
 </code></pre>
-&#x5728;&#x4F7F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x7ED3;&#x70B9;&#x65F6;&#xFF0C;&#x4F20;&#x5165; val &#xFF08;&#x6570;&#x636E;&#x57DF;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5185;&#x5BB9;&#xFF09;&#x3001;&#x6307;&#x5B9A; next &#xFF08;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7ED3;&#x70B9;&#xFF09;&#x5373;&#x53EF;&#xFF1A;<pre><code>const node = new ListNode(1)
-node.next = new ListNode(2)
-</code></pre></li>
+&#x5728;&#x4F7F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x7ED3;&#x70B9;&#x65F6;&#xFF0C;&#x4F20;&#x5165; val &#xFF08;&#x6570;&#x636E;&#x57DF;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5185;&#x5BB9;&#xFF09;&#x3001;&#x6307;&#x5B9A; next &#xFF08;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7ED3;&#x70B9;&#xFF09;&#x5373;&#x53EF;&#xFF1A;<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> node = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">1</span>)
+node.next = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">2</span>)
+</code></pre>
+</li>
 <li>&#x5728;&#x6D89;&#x53CA;&#x94FE;&#x8868;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x9898;&#x76EE;&#x4E2D;&#xFF0C;&#x91CD;&#x70B9;&#x4E0D;&#x662F;&#x5B9A;&#x4F4D;&#x76EE;&#x6807;&#x7ED3;&#x70B9;&#xFF0C;&#x800C;&#x662F;&#x5B9A;&#x4F4D;&#x76EE;&#x6807;&#x7ED3;&#x70B9;&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&#x3002;</li>
 <li>&#x94FE;&#x8868;&#x7684;&#x63D2;&#x5165;/&#x5220;&#x9664;&#x6548;&#x7387;&#x8F83;&#x9AD8;&#xFF0C;&#x800C;&#x8BBF;&#x95EE;&#x6548;&#x7387;&#x8F83;&#x4F4E;&#xFF1B;&#x6570;&#x7EC4;&#x7684;&#x8BBF;&#x95EE;&#x6548;&#x7387;&#x8F83;&#x9AD8;&#xFF0C;&#x800C;&#x63D2;&#x5165;&#x6548;&#x7387;&#x8F83;&#x4F4E;&#x3002;</li>
 </ol>
@@ -1032,7 +1078,7 @@ cur.next = l1 !== <span class="hljs-literal">null</span> ? l1 : l2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"链表","level":"1.6.2","depth":2,"next":{"title":"二叉树","level":"1.6.3","depth":2,"path":"算法/二叉树/README.md","ref":"算法/二叉树/README.md","articles":[]},"previous":{"title":"三数之和","level":"1.6.1.2","depth":3,"path":"算法/数组/三数之和.md","ref":"算法/数组/三数之和.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"算法/链表/README.md","mtime":"2021-08-08T08:31:15.593Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-09T08:17:29.135Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"链表","level":"1.6.3","depth":2,"next":{"title":"二叉树","level":"1.6.4","depth":2,"path":"算法/二叉树/README.md","ref":"算法/二叉树/README.md","articles":[]},"previous":{"title":"三数之和","level":"1.6.2.2","depth":3,"path":"算法/数组/三数之和.md","ref":"算法/数组/三数之和.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"算法/链表/README.md","mtime":"2021-11-10T06:57:11.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-12T03:41:37.641Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
