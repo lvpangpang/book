@@ -32,7 +32,6 @@ window.addEventListener('hashchange',function(e){
     /* 监听改变 */
 })
 ```
-
 ## 2. History对象
 1. listen()
 执行 listeners.push(listener);

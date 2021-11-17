@@ -25,7 +25,7 @@
   }
 ```
 在使用构造函数创建结点时，传入 val （数据域对应的值内容）、指定 next （下一个链表结点）即可：
-```
+```javascript
   const node = new ListNode(1)
   node.next = new ListNode(2)
 ```

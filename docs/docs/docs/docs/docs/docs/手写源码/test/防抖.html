@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖</title>
+  </head>
+  <body>
+    <input id="input2" />
+    <script>
+      function submit1(e) {
+        console.log(e.value)
+      }
+      function submit2(e) {
+        console.log(e.value)
+      }
+      function debounce(fn, time) {
+        let timer = null
+        return function () {
+          if (timer) {
+            // 与节流的区别在这
+            clearTimeout(timer)
+          }
+          timer = setTimeout(() => {
+            console.log(this)
+            fn.apply(this, arguments) // 绑定this， 否则this指向window
+            timer = null
+          }, time || 300)
+        }
+      }
+      input2 = document.getElementById('input2')
+      input2.addEventListener(
+        'input',
+        debounce(function (e) {
+          console.log(input2.value)
+        }, 600)
+      )
+    </script>
+  </body>
+</html>
