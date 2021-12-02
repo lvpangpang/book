@@ -18,6 +18,7 @@ function g() {
 console.log(g());  // 10 x会取他定义时候的值，也就是let x = 10
 ```
 ## 2.声明提前
+
 1. 变量声明提前
 ```javascript
 var x = 1;

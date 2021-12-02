@@ -16,7 +16,7 @@ var b = 2
 a ?? b // 1
 ```
 2. 双感叹号
-* !!将其他类型都转换成boolean型 ，空字符串，0，null都是fasle
+* !!将其他类型都转换成boolean型 ，空字符串，0，null, undefined都是fasle
 ```javascript
 var a = 1
 !!a // true
