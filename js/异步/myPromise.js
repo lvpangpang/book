@@ -2,21 +2,11 @@ const PENDING = 'pending'
 const RESOLVED = 'resolved'
 const REJECTED = 'reject'
 
-
-new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(1)
-  }, 1000)
-}).then((data) => {
-  console.log(data)
-})
-
 // then只是搜集需要执行的函数到数组，真正执行的时机在resolve，reject方法中
 class MyPromise {
   constructor(executor) {
     this.status = PENDING
     this.value = null
-    this.reason = null
 
     this.resolveList = []
     this.rejectList = []
@@ -32,10 +22,10 @@ class MyPromise {
       }
     }
 
-    let reject = (reason) => {
+    let reject = (value) => {
       if (this.status === PENDING) {
         this.status = REJECTED
-        this.reason = reason
+        this.value = value
         this.rejectList.forEach((fn) => {
           fn()
         })
@@ -92,20 +82,24 @@ class MyPromise {
         resolve(this.value)
       })
       this.rejectList.push(() => {
-        reject(this.reason)
+        reject(this.value)
       })
     }
+
     // 如果当前状态为成功，执行成功回调
     if (this.status === RESOLVED) {
       resolve(this.value)
     }
+
     // 如果当前状态为失败，执行失败回调
     if (this.status === REJECTED) {
-      reject(this.reason)
+      reject(this.value)
     }
     
   }
 }
+
+
 
 const promise = new MyPromise((resolve, reject) => {
   setTimeout(() => {
