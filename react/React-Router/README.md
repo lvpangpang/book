@@ -158,7 +158,12 @@ class Router extends React.Component {
     // 一个只包含history信息，同时将子组件通过children渲染出来
     return (
       <RouterContext.Provider
-        
+        value={{
+          history: this.props.history,
+          location: this.state.location,
+          match: Router.computeRootMatch(this.state.location.pathname),
+          staticContext: this.props.staticContext
+        }}
       >
         <HistoryContext.Provider
           children={this.props.children || null}
@@ -177,10 +182,10 @@ export default Router;
 ```javascript
 import React from "react";
 import { Router } from "react-router";
-import { createBrowserHistory as createHistory } from "history";
+import { createBrowserHistory  } from "history";
 
 class BrowserRouter extends React.Component {
-  history = createHistory(this.props);
+  history = createBrowserHistory(this.props);
   render() {
     return <Router history={this.history} children={this.props.children} />;
   }
