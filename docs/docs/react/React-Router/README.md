@@ -99,7 +99,7 @@ The public API for putting history on context（源码介绍）
 **Router是整个应用路由的传递者和派发更新者**
 将从传入的history对象的location信息存入react的state里面，这样就和react建立了关系
 每次路由变化（history.push（）方法改变路由） ->  push函数里面主要是调用api改变url以及执行call函数，也就是执行订阅的函数-> 触发顶层 Router 的history.listen事件 -> Router 进行 setState -> 向下传递 nextContext（context 中含有最新的 location）-> 下面的 Route 获取新的 nextContext 判断是否进行渲染。
-```javascript
+```js
 import React from "react";
 
 import HistoryContext from "./HistoryContext.js";
@@ -157,14 +157,7 @@ class Router extends React.Component {
     // 一个是路由的相关属性，包括history和location等
     // 一个只包含history信息，同时将子组件通过children渲染出来
     return (
-      <RouterContext.Provider
-        value={{
-          history: this.props.history,
-          location: this.state.location,
-          match: Router.computeRootMatch(this.state.location.pathname),
-          staticContext: this.props.staticContext
-        }}
-      >
+      <RouterContext.Provider>
         <HistoryContext.Provider
           children={this.props.children || null}
           value={this.props.history}
