@@ -1,7 +1,7 @@
 # 路由
 
-个人理解，前端路由就是监听 url 变化，根据不同的 pathname 加载对应的 js 资源
-路由的 URL 改变和页面的切换是 2 回事情
+个人理解，前端路由就是监听 url 变化，将最新的路由信息传递给React，然后React往下传递路由信息，匹配对应的组件
+路由的 URL 改变和组件的切换是 2 回事情
 
 1. history： 提供了核心 api，如监听路由，更改路由的方法，已经保存路由状态 state
 2. react-router：在 history 核心基础上，增加了 Router ，Switch ，Route 等组件来处理视图渲染。
@@ -82,7 +82,7 @@ function push(path, state) {
 }
 
 function setState(nextState) {
-  Object.assign(history, nextState)
+  Object.assign(history, nextState) // 合并最新的路由信息
   history.length = globalHistory.length
   transitionManager.notifyListeners(history.location, history.action) // 通知监听者，并将最新的location对象传过去
 }
@@ -126,7 +126,7 @@ class Router extends React.Component {
     super(props)
 
     this.state = {
-      location: props.history.location, // 路由改变后会改变这个props.history.location，Rouer就能通过location的改变通知下面的Route匹配路由渲染组件
+      location: props.history.location
     }
 
     // 下面两个变量是防御性代码，防止根组件还没渲染location就变了
@@ -137,7 +137,7 @@ class Router extends React.Component {
     // 通过history监听路由变化，变化的时候，改变state上的location
     this.unlisten = props.history.listen((location) => {
       if (this._isMounted) {
-        this.setState({ location }) // 这一步很关键
+        this.setState({ location }) // 这一步很关键，React就能获取到最新的路由信息了
       } else {
         this._pendingLocation = location
       }
@@ -174,7 +174,6 @@ class Router extends React.Component {
     )
   }
 }
-
 export default Router
 ```
 
