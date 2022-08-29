@@ -137,6 +137,15 @@ export function updateContainer(
 触发 setState 节点开始，先往上找到 root 最顶层根元素，然后往下根据已存在属性拷贝一份新的 fiber，直到触发 setState 节点，再往下遍历调用子元素 render，中间可以根据 shouldComponentUpdate 等方法跳过
 这个阶段分为两块，往下的过程是一些调用 render 或者克隆一个 fiber 节点的操作，往上的过程是生成 effect 和 updateQueue 更新内容的操作
 
+1. 调用 setState 时，会调用 enqueueSetState 方法创建一个包含 过期时间 和 优先级 lane 以及最新 state 的 update 更新器
+2. 调用 enqueueUpdate 方法将更新器存放到 fiber 的更新队列中
+3. 调用 scheduleUpdateOnFiber 方法 schdule 更新
+4. 调用 ensureRootIsScheduled 方法创建一个 task 来 scheudle 更新
+5. 将更新任务 performWorkOnRoot 存放到 syncQueue 中等待调用
+6. 若是 Legacy 模式（非并发），不启用批量更新，直接调用更新方法 flushSyncCallbackQueue，执行更新，清空 syncQueue
+7. 若是 Concurrent 模式，则延迟调用 flushSyncCallbackQueue，等待所有同步任务执行结束后再调用 flushSyncCallbackQueue
+8. 在 performWorkOnRoot 方法中，会循环 fiber 身上的更新队列拿到最新的 state，然后进行 dom diff 以及 re-render
+
 ```js
 function Component(props, context, updater) {
   this.props = props
@@ -165,7 +174,6 @@ const classComponentUpdater = {
 
     enqueueUpdate(fiber, update) // 处理更新队列
     scheduleUpdateOnFiber(fiber, lane, eventTime) // 调度 render
-
   },
 }
 ```
