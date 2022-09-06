@@ -1077,7 +1077,7 @@
                                 
                                 <h1 id="hooks">Hooks</h1>
 <h2 id="1-usestate">1. useState</h2>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
 <span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>
 
 <span class="hljs-keyword">const</span> state = []
@@ -1132,32 +1132,32 @@ const App = () =&gt; {
 
 export default App
 </span></code></pre>
-<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x652F;&#x6301;&#x4E86;&#x591A;&#x4E2A; useState&#xFF0C;&#x4F46;&#x662F;&#x4ECD;&#x7136;&#x53EA;&#x6709;&#x4E00;&#x5957;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x6765;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x4E0D;&#x5C31;&#x662F;&#x6C61;&#x67D3;&#x4E86;&#x6570;&#x636E;&#x4E86;&#x5417;&#xFF1F;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x6570;&#x636E;&#x8FD8;&#x4E0D;&#x80FD;&#x90FD;&#x5B58;&#x5728;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0A;&#x9762;&#xFF0C;&#x800C;&#x662F;&#x5E94;&#x8BE5;&#x5B58;&#x5728;&#x6BCF;&#x4E2A; fiber &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x518D;&#x5C06;&#x72B6;&#x6001;&#x653E;&#x5230;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7528;&#x6765;&#x901A;&#x8BAF;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x652F;&#x6301;&#x4E86;&#x591A;&#x4E2A; useState&#xFF0C;&#x4F46;&#x662F;&#x4ECD;&#x7136;&#x53EA;&#x6709;&#x4E00;&#x5957;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x6765;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x4E0D;&#x5C31;&#x662F;&#x6C61;&#x67D3;&#x4E86;&#x6570;&#x636E;&#x4E86;&#x5417;&#xFF1F;<br>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x6570;&#x636E;&#x8FD8;&#x4E0D;&#x80FD;&#x90FD;&#x5B58;&#x5728;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0A;&#x9762;&#xFF0C;&#x800C;&#x662F;&#x5E94;&#x8BE5;&#x5B58;&#x5728;&#x6BCF;&#x4E2A; fiber &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x518D;&#x5C06;&#x72B6;&#x6001;&#x653E;&#x5230;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7528;&#x6765;&#x901A;&#x8BAF;</p>
 <h2 id="2-useeffect">2. useEffect</h2>
-<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> allDeps = []
-<span class="hljs-keyword">let</span> effectCursor = <span class="hljs-number">0</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useEffect</span>(<span class="hljs-params">callback, deps</span>) </span>{
-  <span class="hljs-keyword">if</span> (!allDeps[effectCursor]) {
-    allDeps[effectCursor] = deps
-    ++effectCursor
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> allDeps = []
+<span class="hljs-keyword">let</span> cursor = <span class="hljs-number">0</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useEffect</span>(<span class="hljs-params">callback, depsList</span>) </span>{
+  <span class="hljs-comment">// &#x65B0;&#x7684;effect&#x76F4;&#x63A5;&#x6267;&#x884C;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">if</span> (!allDeps[cursor]) {
+    allDeps[cursor] = depsList
+    ++cursor
     callback()
     <span class="hljs-keyword">return</span>
   }
-
-  <span class="hljs-keyword">const</span> currentEffectScrsor = effectCursor
-  <span class="hljs-keyword">const</span> rawDeps = allDeps[currentEffectScrsor]
+  <span class="hljs-keyword">const</span> rawDeps = allDeps[cursor]
+  <span class="hljs-comment">// &#x6BD4;&#x8F83;&#x524D;&#x540E;2&#x6B21;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;&#x662F;&#x5426;&#x6709;&#x53D8;&#x5316;</span>
   <span class="hljs-keyword">const</span> isChanged = rawDeps.some((dep, index) =&gt; {
-    dep !== deps[index]
+    dep !== depsList[index]
   })
   <span class="hljs-keyword">if</span> (isChanged) {
     callback()
-    allDeps[effectCursor] = deps
+    allDeps[cursor] = depsList
   }
-  ++effectCursor
+  ++cursor
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
-  effectSursor = <span class="hljs-number">0</span> <span class="hljs-comment">// &#x6CE8;&#x610F;&#x5C06; effectCursor &#x91CD;&#x7F6E;&#x4E3A;0</span>
+  effectSursor = <span class="hljs-number">0</span> <span class="hljs-comment">// &#x6CE8;&#x610F;&#x5C06; cursor &#x91CD;&#x7F6E;&#x4E3A;0</span>
   ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.querySelector(&apos;#toot&apos;))
 }
 </span></code></pre>
@@ -1204,7 +1204,7 @@ export default App
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hooks","level":"1.4.8","depth":2,"next":{"title":"重要 API","level":"1.4.9","depth":2,"path":"react/重要API/README.md","ref":"react/重要API/README.md","articles":[]},"previous":{"title":"Context","level":"1.4.7","depth":2,"path":"react/Context/README.md","ref":"react/Context/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/Hooks/README.md","mtime":"2022-05-22T03:35:24.654Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-16T09:22:24.990Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hooks","level":"1.4.8","depth":2,"next":{"title":"重要 API","level":"1.4.9","depth":2,"path":"react/重要API/README.md","ref":"react/重要API/README.md","articles":[]},"previous":{"title":"Context","level":"1.4.7","depth":2,"path":"react/Context/README.md","ref":"react/Context/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/Hooks/README.md","mtime":"2022-08-24T08:29:18.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-06T09:46:45.031Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

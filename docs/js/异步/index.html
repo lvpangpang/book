@@ -1077,12 +1077,30 @@
                                 
                                 <h1 id="&#x5F02;&#x6B65;">&#x5F02;&#x6B65;</h1>
 <ol>
-<li>&#x56DE;&#x8C03;&#x51FD;&#x6570;</li>
-<li>Generator</li>
-<li>promise</li>
-<li>Promise &#x5C06;&#x5D4C;&#x5957;&#x8C03;&#x7528;&#x6539;&#x4E3A;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x53EF;&#x9605;&#x8BFB;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;</li>
-<li>&#x91CD;&#x70B9;&#x5173;&#x6CE8;then &#x7684;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x548C;&#x503C;&#x7684;&#x7A7F;&#x900F;</li>
-<li>async await </li>
+<li>catch()&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684; then(null, () =&gt; {}),&#x4F1A;&#x6355;&#x83B7;&#x6700;&#x8FD1;&#x6CA1;&#x6709;&#x88AB;&#x6355;&#x83B7;&#x7684;&#x7684;&#x9519;&#x8BEF;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax2</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> axios
+    .get(<span class="hljs-string">&apos;https://qa01web-gateway.lingxichuxing.com/saas/v1/basic/dataTypes&apos;</span>)
+    .then(() =&gt; {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    })
+    .catch((error) =&gt; {
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error)
+    })
+}
+</code></pre>
+<ol>
+<li><p>then()&#x8FD4;&#x56DE;&#x503C;</p>
+</li>
+<li><p>&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE;&#x7684; Promise &#x5C06;&#x4F1A;&#x6210;&#x4E3A;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</p>
+</li>
+<li><font color="red">&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE;&#x7684; Promise &#x5C06;&#x4F1A;&#x6210;&#x4E3A;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x4E3A; undefined&#x3002;&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x4E2D;&#x4E0D;&#x8FD4;&#x56DE;&#x503C;&#x5F97;then&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4EF7;&#x503C;&#x7684;</font></li>
+<li>&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE;&#x7684; Promise &#x5C06;&#x4F1A;&#x6210;&#x4E3A;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x4F5C;&#x4E3A;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x662F;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#x7684; Promise&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE;&#x7684; Promise &#x4E5F;&#x4F1A;&#x6210;&#x4E3A;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x90A3;&#x4E2A; Promise &#x7684;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x4F5C;&#x4E3A;&#x8BE5;&#x88AB;&#x8FD4;&#x56DE;&#x7684; Promise &#x7684;&#x63A5;&#x53D7;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x662F;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#x7684; Promise&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE;&#x7684; Promise &#x4E5F;&#x4F1A;&#x6210;&#x4E3A;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x90A3;&#x4E2A; Promise &#x7684;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x4F5C;&#x4E3A;&#x8BE5;&#x88AB;&#x8FD4;&#x56DE;&#x7684; Promise &#x7684;&#x62D2;&#x7EDD;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</li>
+<li><font color="red">&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x672A;&#x5B9A;&#x72B6;&#x6001;&#xFF08;pending&#xFF09;&#x7684; Promise&#xFF0C;&#x90A3;&#x4E48; then &#x8FD4;&#x56DE; Promise &#x7684;&#x72B6;&#x6001;&#x4E5F;&#x662F;&#x672A;&#x5B9A;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x7684;&#x7EC8;&#x6001;&#x4E0E;&#x90A3;&#x4E2A; Promise &#x7684;&#x7EC8;&#x6001;&#x76F8;&#x540C;&#xFF1B;&#x540C;&#x65F6;&#xFF0C;&#x5B83;&#x53D8;&#x4E3A;&#x7EC8;&#x6001;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E0E;&#x90A3;&#x4E2A; Promise &#x53D8;&#x4E3A;&#x7EC8;&#x6001;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</font>
+</li>
 </ol>
 
                                 
@@ -1127,7 +1145,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"异步","level":"1.3.6","depth":2,"next":{"title":"深浅拷贝","level":"1.3.7","depth":2,"path":"js/深浅拷贝/README.md","ref":"js/深浅拷贝/README.md","articles":[]},"previous":{"title":"eventLoop","level":"1.3.5","depth":2,"path":"js/eventLoop/README.md","ref":"js/eventLoop/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/异步/README.md","mtime":"2022-05-22T03:35:24.643Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-16T09:22:24.990Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"异步","level":"1.3.6","depth":2,"next":{"title":"深浅拷贝","level":"1.3.7","depth":2,"path":"js/深浅拷贝/README.md","ref":"js/深浅拷贝/README.md","articles":[]},"previous":{"title":"eventLoop","level":"1.3.5","depth":2,"path":"js/eventLoop/README.md","ref":"js/eventLoop/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/异步/README.md","mtime":"2022-09-02T10:13:36.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-06T09:46:45.031Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

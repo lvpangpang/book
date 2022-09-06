@@ -1076,224 +1076,226 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8DEF;&#x7531;">&#x8DEF;&#x7531;</h1>
-<p>&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF0C;&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x5C31;&#x662F;&#x76D1;&#x542C;url&#x53D8;&#x5316;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;pathname&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;js&#x8D44;&#x6E90;
-&#x8DEF;&#x7531;&#x7684;URL&#x6539;&#x53D8;&#x548C;&#x9875;&#x9762;&#x7684;&#x5207;&#x6362;&#x662F;2&#x56DE;&#x4E8B;&#x60C5;</p>
+<p>&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF0C;&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x5C31;&#x662F;&#x76D1;&#x542C; url &#x53D8;&#x5316;&#xFF0C;&#x5C06;&#x6700;&#x65B0;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x7ED9;React&#xFF0C;&#x7136;&#x540E;React&#x5F80;&#x4E0B;&#x4F20;&#x9012;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF0C;&#x5339;&#x914D;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;
+&#x8DEF;&#x7531;&#x7684; URL &#x6539;&#x53D8;&#x548C;&#x7EC4;&#x4EF6;&#x7684;&#x5207;&#x6362;&#x662F; 2 &#x56DE;&#x4E8B;&#x60C5;</p>
 <ol>
-<li>history&#xFF1A; history &#x662F;&#x6574;&#x4E2A; React-router &#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x62EC;&#x4E24;&#x79CD;&#x8DEF;&#x7531;&#x6A21;&#x5F0F;&#x4E0B;&#x6539;&#x53D8;&#x8DEF;&#x7531;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#x65B9;&#x6CD5;&#x7B49;&#x3002;</li>
-<li>react-router&#xFF1A;&#x65E2;&#x7136;&#x6709;&#x4E86; history &#x8DEF;&#x7531;&#x76D1;&#x542C;/&#x6539;&#x53D8;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x8C03;&#x5EA6;&#x7EC4;&#x4EF6;&#x8D1F;&#x8D23;&#x6D3E;&#x53D1;&#x8FD9;&#x4E9B;&#x8DEF;&#x7531;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x66F4;&#x65B0;&#xFF0C;&#x6765;&#x6E32;&#x67D3;&#x89C6;&#x56FE;&#x3002;&#x6240;&#x4EE5;&#x8BF4; React-router &#x5728; history &#x6838;&#x5FC3;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;&#x4E86; Router &#xFF0C;Switch &#xFF0C;Route &#x7B49;&#x7EC4;&#x4EF6;&#x6765;&#x5904;&#x7406;&#x89C6;&#x56FE;&#x6E32;&#x67D3;&#x3002;</li>
-<li>react-router-dom&#xFF1A; &#x5728; react-router &#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B; UI &#x5C42;&#x9762;&#x7684;&#x62D3;&#x5C55;&#x6BD4;&#x5982; Link &#xFF0C;NavLink &#x3002;&#x4EE5;&#x53CA;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x7684;&#x6839;&#x90E8;&#x8DEF;&#x7531; BrowserRouter &#xFF0C;HashRouter &#x3002;
-<strong>&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x53EA;&#x9700;&#x8981;&#x5B89;&#x88C5;react-router-dom&#x5373;&#x53EF;</strong></li>
+<li>history&#xFF1A; &#x63D0;&#x4F9B;&#x4E86;&#x6838;&#x5FC3; api&#xFF0C;&#x5982;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#xFF0C;&#x66F4;&#x6539;&#x8DEF;&#x7531;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5DF2;&#x7ECF;&#x4FDD;&#x5B58;&#x8DEF;&#x7531;&#x72B6;&#x6001; state</li>
+<li>react-router&#xFF1A;&#x5728; history &#x6838;&#x5FC3;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;&#x4E86; Router &#xFF0C;Switch &#xFF0C;Route &#x7B49;&#x7EC4;&#x4EF6;&#x6765;&#x5904;&#x7406;&#x89C6;&#x56FE;&#x6E32;&#x67D3;&#x3002;</li>
+<li>react-router-dom&#xFF1A; &#x5728; react-router &#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B; UI &#x5C42;&#x9762;&#x7684;&#x62D3;&#x5C55;&#x6BD4;&#x5982; Link &#xFF0C;NavLink &#x3002;</li>
 </ol>
+<p><strong>&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x53EA;&#x9700;&#x8981;&#x5B89;&#x88C5; react-router-dom &#x5373;&#x53EF;</strong></p>
 <h2 id="1&#x8DEF;&#x7531;&#x539F;&#x7406;">1.&#x8DEF;&#x7531;&#x539F;&#x7406;</h2>
 <ol>
-<li>history&#x6A21;&#x5F0F;</li>
-<li><p>&#x6539;&#x53D8;&#x8DEF;&#x7531;
-history.pushState(state,title,path)
-&#x53EA;&#x80FD;&#x6539;&#x53D8;url&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x9875;&#x9762;&#x89C6;&#x56FE;&#xFF0C;&#x9700;&#x8981;<strong>&#x624B;&#x52A8;&#x6539;&#x53D8;</strong>
-history.replaceState(state,title,path) </p>
+<li><p>history &#x6A21;&#x5F0F;</p>
 </li>
-<li><p>&#x76D1;&#x542C;&#x8DEF;&#x7531;</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;popstate&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+<li><p>&#x6539;&#x53D8;&#x8DEF;&#x7531;</p>
+</li>
+</ol>
+<pre><code class="lang-js">history.pushState(state, title, path)
+history.replaceState(state, title, path)
+</code></pre>
+<ul>
+<li>&#x76D1;&#x542C;&#x8DEF;&#x7531;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;popstate&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   <span class="hljs-comment">/* &#x76D1;&#x542C;&#x6539;&#x53D8; */</span>
 })
 </code></pre>
 <p>&#x7528; history.pushState() &#x6216;&#x8005; history.replaceState() &#x4E0D;&#x4F1A;&#x89E6;&#x53D1; popstate &#x4E8B;&#x4EF6;&#x3002; popstate &#x4E8B;&#x4EF6;&#x53EA;&#x4F1A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x67D0;&#x4E9B;&#x884C;&#x4E3A;&#x4E0B;&#x89E6;&#x53D1;, &#x6BD4;&#x5982;&#x70B9;&#x51FB;&#x540E;&#x9000;&#x3001;&#x524D;&#x8FDB;&#x6309;&#x94AE;&#x6216;&#x8005;&#x8C03;&#x7528; history.back()&#x3001;history.forward()&#x3001;history.go()&#x65B9;&#x6CD5;&#x3002;
-&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x53EA;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6765;&#x505A;&#x5230;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5728;pushState&#x540E;<strong>&#x624B;&#x52A8;&#x6267;&#x884C;</strong>&#x5BF9;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570;</p>
-</li>
-<li><p>hash&#x6A21;&#x5F0F;</p>
+<strong>&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x53EA;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6765;&#x505A;&#x5230;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5728; pushState &#x540E;&#x624B;&#x52A8;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570;</strong></p>
+<ol>
+<li><p>hash &#x6A21;&#x5F0F;</p>
 </li>
 <li><p>&#x6539;&#x53D8;&#x8DEF;&#x7531;
 windows.location.href</p>
 </li>
 <li><p>&#x76D1;&#x542C;&#x8DEF;&#x7531;</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;hashchange&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;hashchange&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   <span class="hljs-comment">/* &#x76D1;&#x542C;&#x6539;&#x53D8; */</span>
 })
 </code></pre>
-<h2 id="2-history&#x5BF9;&#x8C61;">2. History&#x5BF9;&#x8C61;</h2>
+<h2 id="2-history-&#x5BF9;&#x8C61;">2. History &#x5BF9;&#x8C61;</h2>
+<ol>
+<li><p>push()</p>
 </li>
-<li><p>listen()
-&#x6267;&#x884C; listeners.push(listener);
-&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;&#x5F53;history.push&#x6267;&#x884C;&#x65F6;&#x5019;&#x4F1A;&#x6267;&#x884C;&#x8BA2;&#x9605;&#x7684;&#x4E8B;&#x4EF6;</p>
-<pre><code class="lang-javascript">props.history.listen(location =&gt; {
-<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._isMounted) {
- <span class="hljs-keyword">this</span>.setState({ location }); <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x6B65;&#x5F88;&#x5173;&#x952E;</span>
-} <span class="hljs-keyword">else</span> {
- <span class="hljs-keyword">this</span>._pendingLocation = location;
-}
-});
-</code></pre>
+<li><p>&#x8C03;&#x7528; window.history.pushState() &#x6539;&#x53D8; url</p>
 </li>
-<li><p>push()
-&#x8C03;&#x7528;api&#x6539;&#x53D8;url
-&#x6267;&#x884C;listener.call({location}) &#x6267;&#x884C;&#x8BA2;&#x9605;&#x7684;&#x4E8B;&#x4EF6;
-```javascript
-let history: BrowserHistory = {
- get action() {
-   return action;
- },
- get location() {
-   return location;
- },
- createHref,
- push,
- replace,
- go,
- back() {
-   go(-1);
- },
- forward() {
-   go(1);
- },
- listen(listener) {
-   return listeners.push(listener);
- },
- block(blocker) {
-   let unblock = blockers.push(blocker);</p>
-<p>   if (blockers.length === 1) {</p>
-<pre><code> window.addEventListener(BeforeUnloadEventType, promptBeforeUnload);
-</code></pre><p>   }</p>
-<p>   return function () {</p>
-<pre><code> unblock();
-
- // Remove the beforeunload listener so the document may
- // still be salvageable in the pagehide event.
- // See https://html.spec.whatwg.org/#unloading-documents
- if (!blockers.length) {
-   window.removeEventListener(BeforeUnloadEventType, promptBeforeUnload);
- }
-</code></pre><p>   };
- }
-};</p>
-</li>
+<li>&#x89E6;&#x53D1; history &#x4E0B;&#x9762;&#x7684; setState &#x65B9;&#x6CD5;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A; location &#x5BF9;&#x8C61;, &#x5E76;&#x4E14;&#x901A;&#x77E5;&#x76D1;&#x542C;&#x8005;</li>
 </ol>
-<pre><code>
-## 3. &#x6838;&#x5FC3;&#x7EC4;&#x4EF6;
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">push</span>(<span class="hljs-params">path, state</span>) </span>{
+  <span class="hljs-keyword">const</span> action = <span class="hljs-string">&apos;PUSH&apos;</span>
+  <span class="hljs-keyword">const</span> location = createLocation(path, state, createKey(), history.location)
 
-1. Router
+  transitionManager.confirmTransitionTo(location, action, getUserConfirmation, (ok) =&gt; {
+    <span class="hljs-keyword">if</span> (!ok) <span class="hljs-keyword">return</span>
+
+    <span class="hljs-keyword">const</span> href = createHref(location)
+    <span class="hljs-keyword">const</span> { key, state } = location
+
+    <span class="hljs-keyword">if</span> (canUseHistory) {
+      <span class="hljs-keyword">if</span> (forceRefresh) {
+        <span class="hljs-built_in">window</span>.location.href = href
+      } <span class="hljs-keyword">else</span> {
+        globalHistory.pushState({ key, state }, <span class="hljs-literal">null</span>, href) <span class="hljs-comment">// &#x6539;&#x53D8;url</span>
+        <span class="hljs-keyword">const</span> prevIndex = allKeys.indexOf(history.location.key)
+        <span class="hljs-keyword">const</span> nextKeys = allKeys.slice(<span class="hljs-number">0</span>, prevIndex + <span class="hljs-number">1</span>)
+
+        nextKeys.push(location.key)
+        allKeys = nextKeys
+
+        setState({ action, location }) <span class="hljs-comment">// &#x751F;&#x6210;&#x65B0;&#x7684;location&#x5BF9;&#x8C61;</span>
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">window</span>.location.href = href
+    }
+  })
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setState</span>(<span class="hljs-params">nextState</span>) </span>{
+  <span class="hljs-built_in">Object</span>.assign(history, nextState) <span class="hljs-comment">// &#x5408;&#x5E76;&#x6700;&#x65B0;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;</span>
+  history.length = globalHistory.length
+  transitionManager.notifyListeners(history.location, history.action) <span class="hljs-comment">// &#x901A;&#x77E5;&#x76D1;&#x542C;&#x8005;&#xFF0C;&#x5E76;&#x5C06;&#x6700;&#x65B0;&#x7684;location&#x5BF9;&#x8C61;&#x4F20;&#x8FC7;&#x53BB;</span>
+}
+</code></pre>
+<ul>
+<li>Router &#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x5019;&#x8C03;&#x7528; history.listen &#x76D1;&#x542C;&#xFF0C;&#x611F;&#x77E5;&#x5230; location &#x53C2;&#x6570;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; Context &#x5C06;&#x6700;&#x65B0;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x5230;&#x4E0B;&#x9762;&#x7684; Route &#x7EC4;&#x4EF6;&#x5339;&#x914D;&#x6E32;&#x67D3;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x901A;&#x8FC7;history.listen&#x65B9;&#x6CD5;&#x8BA2;&#x9605;history&#x5BF9;&#x8C61;&#x7684;location&#x53D8;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x6539;&#x53D8;state&#x4E0A;&#x7684;location</span>
+<span class="hljs-keyword">this</span>.unlisten = props.history.listen((location) =&gt; {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._isMounted) {
+    <span class="hljs-keyword">this</span>.setState({ location }) <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;location&#x5BF9;&#x8C61;</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">this</span>._pendingLocation = location
+  }
+})
+</code></pre>
+<h2 id="3-&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;">3. &#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</h2>
+<ol>
+<li>Router
 The public API for putting history on context&#xFF08;&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#xFF09;
-**Router&#x662F;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x8DEF;&#x7531;&#x7684;&#x4F20;&#x9012;&#x8005;&#x548C;&#x6D3E;&#x53D1;&#x66F4;&#x65B0;&#x8005;**
-&#x5C06;&#x4ECE;&#x4F20;&#x5165;&#x7684;history&#x5BF9;&#x8C61;&#x7684;location&#x4FE1;&#x606F;&#x5B58;&#x5165;react&#x7684;state&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x548C;react&#x5EFA;&#x7ACB;&#x4E86;&#x5173;&#x7CFB;
-&#x6BCF;&#x6B21;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF08;history.push&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x8DEF;&#x7531;&#xFF09; -&gt;  push&#x51FD;&#x6570;&#x91CC;&#x9762;&#x4E3B;&#x8981;&#x662F;&#x8C03;&#x7528;api&#x6539;&#x53D8;url&#x4EE5;&#x53CA;&#x6267;&#x884C;call&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6267;&#x884C;&#x8BA2;&#x9605;&#x7684;&#x51FD;&#x6570;-&gt; &#x89E6;&#x53D1;&#x9876;&#x5C42; Router &#x7684;history.listen&#x4E8B;&#x4EF6; -&gt; Router &#x8FDB;&#x884C; setState -&gt; &#x5411;&#x4E0B;&#x4F20;&#x9012; nextContext&#xFF08;context &#x4E2D;&#x542B;&#x6709;&#x6700;&#x65B0;&#x7684; location&#xFF09;-&gt; &#x4E0B;&#x9762;&#x7684; Route &#x83B7;&#x53D6;&#x65B0;&#x7684; nextContext &#x5224;&#x65AD;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;
-```js
-import React from &quot;react&quot;;
+<strong>Router &#x662F;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x8DEF;&#x7531;&#x7684;&#x4F20;&#x9012;&#x8005;&#x548C;&#x6D3E;&#x53D1;&#x66F4;&#x65B0;&#x8005;</strong></li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
 
-import HistoryContext from &quot;./HistoryContext.js&quot;;
-import RouterContext from &quot;./RouterContext.js&quot;;
+<span class="hljs-keyword">import</span> HistoryContext <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./HistoryContext.js&apos;</span>
+<span class="hljs-keyword">import</span> RouterContext <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./RouterContext.js&apos;</span>
 
-/**
+<span class="hljs-comment">/**
  * The public API for putting history on context.
- */
-class Router extends React.Component {
-  // &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x68C0;&#x6D4B;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x662F;&#x5426;&#x5339;&#x914D;
-  static computeRootMatch(pathname) {
-    return { path: &quot;/&quot;, url: &quot;/&quot;, params: {}, isExact: pathname === &quot;/&quot; };
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Router</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-comment">// &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x68C0;&#x6D4B;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x662F;&#x5426;&#x5339;&#x914D;</span>
+  <span class="hljs-keyword">static</span> computeRootMatch(pathname) {
+    <span class="hljs-keyword">return</span> { path: <span class="hljs-string">&apos;/&apos;</span>, url: <span class="hljs-string">&apos;/&apos;</span>, params: {}, isExact: pathname === <span class="hljs-string">&apos;/&apos;</span> }
   }
 
-  constructor(props) {
-    super(props);
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props)
 
-    this.state = {
-      location: props.history.location     // &#x5C06;history&#x7684;location&#x6302;&#x8F7D;&#x5230;state&#x4E0A;
-    };
+    <span class="hljs-keyword">this</span>.state = {
+      location: props.history.location
+    }
 
-    // &#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x9632;&#x5FA1;&#x6027;&#x4EE3;&#x7801;&#xFF0C;&#x9632;&#x6B62;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;location&#x5C31;&#x53D8;&#x4E86;
-    // &#x5982;&#x679C;location&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x5148;&#x8BB0;&#x4E0B;&#x4ED6;&#xFF0C;&#x7B49;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;mount&#x4E86;&#x518D;&#x8BBE;&#x7F6E;&#x5230;state&#x4E0A;
-    this._isMounted = false;
-    this._pendingLocation = null;
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x9632;&#x5FA1;&#x6027;&#x4EE3;&#x7801;&#xFF0C;&#x9632;&#x6B62;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;location&#x5C31;&#x53D8;&#x4E86;</span>
+    <span class="hljs-comment">// &#x5982;&#x679C;location&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x6839;&#x7EC4;&#x4EF6;&#x8FD8;&#x6CA1;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x5148;&#x8BB0;&#x4E0B;&#x4ED6;&#xFF0C;&#x7B49;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;mount&#x4E86;&#x518D;&#x8BBE;&#x7F6E;&#x5230;state&#x4E0A;</span>
+    <span class="hljs-keyword">this</span>._isMounted = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">this</span>._pendingLocation = <span class="hljs-literal">null</span>
 
-    // &#x901A;&#x8FC7;history&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF0C;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6539;&#x53D8;state&#x4E0A;&#x7684;location
-    this.unlisten = props.history.listen(location =&gt; {
-      if (this._isMounted) {
-        this.setState({ location }); // &#x8FD9;&#x4E00;&#x6B65;&#x5F88;&#x5173;&#x952E;
-      } else {
-        this._pendingLocation = location;
+    <span class="hljs-comment">// &#x901A;&#x8FC7;history&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF0C;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6539;&#x53D8;state&#x4E0A;&#x7684;location</span>
+    <span class="hljs-keyword">this</span>.unlisten = props.history.listen((location) =&gt; {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._isMounted) {
+        <span class="hljs-keyword">this</span>.setState({ location }) <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x6B65;&#x5F88;&#x5173;&#x952E;&#xFF0C;React&#x5C31;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x6700;&#x65B0;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x4E86;</span>
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>._pendingLocation = location
       }
-    });
+    })
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    <span class="hljs-keyword">this</span>._isMounted = <span class="hljs-literal">true</span>
 
-    if (this._pendingLocation) {
-      this.setState({ location: this._pendingLocation });
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._pendingLocation) {
+      <span class="hljs-keyword">this</span>.setState({ location: <span class="hljs-keyword">this</span>._pendingLocation })
     }
   }
 
   componentWillUnmount() {
-    if (this.unlisten) {
-      this.unlisten();
-      this._isMounted = false;
-      this._pendingLocation = null;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.unlisten) {
+      <span class="hljs-keyword">this</span>.unlisten()
+      <span class="hljs-keyword">this</span>._isMounted = <span class="hljs-literal">false</span>
+      <span class="hljs-keyword">this</span>._pendingLocation = <span class="hljs-literal">null</span>
     }
   }
 
   render() {
-    // render&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x4E24;&#x4E2A;context
-    // &#x4E00;&#x4E2A;&#x662F;&#x8DEF;&#x7531;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;history&#x548C;location&#x7B49;
-    // &#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B;history&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;children&#x6E32;&#x67D3;&#x51FA;&#x6765;
-    return (
+    <span class="hljs-comment">// render&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x4E24;&#x4E2A;context</span>
+    <span class="hljs-comment">// &#x4E00;&#x4E2A;&#x662F;&#x8DEF;&#x7531;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;history&#x548C;location&#x7B49;</span>
+    <span class="hljs-comment">// &#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B;history&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;children&#x6E32;&#x67D3;&#x51FA;&#x6765;</span>
+    <span class="hljs-keyword">return</span> (
       &lt;RouterContext.Provider&gt;
         &lt;HistoryContext.Provider
           children={this.props.children || null}
           value={this.props.history}
         /&gt;
       &lt;/RouterContext.Provider&gt;
-    );
+    )
   }
 }
-
-export default Router;
-</code></pre><ol>
-<li>BrowserRouter&#xFF08;Router&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#xFF09;
-&#x5BF9;Router&#x7EC4;&#x4EF6;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4F20;&#x4E86;history&#x5BF9;&#x8C61;&#x7ED9;Router
-```javascript
-import React from &quot;react&quot;;
-import { Router } from &quot;react-router&quot;;
-import { createBrowserHistory  } from &quot;history&quot;;</li>
+export default Router
+</code></pre>
+<ol>
+<li>BrowserRouter&#xFF08;Router &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#xFF09;
+&#x5BF9; Router &#x7EC4;&#x4EF6;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4F20;&#x4E86; history &#x5BF9;&#x8C61;&#x7ED9; Router</li>
 </ol>
-<p>class BrowserRouter extends React.Component {
-  history = createBrowserHistory(this.props);
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router&apos;</span>
+<span class="hljs-keyword">import</span> { createBrowserHistory } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;history&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BrowserRouter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  history = createBrowserHistory(<span class="hljs-keyword">this</span>.props)
   render() {
-    return <router history="{this.history}" children="{this.props.children}">;
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{this.history}</span> <span class="hljs-attr">children</span>=<span class="hljs-string">{this.props.children}</span> /&gt;</span>
   }
-}</router></p>
-<pre><code>
-3. Route
+}
+</span></code></pre>
+<ol>
+<li>Route
 The public API for matching a single path and rendering.&#xFF08;&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#xFF09;
 &#x7531;&#x4E8E;&#x6574;&#x4E2A;&#x8DEF;&#x7531;&#x72B6;&#x6001;&#x662F;&#x7528; context &#x4F20;&#x9012;&#x7684;&#xFF0C;&#x6240;&#x4EE5; Route &#x53EF;&#x4EE5;&#x901A;&#x8FC7; RouterContext.Consumer &#x6765;&#x83B7;&#x53D6;&#x4E0A;&#x4E00;&#x7EA7;&#x4F20;&#x9012;&#x6765;&#x7684;&#x8DEF;&#x7531;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x5339;&#x914D;&#xFF0C;&#x5982;&#x679C;&#x5339;&#x914D;&#xFF0C;&#x6E32;&#x67D3;&#x5B50;&#x4EE3;&#x8DEF;&#x7531;&#x3002;&#x5E76;&#x5229;&#x7528; context &#x9010;&#x5C42;&#x4F20;&#x9012;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF0C;&#x5411;&#x5B50;&#x4EE3;&#x8DEF;&#x7531;&#x4F20;&#x9012;&#x4E0B;&#x53BB;&#x3002;&#x8FD9;&#x6837;&#x4E5F;&#x5C31;&#x80FD;&#x8F7B;&#x677E;&#x5B9E;&#x73B0;&#x4E86;&#x5D4C;&#x5957;&#x8DEF;&#x7531;&#x3002;
-&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x652F;&#x6301;3&#x79CD;&#x5F62;&#x5F0F;
-children, component, render
-```javascript
-class Route extends React.Component {
+&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x652F;&#x6301; 3 &#x79CD;&#x5F62;&#x5F0F;
+children, component, render</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Route</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   render() {
-    return (
+    <span class="hljs-keyword">return</span> (
       &lt;RouterContext.Consumer&gt;
-        {context =&gt; {
-          invariant(context, &quot;You should not use &lt;Route&gt; outside a &lt;Router&gt;&quot;);
+        {(context) =&gt; {
+          invariant(context, &apos;You should not use &lt;Route&gt; outside a &lt;Router&gt;&apos;)
 
-          const location = this.props.location || context.location;
+          const location = this.props.location || context.location
           const match = this.props.computedMatch
             ? this.props.computedMatch // &lt;Switch&gt; already computed the match for us
             : this.props.path
             ? matchPath(location.pathname, this.props)
-            : context.match;
+            : context.match
 
-          const props = { ...context, location, match };
+          const props = { ...context, location, match }
 
-          let { children, component, render } = this.props;
+          let { children, component, render } = this.props
 
           // Preact uses an empty array as children by
           // default, so use null if that&apos;s the case.
           if (Array.isArray(children) &amp;&amp; children.length === 0) {
-            children = null;
+            children = null
           }
 
           return (
             &lt;RouterContext.Provider value={props}&gt;
               {props.match
                 ? children
-                  ? typeof children === &quot;function&quot;
+                  ? typeof children === &apos;function&apos;
                     ? __DEV__
                       ? evalChildrenDev(children, props, this.props.path)
                       : children(props)
@@ -1303,156 +1305,27 @@ class Route extends React.Component {
                   : render
                   ? render(props)
                   : null
-                : typeof children === &quot;function&quot;
+                : typeof children === &apos;function&apos;
                 ? __DEV__
                   ? evalChildrenDev(children, props, this.props.path)
                   : children(props)
                 : null}
             &lt;/RouterContext.Provider&gt;
-          );
+          )
         }}
       &lt;/RouterContext.Consumer&gt;
-    );
+    )
   }
-}
-</code></pre><ol>
-<li><p>Switch
-The public API for rendering the first <route> that matches.&#xFF08;&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#xFF09;
-&#x901A;&#x8FC7;&#x5339;&#x914D;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x8DEF;&#x7531; Route &#x8FDB;&#x884C;&#x6E32;&#x67D3;</route></p>
-</li>
-<li><p>Link
-&#x5728; Link &#x4E2D;&#x901A;&#x8FC7; history &#x5E93;&#x7684; push &#x8C03;&#x7528;&#x4E86; HTML5 history &#x7684; pushState&#xFF0C;<strong>&#x4F46;&#x662F;&#x8FD9;&#x4EC5;&#x4EC5;&#x4F1A;&#x8BA9;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF0C;&#x5176;&#x4ED6;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x6539;&#x53D8;</strong>&#x3002;&#x7136;&#x540E;&#x901A;&#x8FC7; Router &#x4E2D;&#x7684; listen&#xFF0C;&#x5B83;&#x4F1A;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x901A;&#x8FC7; context &#x66F4;&#x65B0; props &#x548C; nextContext &#x8BA9;&#x4E0B;&#x5C42;&#x7684; Route &#x53BB;&#x91CD;&#x65B0;&#x5339;&#x914D;&#xFF0C;&#x5B8C;&#x6210;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Link</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-<span class="hljs-keyword">static</span> defaultProps = {
- replace: <span class="hljs-literal">false</span>
-};
-
-handleClick(event, context) {
- <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.onClick) <span class="hljs-keyword">this</span>.props.onClick(event);
-
- <span class="hljs-keyword">if</span> (
-   !event.defaultPrevented &amp;&amp; <span class="hljs-comment">// &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;</span>
-   event.button === <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-comment">// &#x5FFD;&#x7565;&#x9664;&#x5DE6;&#x51FB;&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;</span>
-   !<span class="hljs-keyword">this</span>.props.target &amp;&amp; <span class="hljs-comment">// &#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x5904;&#x7406;&#x201C;target=_blank&#x201D;&#x7B49;&#x3002;</span>
-   !isModifiedEvent(event) <span class="hljs-comment">// &#x5FFD;&#x7565;&#x5E26;&#x6709;&#x4FEE;&#x9970;&#x7B26;&#x952E;&#x7684;&#x5355;&#x51FB;</span>
- ) {
-   event.preventDefault();
-
-   <span class="hljs-keyword">const</span> method = <span class="hljs-keyword">this</span>.props.replace
-     ? context.history.replace
-     : context.history.push;
-
-   method(<span class="hljs-keyword">this</span>.props.to);
- }
-}
-
-render() {
- <span class="hljs-keyword">const</span> { innerRef, replace, to, ...props } = <span class="hljs-keyword">this</span>.props;
- <span class="hljs-comment">// eslint-disable-line no-unused-vars</span>
-
- <span class="hljs-keyword">return</span> (
-   <span class="hljs-comment">// &#x65E0;&#x5904;&#x4E0D;&#x5728;&#x7684;context</span>
-   &lt;RouterContext.Consumer&gt;
-     {context =&gt; {
-       invariant(context, <span class="hljs-string">&quot;You should not use &lt;Link&gt; outside a &lt;Router&gt;&quot;</span>);
-
-       <span class="hljs-keyword">const</span> location =
-         <span class="hljs-keyword">typeof</span> to === <span class="hljs-string">&quot;string&quot;</span>
-           ? createLocation(to, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, context.location)
-           : to;
-       <span class="hljs-keyword">const</span> href = location ? context.history.createHref(location) : <span class="hljs-string">&quot;&quot;</span>;
-
-       <span class="hljs-keyword">return</span> (
-         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>
-           {<span class="hljs-attr">...props</span>}
-           <span class="hljs-attr">onClick</span>=<span class="hljs-string">{event</span> =&gt;</span> this.handleClick(event, context)}
-           href={href}
-           ref={innerRef}
-         /&gt;
-       );
-     }}
-   <span class="hljs-tag">&lt;/<span class="hljs-name">RouterContext.Consumer</span>&gt;</span>
- );
-}
-}
-</span></code></pre>
-</li>
-</ol>
-<h2 id="4-hooks">4. Hooks</h2>
-<p><strong>react-router&#x65B0;&#x589E;&#x7684;hooks&#x5C31;&#x662F;&#x7528;React.useContext()&#x6765;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;history&#x5BF9;&#x8C61;&#x4FE1;&#x606F;</strong></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
-<span class="hljs-keyword">import</span> invariant <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;tiny-invariant&quot;</span>;
-
-<span class="hljs-keyword">import</span> Context <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./RouterContext.js&quot;</span>;
-<span class="hljs-keyword">import</span> HistoryContext <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./HistoryContext.js&quot;</span>;
-<span class="hljs-keyword">import</span> matchPath <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./matchPath.js&quot;</span>;
-
-<span class="hljs-keyword">const</span> useContext = React.useContext;
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useHistory</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">if</span> (__DEV__) {
-    invariant(
-      <span class="hljs-keyword">typeof</span> useContext === <span class="hljs-string">&quot;function&quot;</span>,
-      <span class="hljs-string">&quot;You must use React &gt;= 16.8 in order to use useHistory()&quot;</span>
-    );
-  }
-
-  <span class="hljs-keyword">return</span> useContext(HistoryContext);
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useLocation</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">if</span> (__DEV__) {
-    invariant(
-      <span class="hljs-keyword">typeof</span> useContext === <span class="hljs-string">&quot;function&quot;</span>,
-      <span class="hljs-string">&quot;You must use React &gt;= 16.8 in order to use useLocation()&quot;</span>
-    );
-  }
-
-  <span class="hljs-keyword">return</span> useContext(Context).location;
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useParams</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">if</span> (__DEV__) {
-    invariant(
-      <span class="hljs-keyword">typeof</span> useContext === <span class="hljs-string">&quot;function&quot;</span>,
-      <span class="hljs-string">&quot;You must use React &gt;= 16.8 in order to use useParams()&quot;</span>
-    );
-  }
-
-  <span class="hljs-keyword">const</span> match = useContext(Context).match;
-  <span class="hljs-keyword">return</span> match ? match.params : {};
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useRouteMatch</span>(<span class="hljs-params">path</span>) </span>{
-  <span class="hljs-keyword">if</span> (__DEV__) {
-    invariant(
-      <span class="hljs-keyword">typeof</span> useContext === <span class="hljs-string">&quot;function&quot;</span>,
-      <span class="hljs-string">&quot;You must use React &gt;= 16.8 in order to use useRouteMatch()&quot;</span>
-    );
-  }
-
-  <span class="hljs-keyword">const</span> location = useLocation();
-  <span class="hljs-keyword">const</span> match = useContext(Context).match;
-
-  <span class="hljs-keyword">return</span> path ? matchPath(location.pathname, path) : match;
 }
 </code></pre>
-<h2 id="5-&#x8DEF;&#x7531;&#x9274;&#x6743;">5. &#x8DEF;&#x7531;&#x9274;&#x6743;</h2>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
-<span class="hljs-keyword">import</span> { Route, Redirect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Auth</span>(<span class="hljs-params">props</span>) </span>{
-  <span class="hljs-keyword">const</span> { location, config } = props
-  <span class="hljs-keyword">const</span> { pathname } = location
-  <span class="hljs-keyword">const</span> isLogin = localStorage.getItem(<span class="hljs-string">&apos;token&apos;</span>)
-  <span class="hljs-keyword">const</span> target = config.find((item) =&gt; item.path === pathname)
-  <span class="hljs-keyword">const</span> { auth } = target
-  <span class="hljs-keyword">if</span> (auth &amp;&amp; !isLogin) {
-    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Redirect</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/login&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Redirect</span>&gt;</span></span>
-  }
-  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">exact</span> <span class="hljs-attr">path</span>=<span class="hljs-string">{target[&apos;path&apos;]}</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{target[&apos;component&apos;]}</span> /&gt;</span>
-}
-</span></code></pre>
+<h2 id="4&#x603B;&#x7ED3;">4.&#x603B;&#x7ED3;</h2>
+<ul>
+<li>&#x6BCF;&#x6B21;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#xFF08;history.push&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x8DEF;&#x7531;&#xFF09;</li>
+<li>push &#x51FD;&#x6570;&#x91CC;&#x9762;&#x4E3B;&#x8981;&#x662F;&#x8C03;&#x7528; pushState() &#x6539;&#x53D8; url &#x7136;&#x540E;&#x8C03;&#x7528;setState()&#x65B9;&#x5F0F;</li>
+<li>setState&#x65B9;&#x6CD5;&#x5408;&#x5E76;&#x751F;&#x6210;&#x6700;&#x65B0;&#x7684;location&#x5BF9;&#x8C61;&#x5E76;&#x4E14;&#x6267;&#x884C;&#x8BA2;&#x9605;&#x7684;&#x51FD;&#x6570;&#xFF08;&#x901A;&#x8FC7; history.listen &#x8BA2;&#x9605;&#xFF09;</li>
+<li>&#x89E6;&#x53D1;&#x9876;&#x5C42; Router &#x7684; history.listen &#x4E8B;&#x4EF6;&#xFF0C;&#x4F20;&#x9012;&#x6700;&#x65B0;&#x7684; location &#x5BF9;&#x8C61; Router &#x8FDB;&#x884C; setState</li>
+<li>&#x5411;&#x4E0B;&#x4F20;&#x9012; nextContext&#xFF08;context &#x4E2D;&#x542B;&#x6709;&#x6700;&#x65B0;&#x7684; location&#xFF09; &#x4E0B;&#x9762;&#x7684; Route &#x83B7;&#x53D6;&#x65B0;&#x7684; nextContext &#x5224;&#x65AD;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;</li>
+</ul>
 
                                 
                                 </section>
@@ -1496,7 +1369,7 @@ render() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React-Router","level":"1.4.2","depth":2,"next":{"title":"状态管理","level":"1.4.3","depth":2,"path":"react/状态管理/README.md","ref":"react/状态管理/README.md","articles":[]},"previous":{"title":"渲染流程","level":"1.4.1","depth":2,"path":"react/渲染流程/README.md","ref":"react/渲染流程/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/React-Router/README.md","mtime":"2022-08-16T03:10:16.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-16T09:22:24.990Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React-Router","level":"1.4.2","depth":2,"next":{"title":"状态管理","level":"1.4.3","depth":2,"path":"react/状态管理/README.md","ref":"react/状态管理/README.md","articles":[]},"previous":{"title":"渲染流程","level":"1.4.1","depth":2,"path":"react/渲染流程/README.md","ref":"react/渲染流程/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/React-Router/README.md","mtime":"2022-08-23T09:55:57.429Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-06T09:46:45.031Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

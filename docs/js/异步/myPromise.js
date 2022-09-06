@@ -99,8 +99,6 @@ class MyPromise {
   }
 }
 
-
-
 const promise = new MyPromise((resolve, reject) => {
   setTimeout(() => {
     resolve('成功')
@@ -120,7 +118,7 @@ const promise1 = new MyPromise((resolve, reject) => {
   }, 1000)
 })
 
-const promise2 = new MyPromise((resolve, reject) => {
+/* const promise2 = new MyPromise((resolve, reject) => {
   setTimeout(() => {
     resolve('鱼多多')
   }, 1500)
@@ -133,3 +131,4 @@ MyPromise.all([promise1, promise2]).then((res) => {
 MyPromise.race([promise1, promise2]).then((res) => {
   console.log(res)
 })
+ */

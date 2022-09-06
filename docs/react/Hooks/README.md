@@ -2,7 +2,7 @@
 
 ## 1. useState
 
-```jsx
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -59,35 +59,36 @@ const App = () => {
 export default App
 ```
 
-上面的代码虽然我们支持了多个 useState，但是仍然只有一套全局变量，如果有多个函数组件，每个组件都来操作这个全局变量，那相互之间不就是污染了数据了吗？所以我们数据还不能都存在全局变量上面，而是应该存在每个 fiber 节点上，处理这个节点的时候再将状态放到全局变量用来通讯
+上面的代码虽然我们支持了多个 useState，但是仍然只有一套全局变量，如果有多个函数组件，每个组件都来操作这个全局变量，那相互之间不就是污染了数据了吗？  
+所以我们数据还不能都存在全局变量上面，而是应该存在每个 fiber 节点上，处理这个节点的时候再将状态放到全局变量用来通讯
 
 ## 2. useEffect
 
-```jsx
+```js
 const allDeps = []
-let effectCursor = 0
-function useEffect(callback, deps) {
-  if (!allDeps[effectCursor]) {
-    allDeps[effectCursor] = deps
-    ++effectCursor
+let cursor = 0
+function useEffect(callback, depsList) {
+  // 新的effect直接执行函数
+  if (!allDeps[cursor]) {
+    allDeps[cursor] = depsList
+    ++cursor
     callback()
     return
   }
-
-  const currentEffectScrsor = effectCursor
-  const rawDeps = allDeps[currentEffectScrsor]
+  const rawDeps = allDeps[cursor]
+  // 比较前后2次依赖数组是否有变化
   const isChanged = rawDeps.some((dep, index) => {
-    dep !== deps[index]
+    dep !== depsList[index]
   })
   if (isChanged) {
     callback()
-    allDeps[effectCursor] = deps
+    allDeps[cursor] = depsList
   }
-  ++effectCursor
+  ++cursor
 }
 
 function render() {
-  effectSursor = 0 // 注意将 effectCursor 重置为0
+  effectSursor = 0 // 注意将 cursor 重置为0
   ReactDOM.render(<App />, document.querySelector('#toot'))
 }
 ```

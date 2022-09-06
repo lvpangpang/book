@@ -1076,22 +1076,56 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="fiber">Fiber</h1>
-<p>&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x662F; &#x4EFB;&#x52A1;&#x62C6;&#x5206;&#x548C;&#x534F;&#x540C;&#xFF0C;&#x4E3B;&#x52A8;&#x628A;&#x6267;&#x884C;&#x6743;&#x4EA4;&#x7ED9;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F7F;&#x4E3B;&#x7EBF;&#x7A0B;&#x6709;&#x65F6;&#x95F4;&#x7A7A;&#x6321;&#x5904;&#x7406;&#x5176;&#x4ED6;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1;&#x3002;</p>
-<h2 id="1-&#x6838;&#x5FC3;&#x4EE3;&#x7801;">1. &#x6838;&#x5FC3;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fiber</span> </span>{
-  <span class="hljs-keyword">constructor</span>(instance) {
-    <span class="hljs-keyword">this</span>.instance = instance
-    <span class="hljs-keyword">this</span>.child = child
-    <span class="hljs-keyword">this</span>.return = parent
-    <span class="hljs-keyword">this</span>.sibling = previous
-  }
+<p>&#x5F02;&#x6B65;&#x53EF;&#x4E2D;&#x65AD;&#x7684;&#x66F4;&#x65B0;&#x9700;&#x8981;&#x4E00;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6765;&#x4FDD;&#x5B58;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5C31;&#x662F; Fiber&#x3002;
+Fiber &#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+<h2 id="1-fiber-&#x4F5C;&#x7528;">1. Fiber &#x4F5C;&#x7528;</h2>
+<ul>
+<li>&#x5DE5;&#x4F5C;&#x5355;&#x5143; &#x4EFB;&#x52A1;&#x5206;&#x89E3; &#xFF1A;Fiber &#x6700;&#x91CD;&#x8981;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x4F5C;&#x4E3A;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#xFF0C;&#x4FDD;&#x5B58;&#x539F;&#x751F;&#x8282;&#x70B9;&#x6216;&#x8005;&#x7EC4;&#x4EF6;&#x8282;&#x70B9;&#x5BF9;&#x5E94;&#x4FE1;&#x606F;&#xFF08;&#x5305;&#x62EC;&#x4F18;&#x5148;&#x7EA7;&#xFF09;&#xFF0C;&#x8FD9;&#x4E9B;&#x8282;&#x70B9;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x7684;&#x5F62;&#x4F3C;&#x5F62;&#x6210; Fiber &#x6811;</li>
+<li>&#x589E;&#x91CF;&#x6E32;&#x67D3;&#xFF1A;&#x901A;&#x8FC7; jsx &#x5BF9;&#x8C61;&#x548C; current Fiber &#x7684;&#x5BF9;&#x6BD4;&#xFF0C;&#x751F;&#x6210;&#x6700;&#x5C0F;&#x7684;&#x5DEE;&#x5F02;&#x8865;&#x4E01;&#xFF0C;&#x5E94;&#x7528;&#x5230;&#x771F;&#x5B9E;&#x8282;&#x70B9;&#x4E0A;</li>
+<li>&#x6839;&#x636E;&#x4F18;&#x5148;&#x7EA7;&#x6682;&#x505C;&#x3001;&#x7EE7;&#x7EED;&#x3001;&#x6392;&#x5217;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;Fiber &#x8282;&#x70B9;&#x4E0A;&#x4FDD;&#x5B58;&#x4E86;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x80FD;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5BF9;&#x6BD4;&#xFF0C;&#x8FBE;&#x5230;&#x4EFB;&#x52A1;&#x7684;&#x6682;&#x505C;&#x3001;&#x7EE7;&#x7EED;&#x3001;&#x6392;&#x5217;&#x4F18;&#x5148;&#x7EA7;&#x7B49;&#x80FD;&#x529B;&#xFF0C;&#x4E5F;&#x4E3A;&#x4E0A;&#x5C42;&#x5B9E;&#x73B0;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#x3001;Suspense &#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x7840;</li>
+<li>&#x4FDD;&#x5B58;&#x72B6;&#x6001;&#xFF1A;&#x56E0;&#x4E3A; Fiber &#x80FD;&#x4FDD;&#x5B58;&#x72B6;&#x6001;&#x548C;&#x66F4;&#x65B0;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x80FD;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; hooks</li>
+</ul>
+<h2 id="2-&#x6838;&#x5FC3;&#x4EE3;&#x7801;">2. &#x6838;&#x5FC3;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">//ReactFiber.old.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FiberNode</span>(<span class="hljs-params">tag: WorkTag, pendingProps: mixed, key: null | string, mode: TypeOfMode</span>) </span>{
+  <span class="hljs-comment">//&#x4F5C;&#x4E3A;&#x9759;&#x6001;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784; &#x4FDD;&#x5B58;&#x8282;&#x70B9;&#x7684;&#x4FE1;&#x606F;</span>
+  <span class="hljs-keyword">this</span>.tag = tag <span class="hljs-comment">//&#x5BF9;&#x5E94;&#x7EC4;&#x4EF6;&#x7684;&#x7C7B;&#x578B;</span>
+  <span class="hljs-keyword">this</span>.key = key <span class="hljs-comment">//key&#x5C5E;&#x6027;</span>
+  <span class="hljs-keyword">this</span>.elementType = <span class="hljs-literal">null</span> <span class="hljs-comment">//&#x5143;&#x7D20;&#x7C7B;&#x578B;</span>
+  <span class="hljs-keyword">this</span>.type = <span class="hljs-literal">null</span> <span class="hljs-comment">//func&#x6216;&#x8005;class</span>
+  <span class="hljs-keyword">this</span>.stateNode = <span class="hljs-literal">null</span> <span class="hljs-comment">//&#x771F;&#x5B9E;dom&#x8282;&#x70B9;</span>
+
+  <span class="hljs-comment">//&#x4F5C;&#x4E3A;fiber&#x6570;&#x67B6;&#x6784; &#x8FDE;&#x63A5;&#x6210;fiber&#x6811;</span>
+  <span class="hljs-keyword">this</span>.return = <span class="hljs-literal">null</span> <span class="hljs-comment">//&#x6307;&#x5411;&#x7236;&#x8282;&#x70B9;</span>
+  <span class="hljs-keyword">this</span>.child = <span class="hljs-literal">null</span> <span class="hljs-comment">//&#x6307;&#x5411;child</span>
+  <span class="hljs-keyword">this</span>.sibling = <span class="hljs-literal">null</span> <span class="hljs-comment">//&#x6307;&#x5411;&#x5144;&#x5F1F;&#x8282;&#x70B9;</span>
+  <span class="hljs-keyword">this</span>.index = <span class="hljs-number">0</span>
+
+  <span class="hljs-keyword">this</span>.ref = <span class="hljs-literal">null</span>
+
+  <span class="hljs-comment">//&#x7528;&#x4F5C;&#x4E3A;&#x5DE5;&#x4F5C;&#x5355;&#x5143; &#x6765;&#x8BA1;&#x7B97;state</span>
+  <span class="hljs-keyword">this</span>.pendingProps = pendingProps
+  <span class="hljs-keyword">this</span>.memoizedProps = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.updateQueue = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.memoizedState = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.dependencies = <span class="hljs-literal">null</span>
+
+  <span class="hljs-keyword">this</span>.mode = mode
+
+  <span class="hljs-comment">//effect&#x76F8;&#x5173;</span>
+  <span class="hljs-keyword">this</span>.effectTag = NoEffect
+  <span class="hljs-keyword">this</span>.nextEffect = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.firstEffect = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.lastEffect = <span class="hljs-literal">null</span>
+
+  <span class="hljs-comment">//&#x4F18;&#x5148;&#x7EA7;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;</span>
+  <span class="hljs-keyword">this</span>.lanes = NoLanes
+  <span class="hljs-keyword">this</span>.childLanes = NoLanes
+
+  <span class="hljs-comment">//current&#x548C;workInProgress&#x7684;&#x6307;&#x9488;</span>
+  <span class="hljs-keyword">this</span>.alternate = <span class="hljs-literal">null</span>
 }
 </code></pre>
-<h2 id="2-&#x6E32;&#x67D3;&#x66F4;&#x65B0;">2. &#x6E32;&#x67D3;&#x66F4;&#x65B0;</h2>
-<ol>
-<li>reconciliation &#x9636;&#x6BB5;&#xFF08;&#x8C03;&#x548C;&#xFF09;: vdom &#x7684;&#x6570;&#x636E;&#x5BF9;&#x6BD4;&#xFF0C;&#x662F;&#x4E2A;&#x9002;&#x5408;&#x62C6;&#x5206;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x6BD4;&#x4E00;&#x90E8;&#x5206;&#x6811;&#x540E;&#xFF0C;&#x5148;&#x6682;&#x505C;&#x6267;&#x884C;&#x4E2A;&#x52A8;&#x753B;&#x8C03;&#x7528;&#xFF0C;&#x5F85;&#x5B8C;&#x6210;&#x540E;&#x518D;&#x56DE;&#x6765;&#x7EE7;&#x7EED;&#x6BD4;&#x5BF9;</li>
-<li>Commit &#x9636;&#x6BB5;: &#x5C06; change list &#x66F4;&#x65B0;&#x5230; dom &#x4E0A;&#xFF0C;&#x5E76;&#x4E0D;&#x9002;&#x5408;&#x62C6;&#x5206;&#xFF0C;&#x624D;&#x80FD;&#x4FDD;&#x6301;&#x6570;&#x636E;&#x4E0E; UI &#x7684;&#x540C;&#x6B65;&#x3002;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x963B;&#x585E; UI &#x66F4;&#x65B0;&#xFF0C;&#x800C;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x548C; UI &#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;</li>
-</ol>
 
                                 
                                 </section>
@@ -1135,7 +1169,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Fiber","level":"1.4.6","depth":2,"next":{"title":"Context","level":"1.4.7","depth":2,"path":"react/Context/README.md","ref":"react/Context/README.md","articles":[]},"previous":{"title":"Diff 算法","level":"1.4.5","depth":2,"path":"react/Diff算法/README.md","ref":"react/Diff算法/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/Fiber/README.md","mtime":"2022-05-22T03:35:24.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-16T09:22:24.990Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Fiber","level":"1.4.6","depth":2,"next":{"title":"Context","level":"1.4.7","depth":2,"path":"react/Context/README.md","ref":"react/Context/README.md","articles":[]},"previous":{"title":"Diff 算法","level":"1.4.5","depth":2,"path":"react/Diff算法/README.md","ref":"react/Diff算法/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/Fiber/README.md","mtime":"2022-08-20T05:46:22.592Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-06T09:46:45.031Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

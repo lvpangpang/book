@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+  </head>
+  <body>
+    <script>
+      class Store {
+        constructor({ getData, name, fetchQuest }) {
+          this.name = name
+          this.age = 2
+          this.getData = getData
+          this.fetchQuest = fetchQuest
+        }
+
+        // 类的属性
+        get = () => {
+          console.log('内部请求数据')
+        }
+
+        // 类方法，在prototype属性上面
+        fetchQuest() {
+          console.log('获取数据1')
+        }
+      }
+      const store = new Store({
+        name: '吕肥肥',
+        getData: () => {
+          console.log('外部请求数据')
+        },
+        fetchQuest: () => {
+          console.log('获取数据2')
+        }
+      })
+      console.log(store)
+    </script>
+  </body>
+</html>
