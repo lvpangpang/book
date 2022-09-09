@@ -39,13 +39,13 @@ let company = {
 }
 
 function calSalart(company) {
-  let result = 0
   // 执行单元
   if (Array.isArray(company)) {
     return company.reduce((prev, current) => {
       return prev + current.salary
     }, 0)
   }
+  let result = 0
   for (let item of Object.values(company)) {
     result += calSalart(item)
   }
@@ -57,11 +57,11 @@ console.log(calSalart(company))
 
 // 编写一个函数 sumTo(n) 计算 1 + 2 + ... + n 的和。
 function sumTo(n) {
-  let result = 0
   // 执行单元
   if (n === 1) {
     return n
   }
+  let result = 0
   // 调用执行单元
   result = n + sumTo(n - 1)
   return result
