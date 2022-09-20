@@ -177,3 +177,62 @@ const classComponentUpdater = {
   },
 }
 ```
+
+
+## 4.ReactDom.render()
+
+示例代码
+
+```html
+<div>
+  <img src="avatar.png" className="profile" />
+  <Hello />
+</div>
+;
+```
+
+```javascript
+React.createElement(
+  'div',
+  null,
+  React.createElement('img', {
+    src: 'avatar.png',
+    className: 'profile',
+  }),
+  React.createElement(Hello, null)
+)
+```
+
+1. 使用 React.createElement 或 JSX 编写 React 组件，实际上所有的 JSX 代码最后都会转换成 React.createElement(...)，Babel 帮助我们完成了这个转换的过程。
+2. createElement 函数对 key 和 ref 等特殊的 props 进行处理，并获取 defaultProps 对默认 props 进行赋值，并且对传入的孩子节点进行处理，最终构造成一个 ReactElement 对象（所谓的虚拟 DOM）。
+3. ReactDOM.render 将生成好的虚拟 DOM 渲染到指定容器上，其中采用了批处理、事务等机制并且对特定浏览器进行了性能优化，最终转换为真实 DOM。
+
+```javascript
+function render(vDom, container) {
+  let dom
+  // 检查当前节点是文本还是对象
+  if (typeof vDom !== 'object') {
+    dom = document.createTextNode(vDom)
+  } else {
+    dom = document.createElement(vDom.type)
+  }
+
+  // 将vDom上除了children外的属性都挂载到真正的DOM上去
+  if (vDom.props) {
+    Object.keys(vDom.props)
+      .filter((item) => {
+        return item !== 'children'
+      })
+      .forEach((item) => {
+        dom.setAttribute(item, vDom.props[item])
+      })
+  }
+
+  // 如果还有子元素，递归调用
+  if (vDom.props?.children?.length) {
+    vDom.props.children.forEach((child) => render(child, dom))
+  }
+
+  container.appendChild(dom)
+}
+```
