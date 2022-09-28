@@ -31,4 +31,17 @@ Windows下面使用nginx比较恶心
 需要在cmd里面执行
 1.cd C:\nginx-1.14.2
 2. nginx.exe
+
+
+// 81.69.174.88 软连接
+ln -s /root/node-v14.15.4-linux-x64/bin/create-react-app /usr/local/bin
 ```
+ 
+
+
+
+
+
+
+
+

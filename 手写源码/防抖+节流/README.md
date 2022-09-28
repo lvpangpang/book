@@ -17,3 +17,23 @@ function debounce(fn, time) {
   }
 }
 ```
+
+# 节流
+
+一定时间内，当一个动作连续触发，只执行第一次
+
+```js
+function throttle(fn, time) {
+  let timer = null
+  return function () {
+    if (timer) {
+      // 与节流的区别在这里
+      return
+    }
+    timer = setTimeout(() => {
+      fn.apply(this, arguments) // 绑定this， 否则this指向window
+      timer = null
+    }, time || 300)
+  }
+}
+```
