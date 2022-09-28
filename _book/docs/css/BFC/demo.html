@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .div0 {
+      overflow: hidden;
+    }
+    .img1 {
+      float: left;
+    }
+    .p1 {
+      overflow: hidden;
+    }
+    .div1 {
+      display: flex;
+      height: 300px;
+      background: red;
+    }
+    .div2 {
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="div0">
+    <img class="img1" src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3446442004,2207547936&fm=26&gp=0.jpg'>
+    <p class="p1">我是超长的文字</p>
+  </div>
+
+  <div class="div1">
+    <div class="div2">哈哈</div>
+  </div>
+</body>
+</html>

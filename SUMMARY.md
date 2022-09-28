@@ -68,7 +68,18 @@
   - [常用 Node 库](/node/常用Node库/README.md)
   - [易错路径](/node/易错路径/README.md)
 
-- [6.算法](/算法/README.md)
+
+- [6.工程化](/工程化/README.md)
+
+  - [代码规范](/工程化/代码规范/README.md)
+  - [模块化](/工程化/模块化/README.md)
+  - [jsBridge](/工程化/jsBridge/README.md)
+  - [Linux](/工程化/Linux/README.md)
+  - [Nginx](/工程化/Nginx/README.md)
+  - [package](/工程化/package/README.md)
+  - [webpack](/工程化/webpack/README.md)
+
+- [7.算法](/算法/README.md)
 
   - [字符串](/算法/字符串/README.md)
     - [无重复字符的最长子串](/算法/字符串/无重复字符的最长子串.md)
@@ -78,23 +89,11 @@
   - [链表](/算法/链表/README.md)
   - [二叉树](/算法/二叉树/README.md)
 
-- [7.网络](/网络/README.md)
+- [8.网络](/网络/README.md)
 
   - [http](/网络/http/README.md)
   - [缓存](/网络/缓存/README.md)
-
-- [8.工程化](/工程化/README.md)
-
-  - [代码规范](/工程化/代码规范/README.md)
-  - [模块化](/工程化/模块化/README.md)
-  - [Jenkins](/工程化/Jenkins/README.md)
-  - [JSBridge](/工程化/JSBridge/README.md)
-  - [Lerna](/工程化/Lerna/README.md)
-  - [Linux](/工程化/Linux/README.md)
-  - [Nginx](/工程化/Nginx/README.md)
-  - [package](/工程化/package/README.md)
-  - [webpack](/工程化/webpack/README.md)
-
+  
 - [9.其他](/其他/README.md)
 
   - [前端监控](/其他/前端监控/README.md)

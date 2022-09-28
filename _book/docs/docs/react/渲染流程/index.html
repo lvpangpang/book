@@ -1,0 +1,1585 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>渲染流程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../React-Router/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../css/">
+            
+                <a href="../../css/">
+            
+                    
+                    2.css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../css/易错知识/">
+            
+                <a href="../../css/易错知识/">
+            
+                    
+                    易错知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../css/flex/">
+            
+                <a href="../../css/flex/">
+            
+                    
+                    flex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../css/刘海屏/">
+            
+                <a href="../../css/刘海屏/">
+            
+                    
+                    刘海屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.js
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.1.函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../js/函数/变量作用域，闭包.html">
+            
+                <a href="../../js/函数/变量作用域，闭包.html">
+            
+                    
+                    变量作用域，闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../js/函数/递归和堆栈.html">
+            
+                <a href="../../js/函数/递归和堆栈.html">
+            
+                    
+                    递归和堆栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../js/函数/定时器.html">
+            
+                <a href="../../js/函数/定时器.html">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../js/函数/函数绑定.html">
+            
+                <a href="../../js/函数/函数绑定.html">
+            
+                    
+                    函数绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../../js/函数/箭头函数.html">
+            
+                <a href="../../js/函数/箭头函数.html">
+            
+                    
+                    箭头函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../../js/函数/装饰器模式和转发.html">
+            
+                <a href="../../js/函数/装饰器模式和转发.html">
+            
+                    
+                    装饰器模式和转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../../js/函数/Rest参数与Spread语法.html">
+            
+                <a href="../../js/函数/Rest参数与Spread语法.html">
+            
+                    
+                    Rest参数与Spread语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.2.对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../js/对象/对象.html">
+            
+                <a href="../../js/对象/对象.html">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../js/对象/对象的引用和复制.html">
+            
+                <a href="../../js/对象/对象的引用和复制.html">
+            
+                    
+                    对象的引用和复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.3.类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../js/类/类.html">
+            
+                <a href="../../js/类/类.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../js/类/类继承.html">
+            
+                <a href="../../js/类/类继承.html">
+            
+                    
+                    类继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../js/类/instanceOf.html">
+            
+                <a href="../../js/类/instanceOf.html">
+            
+                    
+                    类继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.4.原型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../js/原型/函数原型.html">
+            
+                <a href="../../js/原型/函数原型.html">
+            
+                    
+                    原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../js/原型/内置对象原型.html">
+            
+                <a href="../../js/原型/内置对象原型.html">
+            
+                    
+                    内置对象原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../js/原型/原型继承.html">
+            
+                <a href="../../js/原型/原型继承.html">
+            
+                    
+                    原型继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.5.异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../js/异步/Promise.html">
+            
+                <a href="../../js/异步/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../js/异步/Promise链.html">
+            
+                <a href="../../js/异步/Promise链.html">
+            
+                    
+                    Promise链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="../../js/异步/Promise错误处理.html">
+            
+                <a href="../../js/异步/Promise错误处理.html">
+            
+                    
+                    Promise错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="../../js/异步/async+await.html">
+            
+                <a href="../../js/异步/async+await.html">
+            
+                    
+                    async+await
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../js/">
+            
+                <a href="../../js/">
+            
+                    
+                    3.6.错误处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../js/错误处理/try+catch.html">
+            
+                <a href="../../js/错误处理/try+catch.html">
+            
+                    
+                    try+catch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    4.react
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    渲染流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../React-Router/">
+            
+                <a href="../React-Router/">
+            
+                    
+                    React-Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../状态管理/">
+            
+                <a href="../状态管理/">
+            
+                    
+                    状态管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../虚拟DOM/">
+            
+                <a href="../虚拟DOM/">
+            
+                    
+                    虚拟 DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Diff算法/">
+            
+                <a href="../Diff算法/">
+            
+                    
+                    Diff 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Fiber/">
+            
+                <a href="../Fiber/">
+            
+                    
+                    Fiber
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Context/">
+            
+                <a href="../Context/">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Hooks/">
+            
+                <a href="../Hooks/">
+            
+                    
+                    Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../重要API/">
+            
+                <a href="../重要API/">
+            
+                    
+                    重要 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../高阶组件/">
+            
+                <a href="../高阶组件/">
+            
+                    
+                    高阶组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../node/">
+            
+                <a href="../../node/">
+            
+                    
+                    5.node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../node/常用Node库/">
+            
+                <a href="../../node/常用Node库/">
+            
+                    
+                    常用 Node 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../node/易错路径/">
+            
+                <a href="../../node/易错路径/">
+            
+                    
+                    易错路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../算法/">
+            
+                <a href="../../算法/">
+            
+                    
+                    6.算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../算法/字符串/">
+            
+                <a href="../../算法/字符串/">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../算法/字符串/无重复字符的最长子串.html">
+            
+                <a href="../../算法/字符串/无重复字符的最长子串.html">
+            
+                    
+                    无重复字符的最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../算法/数组/">
+            
+                <a href="../../算法/数组/">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../算法/数组/两数之和.html">
+            
+                <a href="../../算法/数组/两数之和.html">
+            
+                    
+                    两数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../算法/数组/三数之和.html">
+            
+                <a href="../../算法/数组/三数之和.html">
+            
+                    
+                    三数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../算法/链表/">
+            
+                <a href="../../算法/链表/">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../算法/二叉树/">
+            
+                <a href="../../算法/二叉树/">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../网络/">
+            
+                <a href="../../网络/">
+            
+                    
+                    7.网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../网络/http/">
+            
+                <a href="../../网络/http/">
+            
+                    
+                    http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../网络/缓存/">
+            
+                <a href="../../网络/缓存/">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../工程化/">
+            
+                <a href="../../工程化/">
+            
+                    
+                    8.工程化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../工程化/代码规范/">
+            
+                <a href="../../工程化/代码规范/">
+            
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../工程化/模块化/">
+            
+                <a href="../../工程化/模块化/">
+            
+                    
+                    模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../工程化/Jenkins/README.md">
+            
+                <span>
+            
+                    
+                    Jenkins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../工程化/JSBridge/">
+            
+                <a href="../../工程化/JSBridge/">
+            
+                    
+                    JSBridge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../工程化/Lerna/README.md">
+            
+                <span>
+            
+                    
+                    Lerna
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../工程化/Linux/">
+            
+                <a href="../../工程化/Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../工程化/Nginx/">
+            
+                <a href="../../工程化/Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../工程化/package/">
+            
+                <a href="../../工程化/package/">
+            
+                    
+                    package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../工程化/webpack/">
+            
+                <a href="../../工程化/webpack/">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../其他/">
+            
+                <a href="../../其他/">
+            
+                    
+                    9.其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../其他/前端监控/">
+            
+                <a href="../../其他/前端监控/">
+            
+                    
+                    前端监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../其他/websocket/">
+            
+                <a href="../../其他/websocket/">
+            
+                    
+                    websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../其他/安全/">
+            
+                <a href="../../其他/安全/">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../微信小程序/">
+            
+                <a href="../../微信小程序/">
+            
+                    
+                    10.微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../手写源码/">
+            
+                <a href="../../手写源码/">
+            
+                    
+                    11.手写源码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../手写源码/多维数组扁平化.html">
+            
+                <a href="../../手写源码/多维数组扁平化.html">
+            
+                    
+                    多维数组扁平化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../手写源码/发布订阅.html">
+            
+                <a href="../../手写源码/发布订阅.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../手写源码/防抖.html">
+            
+                <a href="../../手写源码/防抖.html">
+            
+                    
+                    防抖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../手写源码/节流.html">
+            
+                <a href="../../手写源码/节流.html">
+            
+                    
+                    节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../手写源码/深拷贝.html">
+            
+                <a href="../../手写源码/深拷贝.html">
+            
+                    
+                    深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../../手写源码/数组去重.html">
+            
+                <a href="../../手写源码/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../../手写源码/call+apply+bind.html">
+            
+                <a href="../../手写源码/call+apply+bind.html">
+            
+                    
+                    call+apply+bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../../手写源码/instanceOf.html">
+            
+                <a href="../../手写源码/instanceOf.html">
+            
+                    
+                    instanceOf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../../手写源码/New.html">
+            
+                <a href="../../手写源码/New.html">
+            
+                    
+                    New
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../../手写源码/Promise.html">
+            
+                <a href="../../手写源码/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../项目经验/">
+            
+                <a href="../../项目经验/">
+            
+                    
+                    12.项目经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >渲染流程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6E32;&#x67D3;&#x6D41;&#x7A0B;">&#x6E32;&#x67D3;&#x6D41;&#x7A0B;</h1>
+<h2 id="1-&#x6574;&#x4F53;&#x6D41;&#x7A0B;">1. &#x6574;&#x4F53;&#x6D41;&#x7A0B;</h2>
+<p><img src="img1.png" alt="&#x6D41;&#x7A0B;&#x56FE;&#x7247;"></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> state = reconcile(update)
+<span class="hljs-keyword">const</span> UI = commit(state)
+</code></pre>
+<ul>
+<li>Scheduler&#xFF08;&#x8C03;&#x5EA6;&#x5668;&#xFF09;&#xFF1A; &#x6392;&#x5E8F;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x8BA9;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x7684;&#x4EFB;&#x52A1;&#x5148;&#x8FDB;&#x884C; reconcile</li>
+<li>Reconciler&#xFF08;&#x534F;&#x8C03;&#x5668;&#xFF09;&#xFF1A; &#x627E;&#x51FA;&#x54EA;&#x4E9B;&#x8282;&#x70B9;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x5E76;&#x6253;&#x4E0A;&#x4E0D;&#x540C;&#x7684; Flags&#xFF08;&#x65E7;&#x7248;&#x672C; react &#x53EB; Tag&#xFF09;</li>
+<li>Renderer&#xFF08;&#x6E32;&#x67D3;&#x5668;&#xFF09;&#xFF1A; &#x5C06; Reconciler &#x4E2D;&#x6253;&#x597D;&#x6807;&#x7B7E;&#x7684;&#x8282;&#x70B9;&#x6E32;&#x67D3;&#x5230;&#x89C6;&#x56FE;&#x4E0A;</li>
+</ul>
+<h2 id="2-&#x521D;&#x59CB;&#x5316;">2. &#x521D;&#x59CB;&#x5316;</h2>
+<ul>
+<li>&#x5728; render &#x9636;&#x6BB5;&#x4F1A;&#x6839;&#x636E; jsx &#x5BF9;&#x8C61;&#x6784;&#x5EFA;&#x65B0;&#x7684; workInProgressFiber &#x6811;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x76F8;&#x5E94;&#x7684; fiber &#x8282;&#x70B9;&#x6807;&#x8BB0;&#x4E3A; Placement&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x4E2A; fiber &#x8282;&#x70B9;&#x9700;&#x8981;&#x88AB;&#x63D2;&#x5165;&#x5230; dom &#x6811;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x8FD9;&#x4E9B;&#x5E26;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684; fiber &#x8282;&#x70B9;&#x52A0;&#x5165;&#x4E00;&#x6761;&#x53EB;&#x505A; Effect List &#x7684;&#x94FE;&#x8868;&#x4E2D;&#x3002;</li>
+<li>&#x5728; commit &#x9636;&#x6BB5;&#x4F1A;&#x904D;&#x5386; render &#x9636;&#x6BB5;&#x5F62;&#x6210;&#x7684; Effect List&#xFF0C;&#x6267;&#x884C;&#x94FE;&#x8868;&#x4E0A;&#x76F8;&#x5E94; fiber &#x8282;&#x70B9;&#x7684;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x6BD4;&#x5982; Placement &#x63D2;&#x5165;&#xFF0C;&#x6216;&#x8005;&#x6267;&#x884C; Passive&#xFF08;useEffect &#x7684;&#x526F;&#x4F5C;&#x7528;&#xFF09;&#x3002;&#x5C06;&#x8FD9;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#x5E94;&#x7528;&#x5230;&#x771F;&#x5B9E;&#x8282;&#x70B9;&#x4E0A;</li>
+</ul>
+<h2 id="3-&#x66F4;&#x65B0;">3. &#x66F4;&#x65B0;</h2>
+<ul>
+<li>&#x5728; render &#x9636;&#x6BB5;&#x4F1A;&#x6839;&#x636E;&#x6700;&#x65B0;&#x72B6;&#x6001;&#x7684; jsx &#x5BF9;&#x8C61;&#x5BF9;&#x6BD4; current Fiber&#xFF0C;&#x518D;&#x6784;&#x5EFA;&#x65B0;&#x7684; workInProgressFiber &#x6811;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x6BD4;&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x662F; diff &#x7B97;&#x6CD5;&#xFF0C;diff &#x7B97;&#x6CD5;&#x53C8;&#x5206;&#x6210;&#x5355;&#x8282;&#x70B9;&#x7684;&#x5BF9;&#x6BD4;&#x548C;&#x591A;&#x8282;&#x70B9;&#x7684;&#x5BF9;&#x6BD4;&#xFF0C;&#x5BF9;&#x6BD4;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x540C;&#x6837;&#x4F1A;&#x7ECF;&#x5386;&#x6536;&#x96C6;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x5BF9;&#x6BD4;&#x51FA;&#x6765;&#x7684;&#x5DEE;&#x5F02;&#x6807;&#x8BB0;&#x51FA;&#x6765;&#xFF0C;&#x52A0;&#x5165; Effect List &#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x5BF9;&#x6BD4;&#x51FA;&#x6765;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x4F8B;&#x5982;&#xFF1A;Placement&#xFF08;&#x63D2;&#x5165;&#xFF09;&#x3001;Update(&#x66F4;&#x65B0;)&#x3001;Deletion&#xFF08;&#x5220;&#x9664;&#xFF09;&#x7B49;&#x3002;</li>
+<li>&#x5728; commit &#x9636;&#x6BB5;&#x540C;&#x6837;&#x4F1A;&#x904D;&#x5386; Effect List&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B; fiber &#x8282;&#x70B9;&#x4E0A;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x5E94;&#x7528;&#x5230;&#x771F;&#x5B9E;&#x8282;&#x70B9;&#x4E0A;</li>
+</ul>
+<h2 id="6-reactdomrender">6. ReactDom.render()</h2>
+<ol>
+<li>render()</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">element: React$Element&lt;any&gt;, container: Container, callback: ?Function</span>) </span>{
+  <span class="hljs-keyword">return</span> legacyRenderSubtreeIntoContainer(<span class="hljs-literal">null</span>, element, container, <span class="hljs-literal">false</span>, callback)
+}
+</code></pre>
+<ol>
+<li>legacyRenderSubtreeIntoContainer()</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">legacyRenderSubtreeIntoContainer</span>(<span class="hljs-params">
+  parentComponent: ?React$Component&lt;any, any&gt;,
+  children: ReactNodeList,
+  container: Container,
+  forceHydrate: boolean,
+  callback: ?Function
+</span>) </span>{
+  <span class="hljs-keyword">if</span> (__DEV__) {
+    topLevelUpdateWarnings(container)
+    warnOnInvalidCallback(callback === <span class="hljs-literal">undefined</span> ? <span class="hljs-literal">null</span> : callback, <span class="hljs-string">&apos;render&apos;</span>)
+  }
+
+  <span class="hljs-keyword">let</span> root: RootType = (container._reactRootContainer: any)
+  <span class="hljs-keyword">let</span> fiberRoot
+  <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+  <span class="hljs-keyword">if</span> (!root) {
+    <span class="hljs-comment">// Initial mount</span>
+    root = container._reactRootContainer = legacyCreateRootFromDOMContainer(container, forceHydrate)
+    fiberRoot = root._internalRoot
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> callback === <span class="hljs-string">&apos;function&apos;</span>) {
+      <span class="hljs-keyword">const</span> originalCallback = callback
+      callback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> instance = getPublicRootInstance(fiberRoot)
+        originalCallback.call(instance)
+      }
+    }
+    <span class="hljs-comment">// Initial mount should not be batched.</span>
+    unbatchedUpdates(() =&gt; {
+      updateContainer(children, fiberRoot, parentComponent, callback)
+    })
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+    fiberRoot = root._internalRoot
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> callback === <span class="hljs-string">&apos;function&apos;</span>) {
+      <span class="hljs-keyword">const</span> originalCallback = callback
+      callback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> instance = getPublicRootInstance(fiberRoot)
+        originalCallback.call(instance)
+      }
+    }
+    <span class="hljs-comment">// Update</span>
+    updateContainer(children, fiberRoot, parentComponent, callback)
+  }
+  <span class="hljs-keyword">return</span> getPublicRootInstance(fiberRoot)
+}
+</code></pre>
+<ol>
+<li>updateContainer()</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateContainer</span>(<span class="hljs-params">
+  element: ReactNodeList,
+  container: OpaqueRoot,
+  parentComponent: ?React$Component&lt;any, any&gt;,
+  callback: ?Function
+</span>): <span class="hljs-title">Lane</span> </span>{
+  <span class="hljs-keyword">if</span> (__DEV__) {
+    onScheduleRoot(container, element)
+  }
+  <span class="hljs-keyword">const</span> current = container.current
+  <span class="hljs-keyword">const</span> eventTime = requestEventTime()
+  <span class="hljs-keyword">if</span> (__DEV__) {
+    <span class="hljs-comment">// $FlowExpectedError - jest isn&apos;t a global, and isn&apos;t recognized outside of tests</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;undefined&apos;</span> !== <span class="hljs-keyword">typeof</span> jest) {
+      warnIfUnmockedScheduler(current)
+      warnIfNotScopedWithMatchingAct(current)
+    }
+  }
+  <span class="hljs-keyword">const</span> lane = requestUpdateLane(current)
+
+  <span class="hljs-keyword">if</span> (enableSchedulingProfiler) {
+    markRenderScheduled(lane)
+  }
+
+  <span class="hljs-keyword">const</span> context = getContextForSubtree(parentComponent)
+  <span class="hljs-keyword">if</span> (container.context === <span class="hljs-literal">null</span>) {
+    container.context = context
+  } <span class="hljs-keyword">else</span> {
+    container.pendingContext = context
+  }
+
+  <span class="hljs-keyword">const</span> update = createUpdate(eventTime, lane)
+  update.payload = { element }
+
+  callback = callback === <span class="hljs-literal">undefined</span> ? <span class="hljs-literal">null</span> : callback
+  <span class="hljs-keyword">if</span> (callback !== <span class="hljs-literal">null</span>) {
+    update.callback = callback
+  }
+
+  enqueueUpdate(current, update) <span class="hljs-comment">// &#x5904;&#x7406;&#x66F4;&#x65B0;&#x961F;&#x5217;</span>
+  scheduleUpdateOnFiber(current, lane, eventTime) <span class="hljs-comment">// &#x8C03;&#x5EA6; render</span>
+
+  <span class="hljs-keyword">return</span> lane
+}
+</code></pre>
+<h2 id="5-setstate">5. setState()</h2>
+<p>&#x89E6;&#x53D1; setState &#x8282;&#x70B9;&#x5F00;&#x59CB;&#xFF0C;&#x5148;&#x5F80;&#x4E0A;&#x627E;&#x5230; root &#x6700;&#x9876;&#x5C42;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x5F80;&#x4E0B;&#x6839;&#x636E;&#x5DF2;&#x5B58;&#x5728;&#x5C5E;&#x6027;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;&#x65B0;&#x7684; fiber&#xFF0C;&#x76F4;&#x5230;&#x89E6;&#x53D1; setState &#x8282;&#x70B9;&#xFF0C;&#x518D;&#x5F80;&#x4E0B;&#x904D;&#x5386;&#x8C03;&#x7528;&#x5B50;&#x5143;&#x7D20; render&#xFF0C;&#x4E2D;&#x95F4;&#x53EF;&#x4EE5;&#x6839;&#x636E; shouldComponentUpdate &#x7B49;&#x65B9;&#x6CD5;&#x8DF3;&#x8FC7;
+&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x5206;&#x4E3A;&#x4E24;&#x5757;&#xFF0C;&#x5F80;&#x4E0B;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x4E00;&#x4E9B;&#x8C03;&#x7528; render &#x6216;&#x8005;&#x514B;&#x9686;&#x4E00;&#x4E2A; fiber &#x8282;&#x70B9;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5F80;&#x4E0A;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x751F;&#x6210; effect &#x548C; updateQueue &#x66F4;&#x65B0;&#x5185;&#x5BB9;&#x7684;&#x64CD;&#x4F5C;</p>
+<ol>
+<li>&#x8C03;&#x7528; setState &#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; enqueueSetState &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B; &#x8FC7;&#x671F;&#x65F6;&#x95F4; &#x548C; &#x4F18;&#x5148;&#x7EA7; lane &#x4EE5;&#x53CA;&#x6700;&#x65B0; state &#x7684; update &#x66F4;&#x65B0;&#x5668;</li>
+<li>&#x8C03;&#x7528; enqueueUpdate &#x65B9;&#x6CD5;&#x5C06;&#x66F4;&#x65B0;&#x5668;&#x5B58;&#x653E;&#x5230; fiber &#x7684;&#x66F4;&#x65B0;&#x961F;&#x5217;&#x4E2D;</li>
+<li>&#x8C03;&#x7528; scheduleUpdateOnFiber &#x65B9;&#x6CD5; schdule &#x66F4;&#x65B0;</li>
+<li>&#x8C03;&#x7528; ensureRootIsScheduled &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; task &#x6765; scheudle &#x66F4;&#x65B0;</li>
+<li>&#x5C06;&#x66F4;&#x65B0;&#x4EFB;&#x52A1; performWorkOnRoot &#x5B58;&#x653E;&#x5230; syncQueue &#x4E2D;&#x7B49;&#x5F85;&#x8C03;&#x7528;</li>
+<li>&#x82E5;&#x662F; Legacy &#x6A21;&#x5F0F;&#xFF08;&#x975E;&#x5E76;&#x53D1;&#xFF09;&#xFF0C;&#x4E0D;&#x542F;&#x7528;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x66F4;&#x65B0;&#x65B9;&#x6CD5; flushSyncCallbackQueue&#xFF0C;&#x6267;&#x884C;&#x66F4;&#x65B0;&#xFF0C;&#x6E05;&#x7A7A; syncQueue</li>
+<li>&#x82E5;&#x662F; Concurrent &#x6A21;&#x5F0F;&#xFF0C;&#x5219;&#x5EF6;&#x8FDF;&#x8C03;&#x7528; flushSyncCallbackQueue&#xFF0C;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x8C03;&#x7528; flushSyncCallbackQueue</li>
+<li>&#x5728; performWorkOnRoot &#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4F1A;&#x5FAA;&#x73AF; fiber &#x8EAB;&#x4E0A;&#x7684;&#x66F4;&#x65B0;&#x961F;&#x5217;&#x62FF;&#x5230;&#x6700;&#x65B0;&#x7684; state&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C; dom diff &#x4EE5;&#x53CA; re-render</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Component</span>(<span class="hljs-params">props, context, updater</span>) </span>{
+  <span class="hljs-keyword">this</span>.props = props
+  <span class="hljs-keyword">this</span>.context = context
+  <span class="hljs-keyword">this</span>.refs = emptyObject
+  <span class="hljs-keyword">this</span>.updater = updater || ReactNoopUpdateQueue
+}
+Component.prototype.setState = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">partialState, callback</span>) </span>{
+  <span class="hljs-keyword">this</span>.updater.enqueueSetState(<span class="hljs-keyword">this</span>, partialState, callback, <span class="hljs-string">&apos;setState&apos;</span>)
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> classComponentUpdater = {
+  isMounted,
+  enqueueSetState(inst, payload, callback) {
+    <span class="hljs-keyword">const</span> fiber = getInstance(inst)
+    <span class="hljs-keyword">const</span> eventTime = requestEventTime()
+    <span class="hljs-keyword">const</span> lane = requestUpdateLane(fiber)
+
+    <span class="hljs-keyword">const</span> update = createUpdate(eventTime, lane)
+    update.payload = payload
+    <span class="hljs-keyword">if</span> (callback !== <span class="hljs-literal">undefined</span> &amp;&amp; callback !== <span class="hljs-literal">null</span>) {
+      update.callback = callback
+    }
+
+    enqueueUpdate(fiber, update) <span class="hljs-comment">// &#x5904;&#x7406;&#x66F4;&#x65B0;&#x961F;&#x5217;</span>
+    scheduleUpdateOnFiber(fiber, lane, eventTime) <span class="hljs-comment">// &#x8C03;&#x5EA6; render</span>
+  },
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 4.react">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../React-Router/" class="navigation navigation-next " aria-label="Next page: React-Router">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"渲染流程","level":"1.4.1","depth":2,"next":{"title":"React-Router","level":"1.4.2","depth":2,"path":"react/React-Router/README.md","ref":"react/React-Router/README.md","articles":[]},"previous":{"title":"4.react","level":"1.4","depth":1,"path":"react/README.md","ref":"react/README.md","articles":[{"title":"渲染流程","level":"1.4.1","depth":2,"path":"react/渲染流程/README.md","ref":"react/渲染流程/README.md","articles":[]},{"title":"React-Router","level":"1.4.2","depth":2,"path":"react/React-Router/README.md","ref":"react/React-Router/README.md","articles":[]},{"title":"状态管理","level":"1.4.3","depth":2,"path":"react/状态管理/README.md","ref":"react/状态管理/README.md","articles":[]},{"title":"虚拟 DOM","level":"1.4.4","depth":2,"path":"react/虚拟DOM/README.md","ref":"react/虚拟DOM/README.md","articles":[]},{"title":"Diff 算法","level":"1.4.5","depth":2,"path":"react/Diff算法/README.md","ref":"react/Diff算法/README.md","articles":[]},{"title":"Fiber","level":"1.4.6","depth":2,"path":"react/Fiber/README.md","ref":"react/Fiber/README.md","articles":[]},{"title":"Context","level":"1.4.7","depth":2,"path":"react/Context/README.md","ref":"react/Context/README.md","articles":[]},{"title":"Hooks","level":"1.4.8","depth":2,"path":"react/Hooks/README.md","ref":"react/Hooks/README.md","articles":[]},{"title":"重要 API","level":"1.4.9","depth":2,"path":"react/重要API/README.md","ref":"react/重要API/README.md","articles":[]},{"title":"高阶组件","level":"1.4.10","depth":2,"path":"react/高阶组件/README.md","ref":"react/高阶组件/README.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/渲染流程/README.md","mtime":"2022-08-24T08:47:40.096Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-20T01:48:06.596Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
