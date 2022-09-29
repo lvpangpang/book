@@ -39,15 +39,15 @@ let company = {
 }
 
 function calSalart(company) {
-  // 执行单元
-  if (Array.isArray(company)) {
-    return company.reduce((prev, current) => {
-      return prev + current.salary
-    }, 0)
-  }
   let result = 0
   for (let item of Object.values(company)) {
-    result += calSalart(item)
+    if (Array.isArray(item)) {
+      result += item.reduce((prev, current) => {
+        return prev + current.salary
+      }, 0)
+    } else {
+      result += calSalart(item)
+    }
   }
 
   return result
