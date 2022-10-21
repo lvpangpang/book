@@ -65,10 +65,9 @@ $table = new TableStore({
 })
 ```
 
-Search 组件封装了 antd3 的 Form 组件  
-调用Form的方法获取搜索信息对象  
-List 组件封装了 antd3 的 Table 组件  
-两者通过公共的 store 来关联，在 TableStore 里面实例化了 SearchBarStore，这样在 TableStore 中就可以获取到搜索条件了  
-点击搜索的时候，Form 组件获取到的搜索条件和 Table 组件的分页条件合并为最终的接口请求参数  
-业务代码通过重写 store 的 requestList 方法发起请求  
-请求返回的结果设置到 Table 组件  
+1. Search 组件封装了 antd3 的 Form 组件 ,调用 Form 的方法获取搜索信息对象
+2. List 组件封装了 antd3 的 Table 组件
+3. 两者通过公共的 store 来关联，在 TableStore 里面实例化了 SearchBarStore，这样在 TableStore 中就可以获取到搜索条件了
+4. 点击搜索的时候，Form 组件获取到的搜索条件和 Table 组件的分页条件合并为最终的接口请求参数
+5. 业务代码通过重写 store 的 requestList 方法发起请求
+6. 请求返回的结果设置到 Table 组件

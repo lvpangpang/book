@@ -2,7 +2,7 @@
 
 1. 结构示意
 
-```json
+```js
 {
   val: 1,
   left: {
@@ -19,11 +19,11 @@
 ```
 
 2. 二叉搜索树
-  是一棵由根结点、左子树、右子树组成的树，同时左子树和右子树都是二叉搜索树，且左子树上所有结点的数据域都小于等于根结点的数据域，右子树上所有结点的数据域都大于等于根结点的数据域
+   是一棵由根结点、左子树、右子树组成的树，同时左子树和右子树都是二叉搜索树，且左子树上所有结点的数据域都小于等于根结点的数据域，右子树上所有结点的数据域都大于等于根结点的数据域
 
 3. 查找
 
-```javascript
+```js
 function search(root, n) {
   // 若 root 为空，查找失败，直接返回
   if (!root) {
@@ -44,7 +44,7 @@ function search(root, n) {
 
 4. 插入新结点
 
-```javascript
+```js
 function insertIntoBST(root, n) {
   // 若 root 为空，说明当前是一个可以插入的空位
   if (!root) {
@@ -68,15 +68,15 @@ function insertIntoBST(root, n) {
 
 5. 反转二叉树
 
-```javascript
+```js
 var invertTree = function (root) {
   if (root === null) {
-    return null;
+    return null
   }
   const left = invertTree(root.left)
-  const right = invertTree(root.right);
-  root.left = right;
-  root.right = left;
-  return root;
-};
+  const right = invertTree(root.right)
+  root.left = right
+  root.right = left
+  return root
+}
 ```
