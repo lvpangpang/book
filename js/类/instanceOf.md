@@ -2,8 +2,6 @@
 
 instanceof 操作符用于检查一个对象是否等于某个特定的 class 的实例
 
-## 1 instanceof 操作符
-
 ```js
 obj instanceof Class
 ```
