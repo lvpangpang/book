@@ -23,7 +23,7 @@ const UI = commit(state)
 - 在 render 阶段会根据最新状态的 jsx 对象对比 current Fiber，再构建新的 workInProgressFiber 树，这个对比的过程就是 diff 算法，diff 算法又分成单节点的对比和多节点的对比，对比的过程中同样会经历收集副作用的过程，也就是将对比出来的差异标记出来，加入 Effect List 中，这些对比出来的副作用例如：Placement（插入）、Update(更新)、Deletion（删除）等。
 - 在 commit 阶段同样会遍历 Effect List，将这些 fiber 节点上的副作用应用到真实节点上
 
-## 6. ReactDom.render()
+## 4. ReactDom.render()
 
 1. render()
 

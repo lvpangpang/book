@@ -1,6 +1,6 @@
 # instanceof
 
-instanceof 操作符用于检查一个对象是否等于某个特定的 class 的实例
+instanceof -检查构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
 
 ```js
 obj instanceof Class
