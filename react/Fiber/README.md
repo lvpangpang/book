@@ -32,7 +32,7 @@ function FiberNode(tag: WorkTag, pendingProps: mixed, key: null | string, mode: 
   //用作为工作单元 来计算state
   this.pendingProps = pendingProps
   this.memoizedProps = null
-  this.updateQueue = null
+  this.updateQueue = null // 这个属性很重要，更新的对象
   this.memoizedState = null
   this.dependencies = null
 
