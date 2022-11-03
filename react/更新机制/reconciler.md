@@ -155,7 +155,7 @@ function workLoopConcurrent() {
 
 最终无论是同步执行任务，还是可中断地执行任务，都会进入 performUnitOfWork 函数中。
 performUnitOfWork 中会以 fiber 作为单元，进行协调过程。每次 beginWork 执行后都会更新 workIngProgress，从而响应了上面 workLoop 的循环。
-直至 fiber 树便利完成后，workInProgress 此时置为 null，执行 completeUnitOfWork 函数。
+直至 fiber 树遍历完成后，workInProgress 此时置为 null，执行 completeUnitOfWork 函数。
 
 ```js
 // packages/react-reconciler/src/ReactFiberWorkLoop.old.js

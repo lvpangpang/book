@@ -13,7 +13,6 @@ scheduleCallback 函数是引用了 packages/scheduler/src/Scheduler.js 路径�
 
 ```js
 // packages/scheduler/src/Scheduler.js
-
 function unstable_scheduleCallback(priorityLevel, callback, options) {
   // ...
 
