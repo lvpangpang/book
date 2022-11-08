@@ -1,6 +1,6 @@
 # Fiber
 
-1. fiber 是一种数据结构。
+1. fiber 是一种特定数据结构。
 2. fiber 使用父子关系以及 next 的妙用，以链表形式模拟了传统调用栈。
 3. fiber 是一种调度让出机制，只在有剩余时间的情况下运行。React 通过 MessageChannel + requestAnimationFrame 自己模拟实现了 requestIdleCallback。
 
@@ -21,14 +21,14 @@ window.requestIdleCallback(process)
 ```js
 // packages/react-reconciler/src/ReactInternalTypes.js
 export type Fiber = {
-  // 作为静态数据结构，存储节点 dom 相关信息
-  tag: WorkTag, // 组件的类型，取决于 react 的元素类型
+  // 1. 作为静态数据结构，存储节点 dom 相关信息
+  tag: WorkTag, // 组件的类型，取决于 react 的元素类型，比如类组件，函数组件等
   key: null | string,
   elementType: any, // 元素类型
   type: any, // 定义与此fiber关联的功能或类。对于组件，它指向构造函数；对于DOM元素，它指定HTML tag
   stateNode: any, // 真实 dom 节点
 
-  // fiber 链表树相关
+  // 2. fiber 链表树相关
   return: Fiber | null, // 父 fiber
   child: Fiber | null, // 第一个子 fiber
   sibling: Fiber | null, // 下一个兄弟 fiber
@@ -36,16 +36,16 @@ export type Fiber = {
 
   ref: null | (((handle: mixed) => void) & { _stringRef: ?string, ... }) | RefObject,
 
-  // 工作单元，用于计算 state 和 props 渲染
+  // 3. 数据单元，用于计算 state 和 props 渲染
   pendingProps: any, // 本次渲染需要使用的 props
   memoizedProps: any, // 上次渲染使用的 props
-  updateQueue: mixed, // 用于状态更新、回调函数、DOM更新的队列
-  memoizedState: any, // 上次渲染后的 state 状态
+  memoizedState: any, // 上次渲染后的 state 状态（函数组件的更新队列在 memoizedState.queue 中）
+  updateQueue: mixed, // 类组件用于状态更新、回调函数、DOM更新的队列
   dependencies: Dependencies | null, // contexts、events 等依赖
 
   mode: TypeOfMode,
 
-  // 副作用相关
+  // 4. 副作用相关
   flags: Flags, // 记录更新时当前 fiber 的副作用(删除、更新、替换等)状态
   subtreeFlags: Flags, // 当前子树的副作用状态
   deletions: Array<Fiber> | null, // 要删除的子 fiber
@@ -55,19 +55,8 @@ export type Fiber = {
 
   // 优先级相关
   lanes: Lanes,
-  childLanes: Lanes,
 
-  alternate: Fiber | null, // 指向 workInProgress fiber 树中对应的节点
-
-  actualDuration?: number,
-  actualStartTime?: number,
-  selfBaseDuration?: number,
-  treeBaseDuration?: number,
-  _debugID?: number,
-  _debugSource?: Source | null,
-  _debugOwner?: Fiber | null,
-  _debugIsCurrentlyTiming?: boolean,
-  _debugNeedsRemount?: boolean,
-  _debugHookTypes?: Array<HookType> | null,
+  // current树和workInProgress树的桥梁
+  alternate: Fiber | null, // workInProgress 树
 }
 ```
