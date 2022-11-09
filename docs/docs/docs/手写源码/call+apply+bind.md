@@ -1,35 +1,32 @@
 ## call
 
+call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。
+
 ```js
 Function.prototype.myCall = function (context) {
   context = context ? Object(context) : window
   context.fn = this
-
-  // 执行该函数
   let args = [...arguments].slice(1)
   let result = context.fn(...args)
-
-  // 删除该函数
   delete context.fn
-  // 注意：函数是可以有返回值的
   return result
 }
 ```
 
 ## apply
 
+apply() 方法调用一个具有给定 this 值的函数，以及以一个数组（或一个类数组对象）的形式提供的参数。
+
 ```js
 Function.prototype.apply = function (context, arr) {
   context = context ? Object(context) : window
   context.fn = this
-
   let result
   if (!arr) {
     result = context.fn()
   } else {
     result = context.fn(...arr)
   }
-
   delete context.fn
   return result
 }
@@ -39,12 +36,8 @@ Function.prototype.apply = function (context, arr) {
 
 ```js
 Function.prototype.bind_ = function (obj) {
-  if (typeof this !== 'function') {
-    throw new Error('Function.prototype.bind - what is trying to be bound is not callable')
-  }
   var args = Array.prototype.slice.call(arguments, 1)
   var fn = this
-  //创建中介函数
   var fn_ = function () {}
   var bound = function () {
     var params = Array.prototype.slice.call(arguments)

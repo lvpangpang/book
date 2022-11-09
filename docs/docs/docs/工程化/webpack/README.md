@@ -40,13 +40,13 @@ function webpack(options) {
 ...
 ```
 
-3. 开始编译： 用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译。初始化完成后会调用 Compiler 的 run 来真正启动 webpack 编译构建流程，主要流程如下：
+3. 开始编译： 用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译。初始化完成后会调用 Compiler 的 run 来真正启动 webpack 编译构建流程，主要流程如下：ii
 
 - compile 开始编译
   执行了 run 方法后，首先会触发 compile，主要是构建一个 Compilation 对象
   该对象是编译阶段的主要执行者，主要会依次下述流程：执行模块创建、依赖收集、分块、打包等主要任务的对象
 
-- make 从入口点分析模块及其依赖的模块，创建这些模块对象
+- make 从入口点文件开始分析模块及其依赖的模块，创建这些模块对象
   当完成了上述的 compilation 对象后，就开始从 Entry 入口文件开始读取，主要执行 addModuleChain()函数
 
 - build-module 构建模块
@@ -122,14 +122,11 @@ module.exports = HelloPlugin
 
 ## 2.1 垫片处理
 
+1. 开发业务代码
+
 ```js
+// yarn add core-js
 presets: [
-  [
-    '@babel/preset-react',
-    {
-      runtime: 'automatic',
-    },
-  ],
   [
     '@babel/preset-env',
     {
@@ -141,7 +138,18 @@ presets: [
       corejs: 3,
     },
   ],
-  '@babel/typescript',
+]
+```
+
+2. 开发第三方库
+
+```js
+// yarn add @babel/runtime
+// yarn add @babel/plugin-transform-runtime --D
+"plugins": [
+  [
+    "@babel/plugin-transform-runtime"
+  ]
 ]
 ```
 
@@ -179,11 +187,9 @@ plugins: [
 
 ## 2.3 打包优化方式
 
-### 2.3.1 减少 Webpack 打包时间
+1. 优化 Loader 的文件搜索范围
 
-1. 优化 Loader-优化 Loader 的文件搜索范围
-
-```javascript
+```js
 module.exports = {
   module: {
     rules: [
@@ -201,22 +207,10 @@ module.exports = {
 }
 ```
 
-2. HappyPack
-   HappyPack 可以将 Loader 的同步执行转换为并行的，这样就能充分利用系统资源来加快打包效率了
+2. 外置第三方库
 
-3. DllPlugin
-   DllPlugin 可以将特定的类库提前打包然后引入。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。
-
-4. 代码压缩
-   在 Webpack4 中，我们就不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。
-
-### 2.3.2 减少 Webpack 打包后的文件体积
-
-1. 按需加载
-   使用按需加载，将每个路由页面单独打包为一个文件
-
-2. Tree Shaking-树摇
-   你使用 Webpack 4 的话，开启生产环境就会自动启动这个优化功能。
-
-3. externals
-   剔除一些常用库，比如 react，react-router-dom 等，可以很显而易见的减少 dist 文件夹大小
+```js
+  externals: {
+    react: 'React',
+  }
+```

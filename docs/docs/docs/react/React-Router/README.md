@@ -1,6 +1,6 @@
 # 路由
 
-个人理解，前端路由就是监听 url 变化，将最新的路由信息传递给React，然后React往下传递路由信息，匹配对应的组件
+个人理解，前端路由就是监听 url 变化，将最新的路由信息传递给 React，然后 React 往下传递路由信息，匹配对应的组件
 路由的 URL 改变和组件的切换是 2 回事情
 
 1. history： 提供了核心 api，如监听路由，更改路由的方法，已经保存路由状态 state
@@ -45,6 +45,8 @@ window.addEventListener('hashchange', function (e) {
 ```
 
 ## 2. History 对象
+
+观察者模式的典型例子
 
 1. push()
 
@@ -126,7 +128,7 @@ class Router extends React.Component {
     super(props)
 
     this.state = {
-      location: props.history.location
+      location: props.history.location,
     }
 
     // 下面两个变量是防御性代码，防止根组件还没渲染location就变了
@@ -255,7 +257,7 @@ class Route extends React.Component {
 ## 4.总结
 
 - 每次路由变化（history.push（）方法改变路由）
-- push 函数里面主要是调用 pushState() 改变 url 然后调用setState()方式
-- setState方法合并生成最新的location对象并且执行订阅的函数（通过 history.listen 订阅）
+- push 函数里面主要是调用 pushState() 改变 url 然后调用 setState()方式
+- setState 方法合并生成最新的 location 对象并且执行订阅的函数（通过 history.listen 订阅）
 - 触发顶层 Router 的 history.listen 事件，传递最新的 location 对象 Router 进行 setState
 - 向下传递 nextContext（context 中含有最新的 location） 下面的 Route 获取新的 nextContext 判断是否进行渲染。

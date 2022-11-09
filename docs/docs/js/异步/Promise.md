@@ -2,8 +2,8 @@
 
 Promise 对象用于表示一个异步操作的最终完成（或失败）及其结果值
 和订阅发布模式比较像  
-then，catch 订阅事件  
-resolve，reject 发布事件
+**then，catch 订阅事件**  
+**resolve，reject 发布事件**
 
 ## 1 Promise
 
@@ -11,7 +11,6 @@ executor 函数会被立即执行，里面往往会是一个异步函数
 
 ```js
 let promise = new Promise(function (resolve, reject) {})
-
 promise.then((data) => {}).catch((error) => {})
 ```
 
@@ -30,7 +29,7 @@ promise.then(
 
 then()返回值
 
-- 没有返回任何值，那么 then 返回的 Promise 将会成为接受状态，并且该接受状态的回调函数的参数值为 undefined。实际业务中不返回值得 then 是没有任何价值的
+- 没有返回任何值，那么 then 返回的 Promise 将会成为接受状态，并且该接受状态的回调函数的参数值为 undefined。实际业务中不返回值的 then 是没有任何价值的
 - 返回了一个值，那么 then 返回的 Promise 将会成为接受状态，并且将返回的值作为接受状态的回调函数的参数值。
 - 抛出一个错误，那么 then 返回的 Promise 将会成为拒绝状态，并且将抛出的错误作为拒绝状态的回调函数的参数值。
 - 返回一个已经是接受状态的 Promise，那么 then 返回的 Promise 也会成为接受状态，并且将那个 Promise 的接受状态的回调函数的参数值作为该被返回的 Promise 的接受状态回调函数的参数值。

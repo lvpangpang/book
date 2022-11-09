@@ -72,7 +72,7 @@
 - [5.node](/node/README.md)
 
   - [常用 Node 库](/node/常用Node库/README.md)
-  - [易错路径](/node/易错路径/README.md)
+  - [路径](/node/路径/README.md)
 
 - [6.工程化](/工程化/README.md)
 
@@ -111,19 +111,17 @@
   - [websocket](/其他/websocket/README.md)
   - [安全](其他/安全/README.md)
 
-- [10.微信小程序](/微信小程序/README.md)
-
-- [11.手写源码](/手写源码/README.md)
+- [10.手写源码](/手写源码/README.md)
 
   - [多维数组扁平化](/手写源码/多维数组扁平化.md)
-  - [发布订阅](/手写源码/发布订阅.md)
-  - [防抖](/手写源码/防抖.md)
-  - [节流](/手写源码/节流.md)
+  - [发布订阅](/手写源码/发布订阅/README.md)
+  - [防抖+节流](/手写源码/防抖+节流/README.md)
   - [深拷贝](/手写源码/深拷贝.md)
   - [数组去重](/手写源码/数组去重.md)
   - [call+apply+bind](/手写源码/call+apply+bind.md)
-  - [instanceOf](/手写源码/instanceOf.md)
   - [New](/手写源码/New.md)
   - [Promise](/手写源码/Promise.md)
+
+- [11.微信小程序](/微信小程序/README.md)
 
 - [12.项目经验](/项目经验/README.md)
