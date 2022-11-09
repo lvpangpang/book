@@ -47,18 +47,24 @@
   - [3.6.错误处理](/js/错误处理/README.md)
 
     - [try+catch](/js/错误处理/try+catch.md)
+  
+  - [3.7.事件循环](/js/事件循环/README.md)
 
 - [4.react](/react/README.md)
   - [虚拟DOM](/react/虚拟DOM/README.md)
   - [Fiber](/react/Fiber/README.md)
-  - [渲染流程](/react/渲染流程/README.md)
+  - [更新机制](/react/更新机制/README.md)
+    - [触发更新](/react/更新机制/触发更新.md)
+    - [scheduler](/react/更新机制/scheduler.md)
+    - [reconciler](/react/更新机制/reconciler.md)
+    - [commit](/react/更新机制/commit.md)
+  
   - [Diff 算法](/react/Diff算法/README.md)
   - [Hooks](/react/Hooks/README.md)
     - [useState](/react/Hooks/useState.md)
     - [useEffect](/react/Hooks/useEffect.md)
 
   - [Context](/react/Context/README.md)
-  - [重要 API](/react/重要API/README.md)
   - [高阶组件](/react/高阶组件/README.md)
   - [React-Router](/react/React-Router/README.md)
   - [状态管理](/react/状态管理/README.md)
@@ -67,7 +73,6 @@
 
   - [常用 Node 库](/node/常用Node库/README.md)
   - [易错路径](/node/易错路径/README.md)
-
 
 - [6.工程化](/工程化/README.md)
 

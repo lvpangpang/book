@@ -30,7 +30,6 @@
           const events = this.list[event]
           if (events) {
             events.forEach((item) => {
-              // item(...args)
               item.call(this, ...args)
             })
           }
@@ -50,6 +49,7 @@
         pubSub.emit('success1', '吕肥肥')
       })
 
+      // 监听success1，成功后触发fetch1函数
       pubSub.on('success1', fetch1)
     </script>
   </body>
