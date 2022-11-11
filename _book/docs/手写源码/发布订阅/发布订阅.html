@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发布订阅</title>
+  </head>
+  <body>
+    <script>
+      class EventEmitter {
+        constructor() {
+          this.list = {}
+        }
+        on(event, fn) {
+          if (!this.list[event]) {
+            this.list[event] = []
+          }
+          this.list[event].push(fn)
+        }
+        off(event, fn) {
+          const events = this.list[event]
+          if (events) {
+            this.list[event] = this.list[event].filter((item) => {
+              return item !== fn
+            })
+          }
+        }
+        emit(event, ...args) {
+          const events = this.list[event]
+          if (events) {
+            events.forEach((item) => {
+              item.call(this, ...args)
+            })
+          }
+        }
+      }
+
+      const pubSub = new EventEmitter()
+
+      function fetch1(name) {
+        fetch('https://preweb-gateway.lingxichuxing.com/saas/v1/basic/dataTypes').then((data) => {
+          console.log(name)
+        })
+      }
+
+      fetch('https://preweb-gateway.lingxichuxing.com/saas/v1/basic/dataTypes').then((data) => {
+        console.log('第一个请求成功')
+        pubSub.emit('success1', '吕肥肥')
+      })
+
+      // 监听success1，成功后触发fetch1函数
+      pubSub.on('success1', fetch1)
+    </script>
+  </body>
+</html>
