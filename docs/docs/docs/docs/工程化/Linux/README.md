@@ -1,4 +1,6 @@
-## Linux
+# Linux
+
+```js
 // 查找东西安装路径
 whereis redis
 
@@ -17,18 +19,9 @@ use 数据库名称
 find / -name 文件名
 
 
-// 提交到github改变 提交者
+// git项目配置
 git config user.name "Your Name"
-git config user.email you@example.com
-
-
-npm个人账号
-Username lvdaofeng
-password lvdaofeng1993
-
-
-mysql -u root  -p
-
+git config user.email "you@example.com"
 
 查看nginx信息 nginx -V
 
@@ -38,6 +31,15 @@ Windows下面使用nginx比较恶心
 需要在cmd里面执行
 1.cd C:\nginx-1.14.2
 2. nginx.exe
+
+
+// 81.69.174.88 软连接
+ln -s /root/node-v14.15.4-linux-x64/bin/create-react-app /usr/local/bin
+```
+ 
+
+
+
 
 
 

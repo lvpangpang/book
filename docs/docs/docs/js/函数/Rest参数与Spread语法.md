@@ -3,15 +3,13 @@
 ## 1 Rest 参数 ...
 
 在 JavaScript 中，无论函数是如何定义的，你都可以在调用它时传入任意数量的参数。
-Rest 参数表示剩余参数的意思，必须放到参数列表的末尾
+Rest 参数表示剩余参数的意思，**必须放到参数列表的末尾**
 
 ```js
 function sumAll(...args) {
   // 数组名为 args
   let sum = 0
-
   for (let arg of args) sum += arg
-
   return sum
 }
 ```
@@ -26,9 +24,7 @@ function sumAll(...args) {
 function sumAll() {
   // 数组名为 args
   let sum = 0
-
   for (let arg of arguments) sum += arg
-
   return sum
 }
 ```
@@ -43,6 +39,5 @@ function sumAll() {
 
 ```js
 let arr = [1, 2, 3]
-
 let arrCopy = [...arr]
 ```

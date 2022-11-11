@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../模块化/" />
+    <link rel="next" href="../模块化/README.md" />
     
     
     <link rel="prev" href="../" />
@@ -183,7 +183,7 @@
                 <a href="../../js/函数/">
             
                     
-                    3.1.函数
+                    函数
             
                 </a>
             
@@ -293,7 +293,7 @@
                 <a href="../../js/对象/">
             
                     
-                    3.2.对象
+                    对象
             
                 </a>
             
@@ -338,7 +338,7 @@
                 <a href="../../js/类/">
             
                     
-                    3.3.类
+                    类
             
                 </a>
             
@@ -396,7 +396,7 @@
                 <a href="../../js/原型/">
             
                     
-                    3.4.原型
+                    原型
             
                 </a>
             
@@ -454,7 +454,7 @@
                 <a href="../../js/异步/">
             
                     
-                    3.5.异步
+                    异步
             
                 </a>
             
@@ -525,7 +525,7 @@
                 <a href="../../js/错误处理/">
             
                     
-                    3.6.错误处理
+                    错误处理
             
                 </a>
             
@@ -557,7 +557,20 @@
                 <a href="../../js/事件循环/">
             
                     
-                    3.7.事件循环
+                    事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../js/模块化/">
+            
+                <a href="../../js/模块化/">
+            
+                    
+                    模块化
             
                 </a>
             
@@ -868,9 +881,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../模块化/">
+        <li class="chapter " data-level="1.6.2" data-path="../模块化/README.md">
             
-                <a href="../模块化/">
+                <span>
             
                     
                     模块化
@@ -1461,43 +1474,46 @@
 <p>prettier
 &#x4EE3;&#x7801;&#x98CE;&#x683C;&#x95EE;&#x9898;&#xFF1A;&#x98CE;&#x683C;&#x4E0D;&#x7B26;&#x5408;&#x4E00;&#x5B9A;&#x89C4;&#x5219; (doesn&#x2019;t adhere to certain style guidelines)</p>
 <ol>
-<li><p>&#x5B89;&#x88C5;eslint</p>
-<pre><code>npm i eslint -g
+<li>&#x5B89;&#x88C5; eslint</li>
+</ol>
+<pre><code class="lang-js">npm i eslint -g
 cd &#x9879;&#x76EE;&#x8DEF;&#x5F84;
 eslint --init (&#x9009;&#x62E9;&#x4F60;&#x6240;&#x9700;&#x8981;&#x7684;)
 eslint --ext .ts,.tsx src/&#xFF08;&#x68C0;&#x67E5;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF09;
-</code></pre><p>vscode&#x4E2D;&#x5B89;&#x88C5;eslint&#x63D2;&#x4EF6;(Vscode&#x9700;&#x8981;&#x91CD;&#x542F;&#x624D;&#x751F;&#x6548;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x5C31;&#x80FD;&#x5728;vscode&#x91CC;&#x9762;&#x770B;&#x5230;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x63D0;&#x793A;&#x4E86;)</p>
-</li>
-<li><p>&#x7ED3;&#x5408;git</p>
-<pre><code>npm i husky --D
-package.json&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;
-&quot;scripts&quot;: {
-&quot;lint&quot;: &quot;eslint --ext .ts,.tsx src/&quot;
-},
-&quot;husky&quot;: {
-&quot;hooks&quot;: {
- &quot;pre-commit&quot;: &quot;npm run lint&quot;
-}
-}
-</code></pre><p>&#x73B0;&#x5728;&#x5728;&#x8FDB;&#x884C; git commit &#x7684;&#x65F6;&#x5019; &#x5148;&#x53BB;&#x6267;&#x884C; pre-commit &#x91CC;&#x9762;&#x7684;&#x547D;&#x4EE4; &#xFF1A; &#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x8F93;&#x51FA; husky &#x5E76;&#x4E14;&#x6267;&#x884C; npm run lint  (&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x52A0;&#x4E0A;&#x7684;&#x9A8C;&#x8BC1;eslint&#x7684;&#x547D;&#x4EE4;)&#xFF0C;&#x5982;&#x679C;eslint&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x4E86;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C;commit &#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;eslint&#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;</p>
-<!-- 4. 如果只进行到第三步的话，你会发现你改一行代码，在提交的时候会报错N个（整个项目的不规范代码都会报错，这时候你的第一反应就是删除eslint哈哈）。这时候就需要对本次修改的代码进行检查。
-```
-npm i lint-staged -D
-package.json中加入以下配置
-"husky": {
-"hooks": {
- "pre-commit": "lint-staged"
-}
-},
-"lint-staged": {
-"src/**/*.{jsx,tsx,ts,js}": [
- "eslint",
- "git add" 
-]
-}
-``` -->
-</li>
+</code></pre>
+<p>vscode &#x4E2D;&#x5B89;&#x88C5; eslint &#x63D2;&#x4EF6;(Vscode &#x9700;&#x8981;&#x91CD;&#x542F;&#x624D;&#x751F;&#x6548;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x5C31;&#x80FD;&#x5728; vscode &#x91CC;&#x9762;&#x770B;&#x5230;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x63D0;&#x793A;&#x4E86;)</p>
+<ol>
+<li>&#x7ED3;&#x5408; git</li>
 </ol>
+<pre><code class="lang-js">npm i husky --D
+<span class="hljs-comment">// package.json&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;</span>
+<span class="hljs-string">&quot;scripts&quot;</span>: {
+  <span class="hljs-string">&quot;lint&quot;</span>: <span class="hljs-string">&quot;eslint --ext .ts,.tsx src/&quot;</span>
+},
+<span class="hljs-string">&quot;husky&quot;</span>: {
+  <span class="hljs-string">&quot;hooks&quot;</span>: {
+    <span class="hljs-string">&quot;pre-commit&quot;</span>: <span class="hljs-string">&quot;npm run lint&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x5728;&#x8FDB;&#x884C; git commit &#x7684;&#x65F6;&#x5019; &#x5148;&#x53BB;&#x6267;&#x884C; pre-commit &#x91CC;&#x9762;&#x7684;&#x547D;&#x4EE4; &#xFF1A; &#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x8F93;&#x51FA; husky &#x5E76;&#x4E14;&#x6267;&#x884C; npm run lint (&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x52A0;&#x4E0A;&#x7684;&#x9A8C;&#x8BC1; eslint &#x7684;&#x547D;&#x4EE4;)&#xFF0C;&#x5982;&#x679C; eslint &#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x4E86;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C; commit &#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5; eslint &#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x53EA;&#x8FDB;&#x884C;&#x5230;&#x7B2C;&#x4E09;&#x6B65;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4F60;&#x6539;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x5728;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x62A5;&#x9519; N &#x4E2A;&#xFF08;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x4E0D;&#x89C4;&#x8303;&#x4EE3;&#x7801;&#x90FD;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4F60;&#x7684;&#x7B2C;&#x4E00;&#x53CD;&#x5E94;&#x5C31;&#x662F;&#x5220;&#x9664; eslint &#x54C8;&#x54C8;&#xFF09;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x5BF9;&#x672C;&#x6B21;&#x4FEE;&#x6539;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</li>
+</ol>
+<pre><code class="lang-js">npm i lint-staged -D
+<span class="hljs-comment">// package.json&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;</span>
+<span class="hljs-string">&quot;husky&quot;</span>: {
+  <span class="hljs-string">&quot;hooks&quot;</span>: {
+    <span class="hljs-string">&quot;pre-commit&quot;</span>: <span class="hljs-string">&quot;lint-staged&quot;</span>
+  }
+},
+<span class="hljs-string">&quot;lint-staged&quot;</span>: {
+  <span class="hljs-string">&quot;src/**/*.{jsx,tsx,ts,js}&quot;</span>: [
+    <span class="hljs-string">&quot;eslint&quot;</span>,
+    <span class="hljs-string">&quot;git add&quot;</span>
+  ]
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1530,7 +1546,7 @@ package.json中加入以下配置
                 </a>
                 
                 
-                <a href="../模块化/" class="navigation navigation-next " aria-label="Next page: 模块化">
+                <a href="../模块化/README.md" class="navigation navigation-next " aria-label="Next page: 模块化">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1541,7 +1557,7 @@ package.json中加入以下配置
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.6.1","depth":2,"next":{"title":"模块化","level":"1.6.2","depth":2,"path":"工程化/模块化/README.md","ref":"工程化/模块化/README.md","articles":[]},"previous":{"title":"6.工程化","level":"1.6","depth":1,"path":"工程化/README.md","ref":"工程化/README.md","articles":[{"title":"代码规范","level":"1.6.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},{"title":"模块化","level":"1.6.2","depth":2,"path":"工程化/模块化/README.md","ref":"工程化/模块化/README.md","articles":[]},{"title":"jsBridge","level":"1.6.3","depth":2,"path":"工程化/jsBridge/README.md","ref":"工程化/jsBridge/README.md","articles":[]},{"title":"Linux","level":"1.6.4","depth":2,"path":"工程化/Linux/README.md","ref":"工程化/Linux/README.md","articles":[]},{"title":"Nginx","level":"1.6.5","depth":2,"path":"工程化/Nginx/README.md","ref":"工程化/Nginx/README.md","articles":[]},{"title":"package","level":"1.6.6","depth":2,"path":"工程化/package/README.md","ref":"工程化/package/README.md","articles":[]},{"title":"webpack","level":"1.6.7","depth":2,"path":"工程化/webpack/README.md","ref":"工程化/webpack/README.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/代码规范/README.md","mtime":"2022-05-22T03:35:24.673Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-09T03:40:45.268Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.6.1","depth":2,"next":{"title":"模块化","level":"1.6.2","depth":2,"path":"工程化/模块化/README.md","ref":"工程化/模块化/README.md","articles":[]},"previous":{"title":"6.工程化","level":"1.6","depth":1,"path":"工程化/README.md","ref":"工程化/README.md","articles":[{"title":"代码规范","level":"1.6.1","depth":2,"path":"工程化/代码规范/README.md","ref":"工程化/代码规范/README.md","articles":[]},{"title":"模块化","level":"1.6.2","depth":2,"path":"工程化/模块化/README.md","ref":"工程化/模块化/README.md","articles":[]},{"title":"jsBridge","level":"1.6.3","depth":2,"path":"工程化/jsBridge/README.md","ref":"工程化/jsBridge/README.md","articles":[]},{"title":"Linux","level":"1.6.4","depth":2,"path":"工程化/Linux/README.md","ref":"工程化/Linux/README.md","articles":[]},{"title":"Nginx","level":"1.6.5","depth":2,"path":"工程化/Nginx/README.md","ref":"工程化/Nginx/README.md","articles":[]},{"title":"package","level":"1.6.6","depth":2,"path":"工程化/package/README.md","ref":"工程化/package/README.md","articles":[]},{"title":"webpack","level":"1.6.7","depth":2,"path":"工程化/webpack/README.md","ref":"工程化/webpack/README.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"工程化/代码规范/README.md","mtime":"2022-11-10T02:54:00.161Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-11T02:19:51.865Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
