@@ -46,5 +46,21 @@ browser : 定义 npm 包在 browser 环境下的入口文件
    },
    ```
 
-2. 本地安装的gulp-admin包会在node_modules中的.bin文件夹中新建可执行脚本，会将当前目录的 node_modules/.bin 子目录加入 PATH 变量，执行结束后，再将 PATH 变量恢复原样。
-3. gulp-admin这个命令是gulp-admin这个包通过bin字段暴露出来给用户使用的，最终都是调用gulp-admin中某个入口js来完成任务
+2. 本地安装的 gulp-admin 包会在 node_modules 中的.bin 文件夹中新建可执行脚本，会将当前目录的 node_modules/.bin 子目录加入 PATH 变量，执行结束后，再将 PATH 变量恢复原样。
+3. gulp-admin 这个命令是 gulp-admin 这个包通过 bin 字段暴露出来给用户使用的，最终都是调用 gulp-admin 中某个入口 js 来完成任务
+
+## 6 yarn create
+
+先安装create-react-app再初始化项目
+
+```js
+npx create-react-app my-app --typescript
+yarn create react-app my-app --typescript
+```
+
+等价于下面两行命令
+
+```js
+yarn global add create-react-app
+create-react-app my-app
+```
