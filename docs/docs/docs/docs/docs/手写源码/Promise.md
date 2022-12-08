@@ -1,6 +1,6 @@
 # Promise
 
-```javascript
+```js
 const PENDING = 'pending'
 const RESOLVED = 'resolved'
 const REJECTED = 'reject'
@@ -78,26 +78,6 @@ class MyPromise {
         )
       }
     })
-  }
-
-  then(resolve = () => {}, reject = () => {}) {
-    // 如果状态为待定状态，暂时保存两个回调
-    if (this.status === PENDING) {
-      this.resolveList.push(() => {
-        resolve(this.value)
-      })
-      this.rejectList.push(() => {
-        reject(this.reason)
-      })
-    }
-    // 如果当前状态为成功，执行成功回调
-    if (this.status === RESOLVED) {
-      resolve(this.value)
-    }
-    // 如果当前状态为失败，执行失败回调
-    if (this.status === REJECTED) {
-      reject(this.reason)
-    }
   }
 
   then(success = (value) => value, failure = (value) => value) {

@@ -11,7 +11,7 @@ function debounce(fn, time) {
       clearTimeout(timer)
     }
     timer = setTimeout(() => {
-      fn.apply(this, arguments) // 绑定this， 否则this指向window
+      fn.apply(this, arguments) // 借助箭头函数没有this以及arguments的特点
       timer = null
     }, time || 300)
   }
@@ -31,7 +31,7 @@ function throttle(fn, time) {
       return
     }
     timer = setTimeout(() => {
-      fn.apply(this, arguments) // 绑定this， 否则this指向window
+      fn.apply(this, arguments) // 借助箭头函数没有this以及arguments的特点
       timer = null
     }, time || 300)
   }
