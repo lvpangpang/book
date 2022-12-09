@@ -32,7 +32,7 @@ num = 10 // 抛出错误
 1. 可以动态加载语句，代码发生在运行时
 2. CommonJs 导入的值是拷贝的，所以可以修改拷贝值，但这会引起变量污染，一不小心就重名
 
-```javascript
+```js
 // index.js
 let num = 0
 module.exports = {

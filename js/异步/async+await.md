@@ -14,7 +14,7 @@ f().then(alert)
 ## 2 await
 
 关键字 await 让 JavaScript 引擎等待直到 promise 完成（settle）并返回结果。  
-**await 下面的代码相当于在 then 里面是微任务**
+**await 下面的代码相当于在 then()**
 
 ```js
 async function f() {
