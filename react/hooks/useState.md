@@ -2,14 +2,14 @@
 
 ## 1 使用
 
-### 1.1 使用方式
+### 1.1 useState 使用方式
 
 1. 支持传入值
    ```js
    const [count, setCount] = useStaet([1, 2])
    setCount([1, 2, 3])
    ```
-2. 支持传入函数，函数有一个参数是最新的 count 值，所以多次调用都会有效果而不是只生效一次
+2. 支持传入函数，参数是上一次的 state 值，所以多次调用都会有效果而不是只生效一次
    ```js
    const [count, setCount] = useStaet([1, 2])
    setCount((count) => {
@@ -19,12 +19,19 @@
    })
    ```
 
-### 1.2 和 this.setState()比较
+### 1.2 this.setState()使用方式
+
+1. 支持传入值
 
 ```js
 this.setState({
   count: [1, 2],
 })
+```
+
+2. 支持传入函数，这个函数用上一个 state 作为第一个参数，将此次更新被应用时的 props 做为第二个参数
+
+```js
 this.setState(
   (state, props) => {
     return {
@@ -37,8 +44,10 @@ this.setState(
 )
 ```
 
+## 2 useState 和 this.setState()区别
+
 1. **React 使用 Object.is(value1, value2) 比较算法来比较 state**
-   对于复杂类型改变，比如数组，不管 this.setState()还是 useState()都需要传入一个新引用地址的数组才能让页面重新渲染
+   对于复杂类型改变，比如数组，不管 this.setState()还是 useState()都需要传入一个新引用地址的对象或者数组才能让页面重新渲染
 
 ```js
 const arr1 = [1, 2]
@@ -57,7 +66,7 @@ return Object.assgin({}, parState, newState)
 useState //判断前后state是否一致，一致的话直接return不渲染
 ```
 
-## 2 hook 数据结构
+## 3 hook 数据结构
 
 ```js
 const hook = {
@@ -69,7 +78,7 @@ const hook = {
 }
 ```
 
-## 3 源码
+## 4 源码
 
 1. 声明阶段
 
@@ -85,6 +94,7 @@ function useState(initialState) {
 ```js
 function mountState(initialState) {
   const hook = mountWorkInProgressHook() //创建当前hook
+  // 这里就是可以传递函数的原因
   if (typeof initialState === 'function') {
     initialState = initialState()
   }
