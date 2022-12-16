@@ -1,13 +1,10 @@
 # 路由
 
-个人理解，前端路由就是监听 url 变化，将最新的路由信息传递给 React，然后 React 往下传递路由信息，匹配对应的组件
-路由的 URL 改变和组件的切换是 2 回事情
+1. history 库： 提供了核心 api，如监听路由，更改路由的方法，已经保存路由状态 state
+2. react-router 库：在 history 核心基础上，增加了 Router ，Switch ，Route 等组件来处理视图渲染。
+3. react-router-dom 库： 在 react-router 基础上，增加了一些 UI 层面的拓展比如 Link ，NavLink 。
 
-1. history： 提供了核心 api，如监听路由，更改路由的方法，已经保存路由状态 state
-2. react-router：在 history 核心基础上，增加了 Router ，Switch ，Route 等组件来处理视图渲染。
-3. react-router-dom： 在 react-router 基础上，增加了一些 UI 层面的拓展比如 Link ，NavLink 。
-
-**实际开发中只需要安装 react-router-dom 即可**
+实际开发中只需要安装 react-router-dom 即可
 
 ## 1.路由原理
 
@@ -48,7 +45,21 @@ window.addEventListener('hashchange', function (e) {
 
 观察者模式的典型例子
 
-1. push()
+1. listen()
+
+```js
+function listen(listener) {
+  const unlisten = transitionManager.appendListener(listener)
+  checkDOMListeners(1)
+
+  return () => {
+    checkDOMListeners(-1)
+    unlisten()
+  }
+}
+```
+
+2. push()
 
 - 调用 window.history.pushState() 改变 url
 - 触发 history 下面的 setState 方法，产生了一个 location 对象, 并且通知监听者
@@ -119,7 +130,6 @@ import RouterContext from './RouterContext.js'
  * The public API for putting history on context.
  */
 class Router extends React.Component {
-  // 静态方法，检测当前路由是否匹配
   static computeRootMatch(pathname) {
     return { path: '/', url: '/', params: {}, isExact: pathname === '/' }
   }
@@ -131,24 +141,31 @@ class Router extends React.Component {
       location: props.history.location,
     }
 
-    // 下面两个变量是防御性代码，防止根组件还没渲染location就变了
-    // 如果location变化时，当前根组件还没渲染出来，就先记下他，等当前组件mount了再设置到state上
     this._isMounted = false
     this._pendingLocation = null
 
-    // 通过history监听路由变化，变化的时候，改变state上的location
-    this.unlisten = props.history.listen((location) => {
-      if (this._isMounted) {
-        this.setState({ location }) // 这一步很关键，React就能获取到最新的路由信息了
-      } else {
+    if (!props.staticContext) {
+      this.unlisten = props.history.listen((location) => {
         this._pendingLocation = location
-      }
-    })
+      })
+    }
   }
 
   componentDidMount() {
     this._isMounted = true
 
+    if (this.unlisten) {
+      // Any pre-mount location changes have been captured at
+      // this point, so unregister the listener.
+      this.unlisten()
+    }
+    if (!this.props.staticContext) {
+      this.unlisten = this.props.history.listen((location) => {
+        if (this._isMounted) {
+          this.setState({ location })
+        }
+      })
+    }
     if (this._pendingLocation) {
       this.setState({ location: this._pendingLocation })
     }
@@ -163,11 +180,15 @@ class Router extends React.Component {
   }
 
   render() {
-    // render的内容很简单，就是两个context
-    // 一个是路由的相关属性，包括history和location等
-    // 一个只包含history信息，同时将子组件通过children渲染出来
     return (
-      <RouterContext.Provider>
+      <RouterContext.Provider
+        value={{
+          history: this.props.history,
+          location: this.state.location,
+          match: Router.computeRootMatch(this.state.location.pathname),
+          staticContext: this.props.staticContext,
+        }}
+      >
         <HistoryContext.Provider
           children={this.props.children || null}
           value={this.props.history}
@@ -176,7 +197,6 @@ class Router extends React.Component {
     )
   }
 }
-export default Router
 ```
 
 2. BrowserRouter（Router 的语法糖）
@@ -199,7 +219,7 @@ class BrowserRouter extends React.Component {
    The public API for matching a single path and rendering.（源码介绍）
    由于整个路由状态是用 context 传递的，所以 Route 可以通过 RouterContext.Consumer 来获取上一级传递来的路由进行路由匹配，如果匹配，渲染子代路由。并利用 context 逐层传递的特点，将自己的路由信息，向子代路由传递下去。这样也就能轻松实现了嵌套路由。
    从源码中也可以看到使用的时候支持 3 种形式
-   children, component, render
+   children > component > render
 
 ```js
 class Route extends React.Component {
@@ -256,8 +276,9 @@ class Route extends React.Component {
 
 ## 4.总结
 
-- 每次路由变化（history.push（）方法改变路由）
-- push 函数里面主要是调用 pushState() 改变 url 然后调用 setState()方式
-- setState 方法合并生成最新的 location 对象并且执行订阅的函数（通过 history.listen 订阅）
-- 触发顶层 Router 的 history.listen 事件，传递最新的 location 对象 Router 进行 setState
-- 向下传递 nextContext（context 中含有最新的 location） 下面的 Route 获取新的 nextContext 判断是否进行渲染。
+1. Router 组件定义了 state.location 变量来存储最新的路由信息，然后通过 history.listen 来获取最新的路由对象，用 Context 来包装 Children，往下传递 history，location 等对象
+2. history.push() 函数里面主要是调用 pushState() 改变 url 然后调用 setState()方式，setState 方法合并生成最新的 location 对象并且执行订阅的函数（通过 history.listen 订阅）
+3. Router 组件 的 history.listen 订阅的函数被执行，获取到最新的 location 对象，更新 state.location 对象
+4. 向下传递 最新的 location 对象， 下面的 Route 获取新的 location 对象 判断渲染那个路由组件
+
+React-Router 就是发布订阅模式+React.Context 的组合运用

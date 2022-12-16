@@ -40,7 +40,7 @@ function webpack(options) {
 ...
 ```
 
-3. 开始编译： 用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译。初始化完成后会调用 Compiler 的 run 来真正启动 webpack 编译构建流程，主要流程如下：ii
+3. 开始编译： 用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译。初始化完成后会调用 Compiler 的 run 来真正启动 webpack 编译构建流程，主要流程如下：
 
 - compile 开始编译
   执行了 run 方法后，首先会触发 compile，主要是构建一个 Compilation 对象
@@ -125,7 +125,7 @@ module.exports = HelloPlugin
 1. 开发业务代码
 
 ```js
-// yarn add core-js
+yarn add core-js
 presets: [
   [
     '@babel/preset-env',
@@ -141,11 +141,11 @@ presets: [
 ]
 ```
 
-2. 开发第三方库
+1. 开发第三方库
 
 ```js
-// yarn add @babel/runtime
-// yarn add @babel/plugin-transform-runtime --D
+yarn add @babel/runtime
+yarn add @babel/plugin-transform-runtime --D
 "plugins": [
   [
     "@babel/plugin-transform-runtime"

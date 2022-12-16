@@ -2,7 +2,7 @@
 
 ## 1.viewport-fit
 
-viewport-fit 是 IOS 11 新增的特性，关于 viewport-fit 的枚举值介绍如下：
+viewport-fit 是 IOS 11 新增的css特性，关于 viewport-fit 的枚举值介绍如下：
 
 - contain: 可视窗口完全包含网页内容（左图）
 - cover：网页内容完全覆盖可视窗口（右图）

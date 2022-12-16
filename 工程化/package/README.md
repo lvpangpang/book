@@ -2,11 +2,14 @@
 
 ## 1 bin
 
-它是一个命令名和本地文件名的映射。在安装时，如果是全局安装，npm 将会使用符号链接把这些文件链接到 prefix/bin，如果是本地安装，会链接到./node_modules/.bin/。
-**通俗点理解就是我们全局安装， 我们就可以在命令行中执行这个文件， 本地安装我们可以在当前工程目录的命令行中执行该文件。("scripts"里面)**
+它是一个命令名和本地文件名的映射。
+在安装时，如果是全局安装，npm 将会使用符号链接把这些文件链接到 prefix/bin，如果是本地安装，会链接到./node_modules/.bin/。
+通俗点理解就是我们全局安装， 我们就可以在命令行中执行这个文件
+本地安装我们可以在当前工程目录的命令行中执行该文件。("scripts"里面)
 
 本地安装可以用下面 2 种方式执行命令
 
+1. 先在package.json中写好命令
 ```js
 "scripts": {
   "start": "gulp-admin start",
@@ -14,7 +17,7 @@
 },
 ```
 
-或者直接在控制台执行
+2. 直接在控制台执行
 
 ```js
 ./node_modules/.bin/gulp-admin start
@@ -51,7 +54,7 @@ browser : 定义 npm 包在 browser 环境下的入口文件
 
 ## 6 yarn create
 
-先安装create-react-app再初始化项目
+先安装 create-react-app 再初始化项目
 
 ```js
 npx create-react-app my-app --typescript
