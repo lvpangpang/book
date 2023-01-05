@@ -8,9 +8,11 @@
 4. 如果该函数没有返回对象，则返回 this。
 
 ```js
-function myNew(Fn, ...args) {
-  const obj = Object.create(Fn.prototype)
-  const result = Fn.apply(obj, ...args)
-  return result instanceof Object ? result : obj
+function fakeNew() {
+  var obj = Object.create(null)
+  var Constructor = [].shift.call(arguments)
+  obj.__proto__ = Constructor.prototype
+  var ret = Constructor.apply(obj, arguments)
+  return typeof ret === 'object' && ret !== null ? ret : obj
 }
 ```
