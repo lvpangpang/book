@@ -23,7 +23,7 @@ export function add() {
 import { num, add } from './index.js'
 console.log(num) // 0
 add()
-console.log(num) // 1 注意看这里，调用修复num的方法后发现num值变化了
+console.log(num) // 1 注意看这里，调用修改num的方法后发现num值变化了
 num = 10 // 抛出错误
 ```
 
