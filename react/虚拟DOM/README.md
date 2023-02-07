@@ -27,7 +27,7 @@ const VitrualDom = {
     {
       type: 'span',
       null,
-      children: 'Hello ConardLi'
+      children: '吕肥肥'
     },
     {
       type: 'ul',
@@ -41,15 +41,15 @@ const VitrualDom = {
 }
 ```
 
-## 2. ReactElement对象
+## 2. ReactElement 对象
 
 - type：元素的类型，可以是原生 html 类型（字符串），或者自定义组件（函数或 class）
 - key：组件的唯一标识，用于 Diff 算法
 - ref：用于访问原生 dom 节点
+- props：传入组件的 props，chidren 是 props 中的一个属性，它存储了当前组件的孩子节点，可以是数组（多个孩子节点）或对象（只有一个孩子节点）
 - self：（非生产环境）指定当前位于哪个组件实例
 - source：（非生产环境）指定调试代码来自的文件(fileName)和代码行数(lineNumber)
 - owner：当前正在构建的 Component 所属的 Component
-- props：传入组件的 props，chidren 是 props 中的一个属性，它存储了当前组件的孩子节点，可以是数组（多个孩子节点）或对象（只有一个孩子节点）
 
 ```js
 const ReactElement = function (type, key, ref, self, source, owner, props) {
@@ -77,23 +77,28 @@ export function createElement(type, config, children) {
   let source = null
 
   if (config != null) {
-    if (hasValidRef(config)) {
-      ref = config.ref
-    }
+    // 提取key
     if (hasValidKey(config)) {
       key = '' + config.key
     }
 
-    self = config.__self === undefined ? null : config.__self
-    source = config.__source === undefined ? null : config.__source
+    // 提取ref
+    if (hasValidRef(config)) {
+      ref = config.ref
+    }
 
+    // 提取剩余props
     for (propName in config) {
       if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
         props[propName] = config[propName]
       }
     }
+
+    self = config.__self === undefined ? null : config.__self
+    source = config.__source === undefined ? null : config.__source
   }
 
+  // 处理children
   const childrenLength = arguments.length - 2
   if (childrenLength === 1) {
     props.children = children
@@ -105,6 +110,7 @@ export function createElement(type, config, children) {
     props.children = childArray
   }
 
+  // 赋值默认值
   if (type && type.defaultProps) {
     const defaultProps = type.defaultProps
     for (propName in defaultProps) {
@@ -117,6 +123,7 @@ export function createElement(type, config, children) {
   return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props)
 }
 ```
+
 ## 4. 流程总结
 
 1. 使用 React.createElement()或 JSX 编写 React 组件，实际上所有的 JSX 代码最后都会转换成 React.createElement(...)，Babel 帮助我们完成了这个转换的过程。

@@ -1,4 +1,4 @@
-# 状态管理
+# Redux
 
 Redux： 首先 Redux 是一个应用状态管理 js 库，它本身和 React 是没有关系的，换句话说，Redux 可以应用于其他框架构建的前端应用，甚至也可以应用于 Vue 中。  
 React-Redux：React-Redux 是连接 React 应用和 Redux 状态管理的桥梁。React-redux 主要专注两件事，一是如何向 React 应用中注入 redux 中的 Store ，二是如何根据 Store 的改变，把消息派发给应用中需要状态的每一个组件。
@@ -68,6 +68,7 @@ function combineReducers(reducers) {
 ```javascript
 const ReactReduxContext = React.createContext(null)
 function Provider({ store, context, children }) {
+
   /* 利用useMemo，跟据store变化创建出一个contextValue 包含一个根元素订阅器和当前store  */
   const contextValue = useMemo(() => {
     /* 创建了一个根级 Subscription 订阅器 */
@@ -77,6 +78,7 @@ function Provider({ store, context, children }) {
       subscription,
     } /* store 改变创建新的contextValue */
   }, [store])
+
   useEffect(() => {
     const { subscription } = contextValue
     /* 触发trySubscribe方法执行，创建listens */
@@ -85,6 +87,7 @@ function Provider({ store, context, children }) {
       subscription.tryUnsubscribe() // 卸载订阅
     }
   }, [contextValue]) /*  contextValue state 改变出发新的 effect */
+  
   const Context = ReactReduxContext
   return <Context.Provider value={contextValue}>{children}</Context.Provider>
 }

@@ -1,5 +1,7 @@
 # useCallback
 
+**使用 useCallback 是为了让子组件获取到相同的函数，而不是优化组件本身**
+
 ```js
 const memoizedCallback = useCallback(() => {
   doSomething(a, b)
@@ -7,8 +9,6 @@ const memoizedCallback = useCallback(() => {
 ```
 
 返回一个 memoized 回调函数，保证引用相等
-
-**使用 useCallback 是为了让子组件获取到相同的函数，而不是优化组件本身**
 
 useCallback(fn, deps) 相当于 useMemo(() => fn, deps)。
 

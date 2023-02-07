@@ -1,12 +1,12 @@
 # useMemo
 
+**使用 useMemo 是为了让子组件获取到相同的值，而不是优化组件本身**
+
 ```js
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 ```
 
 返回一个 memoized 值，避免昂贵的计算
-
-**使用 useMemo 是为了让子组件获取到相同的值，而不是优化组件本身**
 
 不使用useMemo, 每次A组件执行，都会给value赋值一个新地址的数组，子组件获取到的value永远是变化的（其实人家根本没变）
 

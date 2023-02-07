@@ -1,8 +1,8 @@
 # 高阶组件
 
-传入一个函数并对其进行功能增强后输出
+高阶组件是参数为组件，返回值为新组件的函数。
 
-## 1. withRouter
+## 1. withRouter-增强props
 
 ```javascript
 function withRouter(Component) {

@@ -39,7 +39,7 @@ export type Fiber = {
   // 3. 数据单元，用于计算 state 和 props 渲染
   pendingProps: any, // 本次渲染需要使用的 props
   memoizedProps: any, // 上次渲染使用的 props
-  memoizedState: any, // 上次渲染后的 state 状态（函数组件的更新队列在 memoizedState.queue 中）
+  memoizedState: any, // 上次渲染后的 state 状态（函数组件的更新队列在 memoizedState.queue 中, useRef数据存在memoizedState.ref中）
   updateQueue: mixed, // 类组件用于状态更新、回调函数、DOM更新的队列
   dependencies: Dependencies | null, // contexts、events 等依赖
 

@@ -281,4 +281,4 @@ class Route extends React.Component {
 3. Router 组件 的 history.listen 订阅的函数被执行，获取到最新的 location 对象，更新 state.location 对象
 4. 向下传递 最新的 location 对象， 下面的 Route 获取新的 location 对象 判断渲染那个路由组件
 
-React-Router 就是发布订阅模式+React.Context 的组合运用
+React-Router 就是观察者模式 + Context 的组合运用

@@ -6,12 +6,12 @@
 
 1. 支持传入值
    ```js
-   const [count, setCount] = useStaet([1, 2])
+   const [count, setCount] = useState([1, 2])
    setCount([1, 2, 3])
    ```
 2. 支持传入函数，参数是上一次的 state 值，所以多次调用都会有效果而不是只生效一次
    ```js
-   const [count, setCount] = useStaet([1, 2])
+   const [count, setCount] = useState([1, 2])
    setCount((count) => {
      const temp = [...count]
      temp.push(3)
@@ -181,13 +181,13 @@ function render() {
 
 function useState(initialState) {
   state[stateIndex] = state[stateIndex] ? state[stateIndex] : initialState
+  const value = state[stateIndex]
+  stateIndex++
   const setState = (newState) => {
     state[stateIndex] = newState
     stateIndex = 0
     render()
   }
-  const value = state[stateIndex]
-  stateIndex++
   return [value, setState]
 }
 ```

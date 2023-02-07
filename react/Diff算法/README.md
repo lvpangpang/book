@@ -1,11 +1,12 @@
 # Diff 算法
 
 1. current Fiber。如果该 DOM 节点已在页面中，current Fiber 代表该 DOM 节点对应的 Fiber 节点。
-2. workInProgress Fiber。如果该 DOM 节点将在本次更新中渲染到页面中，workInProgress Fiber 代表该 DOM 节点对应的 Fiber 节点。
-3. DOM 节点本身。
-4. JSX 对象。即 ClassComponent 的 render 方法的返回结果，或者 FunctionComponent 的调用结果，JSX 对象中包含描述 DOM 节点信息。
+2. JSX 对象。即 ClassComponent 的 render 方法的返回结果，或者 FunctionComponent 的调用结果，JSX 对象中包含描述 DOM 节点信息。 
+3. workInProgress Fiber。如果该 DOM 节点将在本次更新中渲染到页面中，workInProgress Fiber 代表该 DOM 节点对应的 Fiber 节点。
 
 比较的是当前节点的旧 fiber 对象和新虚拟 dom 对象比较，生成新 fiber 对象
+
+1 + 2 -〉 3
 
 ## 1.二大策略
 

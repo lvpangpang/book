@@ -121,16 +121,15 @@ const allDeps = []
 let cursor = 0
 
 function useEffect(callback, depsList) {
-  // 新的effect直接执行函数
+  // 首次
   if (!allDeps[cursor]) {
     allDeps[cursor] = depsList
     ++cursor
     callback()
     return
   }
-  const rawDeps = allDeps[cursor]
-  // 比较前后2次依赖数组是否有变化
-  const isChanged = rawDeps.some((dep, index) => {
+  // 非首次
+  const isChanged = allDeps[cursor].some((dep, index) => {
     dep !== depsList[index]
   })
   if (isChanged) {
@@ -138,10 +137,5 @@ function useEffect(callback, depsList) {
     allDeps[cursor] = depsList
   }
   ++cursor
-}
-
-function render() {
-  effectSursor = 0 // 注意将 cursor 重置为0
-  ReactDOM.render(<App />, document.querySelector('#toot'))
 }
 ```
