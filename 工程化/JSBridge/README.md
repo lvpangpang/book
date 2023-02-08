@@ -1,6 +1,6 @@
 # JSBridge
 
-JSBridge 简单来讲，主要是 给 JavaScript 提供调用 Native 功能的接口
+JSBridge 简单来讲，主要 App 提供给 JavaScript 调用的 功能的接口
 
 ## 1 实现原理
 

@@ -46,9 +46,7 @@ npm i lint-staged -D
   }
 },
 "lint-staged": {
-  "src/**/*.{jsx,tsx,ts,js}": [
-    "eslint",
-    "git add"
-  ]
+  "*.{js,jsx,ts,tsx}": "eslint --fix",
+  "*.{css,less}": "stylelint --fix"
 }
 ```
