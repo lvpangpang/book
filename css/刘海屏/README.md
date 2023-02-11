@@ -50,6 +50,7 @@ IOS 11.0-11.2 是支持 constant 函数的，在 11.3 往后是废弃了 constan
     right: 0;
     bottom: 0;
     background-color: #ffffff;
+    width: 100%;
     height: constant(safe-area-inset-bottom);
     height: env(safe-area-inset-bottom);
   }
