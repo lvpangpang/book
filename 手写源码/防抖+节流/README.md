@@ -2,7 +2,7 @@
 
 一定时间内，当一个动作连续触发，只执行最后一次
 
-```javascript
+```js
 function debounce(fn, time) {
   let timer = null
   return function () {

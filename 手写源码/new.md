@@ -1,6 +1,6 @@
 # New
 
-创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例。
+创建一个用户定义的对象类型的实例
 
 1. 创建一个空的简单 JavaScript 对象 obj；
 2. 为 obj 添加属性**proto**，将该属性链接至构造函数的原型对象 ；
@@ -8,11 +8,11 @@
 4. 如果该函数没有返回对象，则返回 this。
 
 ```js
-function fakeNew() {
-  var obj = Object.create(null)
-  var Constructor = [].shift.call(arguments)
-  obj.__proto__ = Constructor.prototype
-  var ret = Constructor.apply(obj, arguments)
-  return typeof ret === 'object' && ret !== null ? ret : obj
+function myNew(Contructor, ...args) {
+  let obj = Object.creat(Contructor)
+  const result = constructor.apply(obj, args)
+  return typeof result === 'object' ? result : obj
 }
 ```
+
+Object.create() 方法用于创建一个新对象，使用现有的对象来作为新创建对象的原型（prototype）。
