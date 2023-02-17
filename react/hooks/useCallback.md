@@ -1,6 +1,6 @@
 # useCallback
 
-**使用 useCallback 是为了让子组件获取到相同的函数，而不是优化组件本身**
+**使用 useCallback 是为了让子组件获取到相同的函数参数，而不是优化组件本身**
 
 ```js
 const memoizedCallback = useCallback(() => {
