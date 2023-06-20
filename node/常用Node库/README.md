@@ -174,16 +174,30 @@ if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
 
 ## 10. dumi
 
-为React组件开发场景而生的文档工具
+为 React 组件开发场景而生的文档工具
 只需要写 README 文件，就可以在浏览器里面看到优雅的组件文档
 
 [文档地址](https://d.umijs.org/zh-CN)
 
 ## 11. father-build
 
-father-build 是 dumi 内部的组件打包工具，目前只支持React
+father-build 是 dumi 内部的组件打包工具，目前只支持 React
 支持 rollup 和 babel 2 种模式的组件打包
 rollup 是根据 entry 把项目依赖打包在一起输出一个文件
 babel 是把 src 目录转化成 lib（cjs） 或 es（esm）
 
 [文档地址](https://github.com/umijs/father)
+
+## 11. compressing
+
+压缩单个文件以及文件夹
+
+```js
+compressing.zip
+  .compressDir('/a', `./a.zip`, {
+    ignoreBase: true, // 这个参数很关键，用于打包后去掉多余的a文件夹目录
+  })
+  .then(() => {
+    shelljs.rm('-rf', `./a`)
+  })
+```
