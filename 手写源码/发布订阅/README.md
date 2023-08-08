@@ -34,6 +34,7 @@ class EventEmitter {
   emit(event, ...args) {
     const events = this.list[event]
     if (events) {
+      // 必须用箭头函数才能保证执行event时this指向对象本身而不是window
       events.forEach((item) => {
         item.call(this, ...args)
       })
