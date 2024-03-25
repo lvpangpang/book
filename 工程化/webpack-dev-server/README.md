@@ -142,9 +142,7 @@ context.compiler.hooks.done.tap('webpack-dev-middleware', done)
 
 ## 4. 更新
 
-因为 webpack-dev-server 使用的是 webpack 的 watch 模式进行的编译，当我们更新了代码后，webpack 是能够监听到代码变化的，代码变化后，webpack 会再次将我们的项目代码进行打包编译，编译完成后，就会触发 done 钩子函数了。
-
-1. 初始化中 setupHooks 里的 websocketServer 对客户端进行消息广播，通知客户端项目代码有更新了。
+1. webpack 是能够监听到代码变化的，代码变化后，webpack 会再次将我们的项目代码进行打包编译，编译完成后，就会触发 done 钩子，函数初始化中 setupHooks 里的 websocketServer 对客户端进行消息广播，通知客户端项目代码有更新了。
    
 2. 当客户端接收到 websocket 广播的消息后，会触发 reloadApp 方法（webpack 打包时注入进去的），reloadApp 会根据广播消息里的更新类型选择是页面更新 liveReload 还是模块更新 hotReload。
    
@@ -152,4 +150,4 @@ context.compiler.hooks.done.tap('webpack-dev-middleware', done)
 
 4. 拿到这两个增量文件后，再去请求 express 服务器去获取最新编译打包的 bundle.js。
 
-5. 根据更新类型，选择是两个增量文件和 bundle.js 比对局部更新还是页面更新。
+5. 根据更新类型，选择这两个增量文件和 bundle.js 比对局部更新还是页面更新。
